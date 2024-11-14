@@ -1,15 +1,15 @@
-package basicmod.relics;
+package botanicamod.relics;
 
 import basemod.abstracts.CustomRelic;
 import basemod.helpers.RelicType;
-import basicmod.util.GeneralUtils;
-import basicmod.util.TextureLoader;
+import botanicamod.util.GeneralUtils;
+import botanicamod.util.TextureLoader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 
-import static basicmod.BasicMod.relicPath;
+import static botanicamod.BasicMod.relicPath;
 
 public abstract class BaseRelic extends CustomRelic {
     public AbstractCard.CardColor pool = null;

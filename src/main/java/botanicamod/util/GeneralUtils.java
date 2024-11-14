@@ -1,4 +1,4 @@
-package basicmod.util;
+package botanicamod.util;
 
 public class GeneralUtils {
     public static String arrToString(Object[] arr) {

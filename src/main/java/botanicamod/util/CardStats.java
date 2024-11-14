@@ -1,4 +1,4 @@
-package basicmod.util;
+package botanicamod.util;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

@@ -1,0 +1,16 @@
+{
+  "${modID}:MirrorShard": {
+    "NAME": "Mirror Shard",
+    "FLAVOR": "A shard broken off from the core of Hexaghost, perhaps from a previous reincarnation?",
+    "DESCRIPTIONS": [
+      "At the start of combat, create a copy of a random card in your hand"
+    ]
+  },
+
+  "${modID}:HandOfMidas": {
+    "NAME": "Hand of Midas",
+    "FLAVOR": "Greed has consumed us all.",
+    "DESCRIPTIONS": [
+      "#yHand #yof #yGreed now grants double gold on kill. NL NL Upon pickup, upgrade all held #yHand #yof #yGreed(s) and obtain #b3 copies."    ]
+  }
+}

@@ -1,7 +1,7 @@
-package basicmod.powers;
+package botanicamod.powers;
 
-import basicmod.util.GeneralUtils;
-import basicmod.util.TextureLoader;
+import botanicamod.util.GeneralUtils;
+import botanicamod.util.TextureLoader;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
