@@ -12,5 +12,13 @@
     "FLAVOR": "Greed has consumed us all.",
     "DESCRIPTIONS": [
       "#yHand #yof #yGreed now grants double gold on kill. NL NL Upon pickup, upgrade all held #yHand #yof #yGreed(s) and obtain #b3 copies."    ]
+  },
+
+  "${modID}:ThornedCrown": {
+    "NAME": "Thorned Crown",
+    "FLAVOR": "A makeshift version of busted crown",
+    "DESCRIPTIONS": [
+      "Start each combat with #b2 #yThorns for each boss relic you have"
+    ]
   }
 }
