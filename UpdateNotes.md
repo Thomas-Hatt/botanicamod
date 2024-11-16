@@ -14,7 +14,6 @@
 
 ## New Features
 - Changed the `ID` of each relic to be more in line with Slay the Spire's formatting.
-- Created `UpdateNotes.md`.
 - Added 2 new boss relics:
 - 1. Flask of Duplication. Upon pickup, gain 2 copies of #yNormality. Duplicate every card in your deck and gain 10 gold for each card duplicated.
 - 2. Dragon Heart - Gain 2 Strength and 2 Dexterity at the start of each combat. Retain a random card at the end of your turn
