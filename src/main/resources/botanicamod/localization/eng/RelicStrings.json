@@ -1,24 +1,42 @@
 {
-  "${modID}:MirrorShard": {
+  "${modID}:Mirror_Shard": {
     "NAME": "Mirror Shard",
     "FLAVOR": "A shard broken off from the core of Hexaghost, perhaps from a previous reincarnation?",
     "DESCRIPTIONS": [
-      "At the start of combat, create a copy of a random card in your hand"
+      "At the start of combat, create a copy of a random card in your hand."
     ]
   },
 
-  "${modID}:HandOfMidas": {
+  "${modID}:Hand_Of_Midas": {
     "NAME": "Hand of Midas",
     "FLAVOR": "Greed has consumed us all.",
     "DESCRIPTIONS": [
       "#yHand #yof #yGreed now grants double gold on kill. NL NL Upon pickup, upgrade all held #yHand #yof #yGreed(s) and obtain #b3 copies."    ]
   },
 
-  "${modID}:ThornedCrown": {
+  "${modID}:Thorned_Crown": {
     "NAME": "Thorned Crown",
     "FLAVOR": "A makeshift version of busted crown",
     "DESCRIPTIONS": [
       "Start each combat with #b2 #yThorns for each boss relic you have"
+    ]
+  },
+
+  "${modID}:Flask_Of_Duplication": {
+    "NAME": "Flask of Duplication",
+    "FLAVOR": "What did they do to entropic brew?",
+    "DESCRIPTIONS": [
+      "Upon pickup, gain #y2 copies of #yNormality. NL NL Duplicate every card in your deck and gain #y10 gold for each card duplicated."
+    ]
+  },
+
+  "${modID}:Dragon_Heart": {
+    "NAME": "Dragon Heart",
+    "FLAVOR": "The Dragonborn could only wish to have this power",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " #yStrength and #b",
+      " #yDexterity at the start of each combat. Retain a random card at the end of your turn."
     ]
   }
 }

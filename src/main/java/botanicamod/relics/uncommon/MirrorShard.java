@@ -10,7 +10,7 @@ import static botanicamod.BasicMod.makeID;
 // Mirror Shard - At the start of each combat, create a copy of a random card in your hand
 
 public class MirrorShard extends BaseRelic {
-    private static final String NAME = "MirrorShard"; // The name will be used for determining the image file as well as the ID.
+    private static final String NAME = "Mirror_Shard"; // The name will be used for determining the image file as well as the ID.
     public static final String ID = makeID(NAME); // This adds the mod's prefix to the relic ID, resulting in modID:relic
     private static final RelicTier RARITY = RelicTier.UNCOMMON; // The relic's rarity.
     private static final LandingSound SOUND = LandingSound.CLINK; // The sound played when the relic is clicked.

@@ -15,7 +15,7 @@ import static botanicamod.BasicMod.makeID;
 // Hand of Midas - Hand of Greed now grants double gold on kill. Upon pickup, upgrade all held Hand of Greed(s) and obtain 3 copies
 
 public class HandOfMidas extends BaseRelic {
-    private static final String NAME = "HandOfMidas"; // The name will be used for determining the image file as well as the ID.
+    private static final String NAME = "Hand_Of_Midas"; // The name will be used for determining the image file as well as the ID.
     public static final String ID = makeID(NAME); // This adds the mod's prefix to the relic ID, resulting in modID:relic
     private static final RelicTier RARITY = RelicTier.BOSS; // The relic's rarity.
     private static final LandingSound SOUND = LandingSound.FLAT; // The sound played when the relic is clicked.
