@@ -35,6 +35,7 @@ People who have helped me code:
 - Ocean
 - gkjzhgffjh
 - kiooeht
+- queenmaddii
 
 
 Card removal cost is doubled, but the rest of the shop is discounted by 25%

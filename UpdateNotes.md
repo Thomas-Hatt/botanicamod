@@ -48,3 +48,8 @@ Flask of duplication is now a Boss Relic instead of an Uncommon Relic
 
 ## Known Bugs
 - Gambler's Debt is not removing the card the player is supposed to receive when a curse replaces that card in the deck
+
+# Version 0.0.5 #2 - 11/19/2024
+This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I decided to label it as 11/19/2024).
+- Fixed bug where Gambler's Debt was not removing the card the player is supposed to receive when a curse replaces that card in the deck
+- Improved logic for adding the random curse to the player's deck
