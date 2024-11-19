@@ -5,6 +5,7 @@
 ## Uncommon Relics:
 - Mirror Shard [X] - At the start of each combat, create a copy of a random card in your hand.
 - Reality Shard [] - Right click to activate. Once per combat, you can switch your current draw pile with one from a random character.
+- Tapinella [] - All Dexterity is converted to Strength
 
 ## Rare Relics:
 - Gambler's debt [] - Card rewards have 2 extra cards, but 1 random card is disguised as a curse.
@@ -20,7 +21,7 @@
 - Thorned Crown [X] - Start each combat with 2 Thorns for each boss relic you have
 - Dragon Heart [X] - Gain 2 Strength and 2 Dexterity at the start of each combat. Retain a random card at the end of your turn
 - Flask of Duplication [X] - Upon pickup, gain 2 copies of Normality. Duplicate every card in your deck and gain 10 gold for each card added.
-- Glimmering Orb [] - Every 5th power played each combat gives you 1 permanent Strength
+- Glimmering Orb [X] - The first time you play 5 Power Cards each combat, gain 1 permanent Strength
 - Purging Stone [] - Remove all copies of a selected card from your deck. If the card is part of your starter deck, lose 10 Max HP.
 
 ## Create the images for all relics
@@ -33,6 +34,7 @@ People who have helped me code:
 - Vex'd
 - Ocean
 - gkjzhgffjh
+- kiooeht
 
 
 Card removal cost is doubled, but the rest of the shop is discounted by 25%

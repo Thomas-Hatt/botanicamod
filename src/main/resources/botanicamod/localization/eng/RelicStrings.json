@@ -38,5 +38,30 @@
       " #yStrength and #b",
       " #yDexterity at the start of each combat. Retain a random card at the end of your turn."
     ]
+  },
+
+  "${modID}:Glimmering_Orb": {
+    "NAME": "Glimmering Orb",
+    "FLAVOR": "A powerful orb connected with the essence of nature itself",
+    "DESCRIPTIONS": [
+      "The first time first time you play #b",
+      " Power Cards each combat, Gain 1 Permanent #yStrength"
+    ]
+  },
+
+  "${modID}:Gamblers_Debt": {
+    "NAME": "Gambler's Debt",
+    "FLAVOR": "Let's go gambling!",
+    "DESCRIPTIONS": [
+      "Card rewards have #b2 Extra Cards, but #b1 Random Card is disguised as a #rCurse."
+    ]
+  },
+
+  "${modID}:Tapinella": {
+    "NAME": "Tapinella",
+    "FLAVOR": "Who knew mushrooms held so much power!?",
+    "DESCRIPTIONS": [
+      "All #yDexterity is converted to #yStrength"
+    ]
   }
 }

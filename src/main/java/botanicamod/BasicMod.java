@@ -2,14 +2,21 @@ package botanicamod;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.devcommands.relic.Relic;
 import basemod.helpers.RelicType;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import botanicamod.relics.BaseRelic;
-import botanicamod.relics.boss.HandOfMidas;
+import botanicamod.relics.boss.*;
+import botanicamod.relics.rare.AlchemistsMask;
+import botanicamod.relics.rare.GamblersDebt;
+import botanicamod.relics.rare.JestersBelt;
+import botanicamod.relics.rare.SkysDeathSpell;
+import botanicamod.relics.shop.RainbowCape;
 import botanicamod.relics.uncommon.MirrorShard;
+import botanicamod.relics.uncommon.RealityShard;
 import botanicamod.util.GeneralUtils;
 import botanicamod.util.KeywordInfo;
 import botanicamod.util.TextureLoader;
@@ -66,11 +73,23 @@ public class BasicMod implements
 
         // Add the uncommon relics
         BaseMod.addRelic(new MirrorShard(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(MirrorShard.ID);
+        // BaseMod.addRelic(new RealityShard(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
 
         // Add the rare relics
+        // BaseMod.addRelic(new AlchemistsMask(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
+        BaseMod.addRelic(new GamblersDebt(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(GamblersDebt.ID);
+        // BaseMod.addRelic(new JestersBelt(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
+        // BaseMod.addRelic(new SkysDeathSpell(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
 
         // Add the boss relics
         BaseMod.addRelic(new HandOfMidas(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
+        BaseMod.addRelic(new DragonHeart(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(DragonHeart.ID);
+        BaseMod.addRelic(new FlaskOfDuplication(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(FlaskOfDuplication.ID);
+        // BaseMod.addRelic(new PurgingStone(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
+        BaseMod.addRelic(new ThornedCrown(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(ThornedCrown.ID);
+
+        // Add the shop relics
+        // BaseMod.addRelic(new RainbowCape(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
     }
 
     //This is used to prefix the IDs of various objects like cards and relics,

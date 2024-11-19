@@ -33,12 +33,7 @@ public class ThornedCrown extends BaseRelic
         int thornsAmount = (int) bossRelicCount * 2;
 
         // Apply thorns equal to twice the amount of boss relics that the player has
-        this.addToTop(new ApplyPowerAction(
-                AbstractDungeon.player,
-                AbstractDungeon.player,
-                new ThornsPower(AbstractDungeon.player, thornsAmount),
-                thornsAmount
-        ));
+        this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThornsPower(AbstractDungeon.player, thornsAmount), thornsAmount));
     }
 
     @Override

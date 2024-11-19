@@ -32,3 +32,19 @@
 - 4. Sky's Death Spell
 - 5. Rainbow Cape
 - 6. Reality Shard
+
+# Version 0.0.5 - 11/18/2024
+## New Features
+- Updated `ToDo.md`
+- Added 2 new Boss Relics:
+- 1. Gambler's debt - Card rewards have 2 extra cards, but 1 random card is disguised as a curse.
+- 2. Glimmering Orb - The first time you play 5 Power Cards each combat, gain 1 permanent Strength
+
+
+- Created the programming outlines for the following relics:
+- 1. Tapinella
+## Fixed Bugs
+Flask of duplication is now a Boss Relic instead of an Uncommon Relic
+
+## Known Bugs
+- Gambler's Debt is not removing the card the player is supposed to receive when a curse replaces that card in the deck
