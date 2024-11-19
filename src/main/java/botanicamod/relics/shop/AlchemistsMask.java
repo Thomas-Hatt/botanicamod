@@ -1,4 +1,4 @@
-package botanicamod.relics.rare;
+package botanicamod.relics.shop;
 
 public class AlchemistsMask {
 }

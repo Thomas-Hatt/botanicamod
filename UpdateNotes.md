@@ -53,3 +53,24 @@ Flask of duplication is now a Boss Relic instead of an Uncommon Relic
 This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I decided to label it as 11/19/2024).
 - Fixed bug where Gambler's Debt was not removing the card the player is supposed to receive when a curse replaces that card in the deck
 - Improved logic for adding the random curse to the player's deck
+
+# Version 0.0.6 - 11/19/2024
+## New Features
+- Updated `ToDo.md`
+- Created the programming outlines for the following relics:
+- 1. Cerberus' Mask - Upon pickup, obtain all Face Relics. Lose 1 Energy at the start of your turn.
+- Added 1 new Shop relic:
+- 1. Tapinella - All Dexterity is converted to Strength
+- Moved the following relics to become Boss Relics:
+- 1. Jester's Belt
+- Moved the following relics to become Shop Relics:
+- 1. Tapinella
+- 2. Sky's Death Spell
+- 3. Alchemist's Mask
+
+## Known Bugs
+- Gambler's Debt does not trigger Darkstone Periapt
+
+## Future features I want to implement
+- For Gambler's Debt, I want to mark 3 cards that are known to be safe (i.e., won't give a curse if the player chooses that card).
+- This would dynamically scale if the player has fewer card rewards, for instance.

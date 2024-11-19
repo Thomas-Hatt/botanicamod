@@ -5,16 +5,15 @@
 ## Uncommon Relics:
 - Mirror Shard [X] - At the start of each combat, create a copy of a random card in your hand.
 - Reality Shard [] - Right click to activate. Once per combat, you can switch your current draw pile with one from a random character.
-- Tapinella [] - All Dexterity is converted to Strength
 
 ## Rare Relics:
-- Gambler's debt [] - Card rewards have 2 extra cards, but 1 random card is disguised as a curse.
-- Sky's Death Spell [] - At the end of your turn, double the potency of your potions. If you use a potion, die next turn.
-- Jester's Belt [] - Gain 1 Dexterity for every 4 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 4.
-- Alchemist's Mask [] - Right click to activate. Lose all gold. At the end of your turn, if you have 0 gold, obtain a random potion and add a random curse to your deck and draw pile.
+- Gambler's debt [X] - Card rewards have 2 extra cards, but 1 random card is disguised as a curse.
 
 ## Shop Relics:
 - Rainbow Cape [] - Card can be of any color, except your own character's. If you have Prismatic Shard, exchange it for a random rare relic
+- Sky's Death Spell [] - At the end of your turn, double the potency of your potions. If you use a potion, die next turn.
+- Tapinella [X] - All Dexterity is converted to Strength
+- Alchemist's Mask [] - Right click to activate. Lose all gold. At the end of your turn, if you have 0 gold, obtain a random potion and add a random curse to your deck and draw pile.
 
 ## Boss Relics:
 - Hand of Midas [X] - Hand of Greed now grants double gold on kill. Upon pickup, upgrade all held Hand of Greed(s) and obtain 3 copies
@@ -23,11 +22,16 @@
 - Flask of Duplication [X] - Upon pickup, gain 2 copies of Normality. Duplicate every card in your deck and gain 10 gold for each card added.
 - Glimmering Orb [X] - The first time you play 5 Power Cards each combat, gain 1 permanent Strength
 - Purging Stone [] - Remove all copies of a selected card from your deck. If the card is part of your starter deck, lose 10 Max HP.
+- Jester's Belt [] - At the start of your turn, gain 1 Energy. Gain 1 Dexterity for every 4 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 4.
+
+## Event Relics:
+- Cerberus' Mask [] - Upon pickup, obtain all Face Relics. Lose 1 Energy at the start of your turn.
 
 ## Create the images for all relics
 
 ### Currently known bugs:
 1. Images don't work
+2. Gambler's Debt doesn't trigger Darkstone Periapt
 
 ### Create a proper credits file
 People who have helped me code:
@@ -36,6 +40,11 @@ People who have helped me code:
 - gkjzhgffjh
 - kiooeht
 - queenmaddii
+- darkglade
+- modargo
+
+Gambler's Debt:
+Create a system that highlights known safe cards
 
 
 Card removal cost is doubled, but the rest of the shop is discounted by 25%

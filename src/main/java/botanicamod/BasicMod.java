@@ -2,21 +2,13 @@ package botanicamod;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
-import basemod.devcommands.relic.Relic;
 import basemod.helpers.RelicType;
-import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.*;
 import botanicamod.relics.BaseRelic;
 import botanicamod.relics.boss.*;
-import botanicamod.relics.rare.AlchemistsMask;
 import botanicamod.relics.rare.GamblersDebt;
-import botanicamod.relics.rare.JestersBelt;
-import botanicamod.relics.rare.SkysDeathSpell;
-import botanicamod.relics.shop.RainbowCape;
+import botanicamod.relics.shop.Tapinella;
 import botanicamod.relics.uncommon.MirrorShard;
-import botanicamod.relics.uncommon.RealityShard;
 import botanicamod.util.GeneralUtils;
 import botanicamod.util.KeywordInfo;
 import botanicamod.util.TextureLoader;
@@ -32,7 +24,12 @@ import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -46,7 +43,10 @@ public class BasicMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditRelicsSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        OnPowersModifiedSubscriber,
+        OnStartBattleSubscriber,
+        PostPowerApplySubscriber{
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
@@ -69,6 +69,8 @@ public class BasicMod implements
                         UnlockTracker.markRelicAsSeen(relic.relicId);
                 });
 
+
+
         // Add the common relics
 
         // Add the uncommon relics
@@ -76,20 +78,21 @@ public class BasicMod implements
         // BaseMod.addRelic(new RealityShard(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
 
         // Add the rare relics
-        // BaseMod.addRelic(new AlchemistsMask(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-        BaseMod.addRelic(new GamblersDebt(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(GamblersDebt.ID);
-        // BaseMod.addRelic(new JestersBelt(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-        // BaseMod.addRelic(new SkysDeathSpell(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
 
         // Add the boss relics
+        // BaseMod.addRelic(new AlchemistsMask(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
         BaseMod.addRelic(new HandOfMidas(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
         BaseMod.addRelic(new DragonHeart(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(DragonHeart.ID);
         BaseMod.addRelic(new FlaskOfDuplication(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(FlaskOfDuplication.ID);
         // BaseMod.addRelic(new PurgingStone(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
         BaseMod.addRelic(new ThornedCrown(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(ThornedCrown.ID);
+        // BaseMod.addRelic(new JestersBelt(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
 
         // Add the shop relics
         // BaseMod.addRelic(new RainbowCape(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
+        BaseMod.addRelic(new Tapinella(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
+        // BaseMod.addRelic(new AlchemistsMask(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
+        // BaseMod.addRelic(new SkysDeathSpell(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
     }
 
     //This is used to prefix the IDs of various objects like cards and relics,
@@ -272,5 +275,32 @@ public class BasicMod implements
         else {
             throw new RuntimeException("Failed to determine mod info/ID based on initializer.");
         }
+    }
+
+    @Override
+    public void receivePostPowerApplySubscriber(AbstractPower power, com.megacrit.cardcrawl.core.AbstractCreature target, com.megacrit.cardcrawl.core.AbstractCreature source) {
+        if (target == AbstractDungeon.player && power.ID.equals(DexterityPower.POWER_ID)) {
+            Tapinella tapinella = (Tapinella) AbstractDungeon.player.getRelic(Tapinella.ID);
+            if (tapinella != null && !tapinella.isConverting()) {
+                tapinella.convertDexterityToStrength(AbstractDungeon.player, power.amount);
+            }
+        }
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        AbstractDungeon.player.powers.forEach(power -> {
+            if (power.ID.equals(StrengthPower.POWER_ID)) {
+                Tapinella tapinella = (Tapinella) AbstractDungeon.player.getRelic(Tapinella.ID);
+                if (tapinella != null && !tapinella.isConverting()) {
+                    tapinella.convertDexterityToStrength(AbstractDungeon.player, power.amount);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void receivePowersModified() {
+
     }
 }

@@ -63,5 +63,13 @@
     "DESCRIPTIONS": [
       "All #yDexterity is converted to #yStrength"
     ]
+  },
+
+  "${modID}:Cerberus_Mask": {
+    "NAME": "Cerberus' Mask",
+    "FLAVOR": "Power taken straight from the Gods.",
+    "DESCRIPTIONS": [
+      "Upon pickup, obtain all #yFace #yRelics. Lose [E] at the start of your turn."
+    ]
   }
 }
