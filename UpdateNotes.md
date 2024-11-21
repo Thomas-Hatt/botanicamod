@@ -85,3 +85,13 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - 1. Nebula - If you end your turn without Block, your next skill is played twice.
 - Moved the following relics to become Shop Relics:
 - 1. Gambler's Debt
+
+# Version 0.0.8 - 11/21/2024
+## New Features
+- Updated `ToDo.md`
+- Added 1 new Boss relic:
+- 1. Jester's Belt - Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 4 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 4.
+
+## Known Bugs
+- Jester's Belt does not cap the amount of Dexterity the player has (specifically, a Dexterity potion breaks the cap)
+- Jester's Belt does not reset the relic counter if the player has Dexterity equal to the Dexterity cap

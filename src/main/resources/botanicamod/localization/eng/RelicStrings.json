@@ -88,5 +88,17 @@
       "Every #b",
       " turns, add a random skill into your hand."
     ]
+  },
+
+  "${modID}:Jesters_Belt": {
+    "NAME": "Jester's Belt",
+    "FLAVOR": "Loki needs your help",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of each turn. NL NL Gain #b",
+      " #yDexterity for every #b",
+      " cards played in a turn, but lose #b",
+      " #yDexterity if you play a Power card. NL NL #yDexterity is now #rcapped at #b",
+      "."
+    ]
   }
 }

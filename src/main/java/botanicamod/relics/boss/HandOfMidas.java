@@ -1,8 +1,6 @@
 package botanicamod.relics.boss;
 
 import botanicamod.relics.BaseRelic;
-import com.badlogic.gdx.Gdx;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.HandOfGreed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

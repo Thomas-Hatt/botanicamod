@@ -90,7 +90,7 @@ public class BasicMod implements
         BaseMod.addRelic(new FlaskOfDuplication(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(FlaskOfDuplication.ID);
         // BaseMod.addRelic(new PurgingStone(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
         BaseMod.addRelic(new ThornedCrown(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(ThornedCrown.ID);
-        // BaseMod.addRelic(new JestersBelt(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
+        BaseMod.addRelic(new JestersBelt(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
 
         // Add the shop relics
         // BaseMod.addRelic(new RainbowCape(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
@@ -284,11 +284,20 @@ public class BasicMod implements
 
     @Override
     public void receivePostPowerApplySubscriber(AbstractPower power, com.megacrit.cardcrawl.core.AbstractCreature target, com.megacrit.cardcrawl.core.AbstractCreature source) {
-        if (target == AbstractDungeon.player && power.ID.equals(DexterityPower.POWER_ID)) {
-            Tapinella tapinella = (Tapinella) AbstractDungeon.player.getRelic(Tapinella.ID);
-            if (tapinella != null && !tapinella.isConverting()) {
-                tapinella.convertDexterityToStrength(AbstractDungeon.player, power.amount);
-            }
+        if (target == AbstractDungeon.player)
+            if (power.ID.equals(DexterityPower.POWER_ID)) {
+                // Jester's Belt
+                JestersBelt jestersBelt = (JestersBelt) AbstractDungeon.player.getRelic(JestersBelt.ID);
+                if (jestersBelt != null)
+                {
+                    jestersBelt.reduceDexterity();
+                }
+
+                // Tapinella
+                Tapinella tapinella = (Tapinella) AbstractDungeon.player.getRelic(Tapinella.ID);
+                if (tapinella != null && !tapinella.isConverting()) {
+                    tapinella.convertDexterityToStrength(AbstractDungeon.player, power.amount);
+                }
         }
     }
 
