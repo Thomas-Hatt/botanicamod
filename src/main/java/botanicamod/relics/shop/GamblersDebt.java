@@ -1,4 +1,4 @@
-package botanicamod.relics.rare;
+package botanicamod.relics.shop;
 
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,8 +14,8 @@ import static botanicamod.BasicMod.makeID;
 public class GamblersDebt extends BaseRelic {
     private static final String NAME = "Gamblers_Debt"; // The name will be used for determining the image file as well as the ID.
     public static final String ID = makeID(NAME); // This adds the mod's prefix to the relic ID, resulting in modID:relic
-    private static final RelicTier RARITY = RelicTier.RARE; // The relic's rarity.
-    private static final LandingSound SOUND = LandingSound.FLAT; // The sound played when the relic is clicked.
+    private static final RelicTier RARITY = RelicTier.SHOP; // The relic's rarity.
+    private static final LandingSound SOUND = LandingSound.HEAVY; // The sound played when the relic is clicked.
 
     public GamblersDebt() {
         super(ID, NAME, RARITY, SOUND);

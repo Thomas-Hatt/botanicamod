@@ -14,7 +14,7 @@ public class Tapinella extends BaseRelic {
     private static final String NAME = "Tapinella";
     public static final String ID = makeID(NAME);
     private static final RelicTier RARITY = RelicTier.SHOP;
-    private static final LandingSound SOUND = LandingSound.CLINK;
+    private static final LandingSound SOUND = LandingSound.HEAVY;
 
     private boolean isConverting = false;  // Flag to prevent infinite loop
 

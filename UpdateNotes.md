@@ -74,3 +74,14 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 ## Future features I want to implement
 - For Gambler's Debt, I want to mark 3 cards that are known to be safe (i.e., won't give a curse if the player chooses that card).
 - This would dynamically scale if the player has fewer card rewards, for instance.
+
+# Version 0.0.7 - 11/20/2024
+## New Features
+- Updated `ToDo.md`
+- Deleted excess imports in the individual classes for relics
+- Added 1 new Uncommon relic:
+- 1. Divider - Every 4 turns, add a random skill into your hand.
+- Added 1 new Rare relic:
+- 1. Nebula - If you end your turn without Block, your next skill is played twice.
+- Moved the following relics to become Shop Relics:
+- 1. Gambler's Debt

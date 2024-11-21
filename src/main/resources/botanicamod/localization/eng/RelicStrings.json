@@ -71,5 +71,22 @@
     "DESCRIPTIONS": [
       "Upon pickup, obtain all #yFace #yRelics. Lose [E] at the start of your turn."
     ]
+  },
+
+  "${modID}:Nebula": {
+    "NAME": "Nebula",
+    "FLAVOR": "The power consumes you, and grows.",
+    "DESCRIPTIONS": [
+      "If you end your turn without #yBlock, your next skill is played twice."
+    ]
+  },
+
+  "${modID}:Divider": {
+    "NAME": "Divider",
+    "FLAVOR": "The Defect",
+    "DESCRIPTIONS": [
+      "Every #b",
+      " turns, add a random skill into your hand."
+    ]
   }
 }

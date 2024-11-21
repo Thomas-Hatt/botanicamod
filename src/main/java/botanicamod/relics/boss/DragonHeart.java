@@ -1,7 +1,6 @@
 package botanicamod.relics.boss;
 
 import botanicamod.actions.DragonHeartAction;
-import botanicamod.actions.MirrorShardAction;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;

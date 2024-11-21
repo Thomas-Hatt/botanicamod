@@ -6,8 +6,10 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import botanicamod.relics.BaseRelic;
 import botanicamod.relics.boss.*;
-import botanicamod.relics.rare.GamblersDebt;
+import botanicamod.relics.shop.GamblersDebt;
+import botanicamod.relics.rare.Nebula;
 import botanicamod.relics.shop.Tapinella;
+import botanicamod.relics.uncommon.Divider;
 import botanicamod.relics.uncommon.MirrorShard;
 import botanicamod.util.GeneralUtils;
 import botanicamod.util.KeywordInfo;
@@ -75,9 +77,11 @@ public class BasicMod implements
 
         // Add the uncommon relics
         BaseMod.addRelic(new MirrorShard(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(MirrorShard.ID);
+        BaseMod.addRelic(new Divider(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(MirrorShard.ID);
         // BaseMod.addRelic(new RealityShard(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
 
         // Add the rare relics
+        BaseMod.addRelic(new Nebula(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
 
         // Add the boss relics
         // BaseMod.addRelic(new AlchemistsMask(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
@@ -93,6 +97,7 @@ public class BasicMod implements
         BaseMod.addRelic(new Tapinella(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
         // BaseMod.addRelic(new AlchemistsMask(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
         // BaseMod.addRelic(new SkysDeathSpell(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
+        BaseMod.addRelic(new GamblersDebt(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
     }
 
     //This is used to prefix the IDs of various objects like cards and relics,

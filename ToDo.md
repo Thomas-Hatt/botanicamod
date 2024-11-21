@@ -5,15 +5,17 @@
 ## Uncommon Relics:
 - Mirror Shard [X] - At the start of each combat, create a copy of a random card in your hand.
 - Reality Shard [] - Right click to activate. Once per combat, you can switch your current draw pile with one from a random character.
+- Divider [X] - Every 4 turns, add a random skill into your hand.
 
 ## Rare Relics:
-- Gambler's debt [X] - Card rewards have 2 extra cards, but 1 random card is disguised as a curse.
+- Nebula [X] - If you end your turn without Block, your next skill is played twice.
 
 ## Shop Relics:
 - Rainbow Cape [] - Card can be of any color, except your own character's. If you have Prismatic Shard, exchange it for a random rare relic
 - Sky's Death Spell [] - At the end of your turn, double the potency of your potions. If you use a potion, die next turn.
 - Tapinella [X] - All Dexterity is converted to Strength
 - Alchemist's Mask [] - Right click to activate. Lose all gold. At the end of your turn, if you have 0 gold, obtain a random potion and add a random curse to your deck and draw pile.
+- Gambler's debt [X] - Card rewards have 2 extra cards, but 1 random card is disguised as a curse.
 
 ## Boss Relics:
 - Hand of Midas [X] - Hand of Greed now grants double gold on kill. Upon pickup, upgrade all held Hand of Greed(s) and obtain 3 copies
