@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.cards.colorless.HandOfGreed;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class HandOfMidas_Patched {
-
     @SpirePatch(clz = HandOfGreed.class, method = SpirePatch.CONSTRUCTOR)
     public static class DoubleInitialValue {
         @SpirePostfixPatch

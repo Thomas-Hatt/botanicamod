@@ -70,34 +70,6 @@ public class BasicMod implements
                     if (info.seen)
                         UnlockTracker.markRelicAsSeen(relic.relicId);
                 });
-
-
-
-        // Add the common relics
-
-        // Add the uncommon relics
-        BaseMod.addRelic(new MirrorShard(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(MirrorShard.ID);
-        BaseMod.addRelic(new Divider(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(MirrorShard.ID);
-        // BaseMod.addRelic(new RealityShard(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-
-        // Add the rare relics
-        BaseMod.addRelic(new Nebula(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-
-        // Add the boss relics
-        // BaseMod.addRelic(new AlchemistsMask(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-        BaseMod.addRelic(new HandOfMidas(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-        BaseMod.addRelic(new DragonHeart(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(DragonHeart.ID);
-        BaseMod.addRelic(new FlaskOfDuplication(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(FlaskOfDuplication.ID);
-        // BaseMod.addRelic(new PurgingStone(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-        BaseMod.addRelic(new ThornedCrown(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(ThornedCrown.ID);
-        BaseMod.addRelic(new JestersBelt(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-
-        // Add the shop relics
-        // BaseMod.addRelic(new RainbowCape(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-        BaseMod.addRelic(new Tapinella(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-        // BaseMod.addRelic(new AlchemistsMask(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-        // BaseMod.addRelic(new SkysDeathSpell(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
-        BaseMod.addRelic(new GamblersDebt(), RelicType.SHARED); UnlockTracker.markRelicAsSeen(HandOfMidas.ID);
     }
 
     //This is used to prefix the IDs of various objects like cards and relics,

@@ -9,6 +9,7 @@
 
 ## Rare Relics:
 - Nebula [X] - If you end your turn without Block, your next skill is played twice.
+- Narcissus (Ironclad Specific) [] - Start each combat with Limit Break. It has Purge and costs 0.
 
 ## Shop Relics:
 - Rainbow Cape [] - Card can be of any color, except your own character's. If you have Prismatic Shard, exchange it for a random rare relic
@@ -29,25 +30,6 @@
 ## Event Relics:
 - Cerberus' Mask [] - Upon pickup, obtain all Face Relics. Lose 1 Energy at the start of your turn.
 
-## Create the images for all relics
-
-### Currently known bugs:
-1. Images don't work
-2. Gambler's Debt doesn't trigger Darkstone Periapt
-
-### Create a proper credits file
-People who have helped me code:
-- Vex'd
-- Ocean
-- gkjzhgffjh
-- kiooeht
-- queenmaddii
-- darkglade
-- modargo
-
-Gambler's Debt:
-Create a system that highlights known safe cards
-
 
 Card removal cost is doubled, but the rest of the shop is discounted by 25%
 
@@ -55,3 +37,20 @@ Card removal cost is doubled, but the rest of the shop is discounted by 25%
 
 Sneckos eyepatch
 The first 7 cards drawn in a players turn have snecko debuff, the rest don't
+
+At the end of turn 3, all minions run away
+If you play 20 cards, you may flee combat
+If you receive a debuff, permanently weaken the enemy
+Every time an enemy gains a buff, gain block
+Right click to activate, you and the enemy loses half of your current hp
+Gain 50% of the damage you did in combat in gold
+Heal 10% of damage you take in a combat
+
+The Defect:
+Sweater
+At the start of each combat, Channel 2 Frost. Gain 1 Focus every 3 turns.
+
+The Silent:
+
+Ironclad:
+Start each combat with Limit Break. It has Purge and costs 0.

@@ -100,5 +100,13 @@
       " #yDexterity if you play a Power card. NL NL #yDexterity is now #rcapped at #b",
       "."
     ]
+  },
+
+  "${modID}:Narcissus": {
+    "NAME": "Narcissus",
+    "FLAVOR": "Don't look into the water.",
+    "DESCRIPTIONS": [
+      "Start each combat with #yLimit #yBreak. It has #yPurge and costs #b0."
+    ]
   }
 }

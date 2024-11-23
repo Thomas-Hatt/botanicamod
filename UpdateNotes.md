@@ -13,6 +13,7 @@
 # Version 0.0.3 - 11/16/2024
 
 ## New Features
+- Updated `ToDo.md`
 - Changed the `ID` of each relic to be more in line with Slay the Spire's formatting.
 - Added 2 new boss relics:
 - 1. Flask of Duplication. Upon pickup, gain 2 copies of #yNormality. Duplicate every card in your deck and gain 10 gold for each card duplicated.
@@ -92,6 +93,12 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - Added 1 new Boss relic:
 - 1. Jester's Belt - Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 4 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 4.
 
-## Known Bugs
-- Jester's Belt does not cap the amount of Dexterity the player has (specifically, a Dexterity potion breaks the cap)
-- Jester's Belt does not reset the relic counter if the player has Dexterity equal to the Dexterity cap
+# Version 0.0.9 - 11/22/2024
+## New Features
+- Updated `ToDo.md`
+- Created `Credits.md`
+- Created `FutureFeatures.md`
+- Created `KnownBugs.md`
+- Removed unnecessary code
+- Added 1 new Rare relic:
+- 1. Narcissus (Ironclad Specific) - Start each combat with Limit Break. It has Purge and costs 0.
