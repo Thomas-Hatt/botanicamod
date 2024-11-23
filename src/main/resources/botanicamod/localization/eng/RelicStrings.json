@@ -44,7 +44,7 @@
     "NAME": "Glimmering Orb",
     "FLAVOR": "A powerful orb connected with the essence of nature itself",
     "DESCRIPTIONS": [
-      "The first time first time you play #b",
+      "The first time you play #b",
       " Power Cards each combat, Gain 1 Permanent #yStrength"
     ]
   },
@@ -107,6 +107,22 @@
     "FLAVOR": "Don't look into the water.",
     "DESCRIPTIONS": [
       "Start each combat with #yLimit #yBreak. It has #yPurge and costs #b0."
+    ]
+  },
+
+  "${modID}:Silene": {
+    "NAME": "Silene",
+    "FLAVOR": "A flower with healing properties.",
+    "DESCRIPTIONS": [
+      "Heal #b10% of damage taken at the end of combat."
+    ]
+  },
+
+  "${modID}:Marigold": {
+    "NAME": "Marigold",
+    "FLAVOR": "A flower with gold gaining properties.",
+    "DESCRIPTIONS": [
+      "Gain #yGold equal to #b25% of the damage dealt in combat, but only for the first #b50 damage dealt. NL NL Additionally, for every #b100 #yGold gained from this effect, draw #b1 card at the start of combat."
     ]
   }
 }

@@ -102,3 +102,12 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - Removed unnecessary code
 - Added 1 new Rare relic:
 - 1. Narcissus (Ironclad Specific) - Start each combat with Limit Break. It has Purge and costs 0.
+
+# Version 0.1.0 - 11/23/2024
+## New Features
+- Updated `ToDo.md`
+- Added new credits in `Credits.md`
+- Fixed a typo for the relic `Glimmering Orb`
+- Added 2 new Rare relics:
+- 1. Silene - Heal 10% of damage taken at the end of combat.
+- 2. Marigold - Gain gold equal to 25% of the damage dealt in combat, but only for the first 50 damage dealt. Additionally, for every 100 Gold gained from this effect, draw one card at the start of combat.

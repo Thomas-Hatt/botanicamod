@@ -9,7 +9,9 @@
 
 ## Rare Relics:
 - Nebula [X] - If you end your turn without Block, your next skill is played twice.
-- Narcissus (Ironclad Specific) [] - Start each combat with Limit Break. It has Purge and costs 0.
+- Narcissus (Ironclad Specific) [X] - Start each combat with Limit Break. It has Purge and costs 0.
+- Silene [X] - Heal 10% of damage taken at the end of combat.
+- Marigold [X] - Gain gold equal to 25% of the damage dealt in combat, but only for the first 50 damage dealt. Additionally, for every 100 gold gained from this effect, draw one card at the start of combat.
 
 ## Shop Relics:
 - Rainbow Cape [] - Card can be of any color, except your own character's. If you have Prismatic Shard, exchange it for a random rare relic
@@ -44,7 +46,6 @@ If you receive a debuff, permanently weaken the enemy
 Every time an enemy gains a buff, gain block
 Right click to activate, you and the enemy loses half of your current hp
 Gain 50% of the damage you did in combat in gold
-Heal 10% of damage you take in a combat
 
 The Defect:
 Sweater
