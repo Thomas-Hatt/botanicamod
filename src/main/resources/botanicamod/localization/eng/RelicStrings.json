@@ -124,5 +124,21 @@
     "DESCRIPTIONS": [
       "Gain #yGold equal to #b25% of the damage dealt in combat, but only for the first #b50 damage dealt. NL NL Additionally, for every #b100 #yGold gained from this effect, draw #b1 card at the start of combat."
     ]
+  },
+
+  "${modID}:Hemlock": {
+    "NAME": "Hemlock",
+    "FLAVOR": "Sample Text",
+    "DESCRIPTIONS": [
+      "Upon entering a Rest Site, #yScry #b1 for every #b6 cards in your deck at the start of your next combat."
+    ]
+  },
+
+  "${modID}:Cardoon": {
+    "NAME": "Cardoon",
+    "FLAVOR": "Sample Text",
+    "DESCRIPTIONS": [
+      "Every time you play #b4 #yAttacks in a single turn, shuffle a #yJack #yof #yAll #yTrades into your draw pile."
+    ]
   }
 }

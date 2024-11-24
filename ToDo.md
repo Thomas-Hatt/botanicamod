@@ -6,12 +6,15 @@
 - Mirror Shard [X] - At the start of each combat, create a copy of a random card in your hand.
 - Reality Shard [] - Right click to activate. Once per combat, you can switch your current draw pile with one from a random character.
 - Divider [X] - Every 4 turns, add a random skill into your hand.
+- Cardoon [] - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.
+
 
 ## Rare Relics:
 - Nebula [X] - If you end your turn without Block, your next skill is played twice.
 - Narcissus (Ironclad Specific) [X] - Start each combat with Limit Break. It has Purge and costs 0.
 - Silene [X] - Heal 10% of damage taken at the end of combat.
 - Marigold [X] - Gain gold equal to 25% of the damage dealt in combat, but only for the first 50 damage dealt. Additionally, for every 100 gold gained from this effect, draw one card at the start of combat.
+- Hemlock [X] - Upon entering a Rest Site, Scry 1 for every 6 cards in your deck at the start of your next combat.
 
 ## Shop Relics:
 - Rainbow Cape [] - Card can be of any color, except your own character's. If you have Prismatic Shard, exchange it for a random rare relic
@@ -45,7 +48,6 @@ If you play 20 cards, you may flee combat
 If you receive a debuff, permanently weaken the enemy
 Every time an enemy gains a buff, gain block
 Right click to activate, you and the enemy loses half of your current hp
-Gain 50% of the damage you did in combat in gold
 
 The Defect:
 Sweater

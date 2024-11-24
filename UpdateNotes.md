@@ -111,3 +111,9 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - Added 2 new Rare relics:
 - 1. Silene - Heal 10% of damage taken at the end of combat.
 - 2. Marigold - Gain gold equal to 25% of the damage dealt in combat, but only for the first 50 damage dealt. Additionally, for every 100 Gold gained from this effect, draw one card at the start of combat.
+
+# Version 0.1.1 - 11/24/2024
+## New Features
+- Updated `ToDo.md`
+- Added 1 new Rare relic:
+- 1. Hemlock - Upon entering a Rest Site, Scry 1 for every 6 cards in your deck at the start of your next combat.
