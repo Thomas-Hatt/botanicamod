@@ -8,3 +8,7 @@
 ### - modargo
 ### - actuallyenbeon
 ### - narvoxx
+
+## Thank you to these people who suggested relics for me to add to the mod!
+### - blueash7077, suggested `Blue Ashes`
+### - equi31, suggested `Equinox`

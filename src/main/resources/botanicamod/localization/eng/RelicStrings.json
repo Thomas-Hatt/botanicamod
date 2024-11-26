@@ -140,5 +140,21 @@
     "DESCRIPTIONS": [
       "Every time you play #b4 #yAttacks in a single turn, shuffle a #yJack #yof #yAll #yTrades into your draw pile."
     ]
+  },
+
+  "${modID}:Blue_Ashes": {
+    "NAME": "Blue Ashes",
+    "FLAVOR": "As suggested by blueash7077",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain the #yFire #yBreathing #ybuff. NL NL Has a #y${modID}:Fiery_Quest."
+    ]
+  },
+
+  "${modID}:Equinox": {
+    "NAME": "Equinox",
+    "FLAVOR": "As suggested by equi31",
+    "DESCRIPTIONS": [
+      "Every time you play #b10 Attacks, play the top card of your draw pile."
+    ]
   }
 }

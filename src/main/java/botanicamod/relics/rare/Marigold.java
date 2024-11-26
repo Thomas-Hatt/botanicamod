@@ -1,7 +1,6 @@
 package botanicamod.relics.rare;
 
 import botanicamod.relics.BaseRelic;
-import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

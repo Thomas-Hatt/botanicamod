@@ -7,6 +7,9 @@
 - Reality Shard [] - Right click to activate. Once per combat, you can switch your current draw pile with one from a random character.
 - Divider [X] - Every 4 turns, add a random skill into your hand.
 - Cardoon [] - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.
+- Blue Ashes (as suggested by blueash7077!) [X] - At the start of each combat, gain the Fire Breathing buff. 
+- 1. Blue Ashes Side Quest [X] - Upon drawing 20 total Status Cards, gain the Fire Breathing+ buff instead.
+- Equinox (as suggested by equi31!) [X] - Every time you play 10 Attacks, play the top card of your draw pile.
 
 
 ## Rare Relics:
@@ -30,7 +33,7 @@
 - Flask of Duplication [X] - Upon pickup, gain 2 copies of Normality. Duplicate every card in your deck and gain 10 gold for each card added.
 - Glimmering Orb [X] - The first time you play 5 Power Cards each combat, gain 1 permanent Strength
 - Purging Stone [] - Remove all copies of a selected card from your deck. If the card is part of your starter deck, lose 10 Max HP.
-- Jester's Belt [] - Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 4 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 4.
+- Jester's Belt [X] - Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 4 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 4.
 
 ## Event Relics:
 - Cerberus' Mask [] - Upon pickup, obtain all Face Relics. Lose 1 Energy at the start of your turn.

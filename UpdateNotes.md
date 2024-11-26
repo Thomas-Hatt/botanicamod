@@ -117,3 +117,11 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - Updated `ToDo.md`
 - Added 1 new Rare relic:
 - 1. Hemlock - Upon entering a Rest Site, Scry 1 for every 6 cards in your deck at the start of your next combat.
+
+# Version 0.1.2 - 11/25/2024
+## Today I added 2 relics suggested by Frost Prime's community!
+- Updated `ToDo.md`
+- Added 2 new Uncommon relics:
+1. Blue Ashes (as suggested by blueash7077!) [X] - At the start of each combat, gain the Fire Breathing buff.
+- - Blue Ashes Side Quest [X] - Upon drawing 20 total Status Cards, gain the Fire Breathing+ buff instead.
+3. Equinox (as suggested by equi31!) [X] - Every time you play 10 Attacks, play the top card of your draw pile.
