@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static botanicamod.BasicMod.makeID;
 
-// Dragon Heart - Gain 2 Strength and 2 Dexterity at the start of each combat. Retain a random card at the end of your turn
+// Dragon Heart - Gain 2 Strength and 2 Dexterity at the start of each combat. Retain a random card at the end of your turn.
 
 public class DragonHeart extends BaseRelic {
     private static final String NAME = "Dragon_Heart"; // The name will be used for determining the image file as well as the ID.

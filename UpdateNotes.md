@@ -120,8 +120,16 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 
 # Version 0.1.2 - 11/25/2024
 ## Today I added 2 relics suggested by Frost Prime's community!
+## New Features
 - Updated `ToDo.md`
 - Added 2 new Uncommon relics:
-1. Blue Ashes (as suggested by blueash7077!) [X] - At the start of each combat, gain the Fire Breathing buff.
-- - Blue Ashes Side Quest [X] - Upon drawing 20 total Status Cards, gain the Fire Breathing+ buff instead.
-3. Equinox (as suggested by equi31!) [X] - Every time you play 10 Attacks, play the top card of your draw pile.
+1. Blue Ashes (as suggested by blueash7077!) - At the start of each combat, gain the Fire Breathing buff.
+- - Blue Ashes Side Quest - Upon drawing 20 total Status Cards, gain the Fire Breathing+ buff instead.
+3. Equinox (as suggested by Equi!) - Every time you play 10 Attacks, play the top card of your draw pile.
+
+# Version 0.1.3 - 11/26/2024
+## New Features
+- Updated `ToDo.md`
+- Added 2 new Uncommon relics:
+- 1. Terrifying Trinket - At the start of turn 3, all Minions run away.
+- 2. Cardoon - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.

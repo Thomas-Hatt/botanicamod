@@ -9,7 +9,8 @@
 - Cardoon [] - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.
 - Blue Ashes (as suggested by blueash7077!) [X] - At the start of each combat, gain the Fire Breathing buff. 
 - 1. Blue Ashes Side Quest [X] - Upon drawing 20 total Status Cards, gain the Fire Breathing+ buff instead.
-- Equinox (as suggested by equi31!) [X] - Every time you play 10 Attacks, play the top card of your draw pile.
+- Equinox (as suggested by Equi!) [X] - Every time you play 10 Attacks, play the top card of your draw pile.
+- Terrifying Trinket [X] - At the start of turn 3, all minions run away.
 
 
 ## Rare Relics:
@@ -38,6 +39,9 @@
 ## Event Relics:
 - Cerberus' Mask [] - Upon pickup, obtain all Face Relics. Lose 1 Energy at the start of your turn.
 
+## Potions:
+- Slowness Potion [] - Apply 1 Slow.
+
 
 Card removal cost is doubled, but the rest of the shop is discounted by 25%
 
@@ -46,7 +50,7 @@ Card removal cost is doubled, but the rest of the shop is discounted by 25%
 Sneckos eyepatch
 The first 7 cards drawn in a players turn have snecko debuff, the rest don't
 
-At the end of turn 3, all minions run away
+
 If you play 20 cards, you may flee combat
 If you receive a debuff, permanently weaken the enemy
 Every time an enemy gains a buff, gain block

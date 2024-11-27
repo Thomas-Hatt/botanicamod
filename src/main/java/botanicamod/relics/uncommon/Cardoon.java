@@ -1,6 +1,10 @@
 package botanicamod.relics.uncommon;
 
 import botanicamod.relics.BaseRelic;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.colorless.JackOfAllTrades;
 
 import static botanicamod.BasicMod.makeID;
 
@@ -12,11 +16,32 @@ public class Cardoon extends BaseRelic {
     private static final RelicTier RARITY = RelicTier.UNCOMMON; // The relic's rarity.
     private static final LandingSound SOUND = LandingSound.CLINK; // The sound played when the relic is clicked.
 
-    // Create a variable to be used for the turn counter
-    private final int turnCounter = 4;
-
     public Cardoon() {
         super(ID, NAME, RARITY, SOUND);
+    }
+
+    // Reset the counter
+    @Override
+    public void atTurnStart() {
+        this.counter = 0;
+    }
+
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.type == AbstractCard.CardType.ATTACK) {
+            this.counter++;
+            // Create a variable to be used for the attack requirement
+            int attackRequirement = 4;
+            if (this.counter % attackRequirement == 0) {
+                this.counter = 0;
+                flash();
+                this.addToBot(new MakeTempCardInDrawPileAction(new JackOfAllTrades(), 1, true, true));
+            }
+        }
+    }
+
+    public void onVictory() {
+        this.counter = -1;
     }
 
     @Override

@@ -152,9 +152,17 @@
 
   "${modID}:Equinox": {
     "NAME": "Equinox",
-    "FLAVOR": "As suggested by equi31",
+    "FLAVOR": "As suggested by Equi",
     "DESCRIPTIONS": [
       "Every time you play #b10 Attacks, play the top card of your draw pile."
+    ]
+  },
+
+  "${modID}:Terrifying_Trinket": {
+    "NAME": "Terrifying Trinket",
+    "FLAVOR": "How spooky!",
+    "DESCRIPTIONS": [
+      "At the start of turn #b3, all Minions run away."
     ]
   }
 }
