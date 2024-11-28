@@ -6,5 +6,13 @@
       "fiery_quest"
     ],
     "DESCRIPTION": "Upon drawing 20 total #yStatus cards, gain the #yFire #yBreathing+ #ybuff instead."
+  },
+  {
+    "ID": "slow",
+    "PROPER_NAME": "Slow",
+    "NAMES": [
+      "slow"
+    ],
+    "DESCRIPTION": "Whenever you play a card, #ythe #yEnemy receives #b10% more damage from #yAttacks this turn."
   }
   ]

@@ -6,7 +6,7 @@
 - Mirror Shard [X] - At the start of each combat, create a copy of a random card in your hand.
 - Reality Shard [] - Right click to activate. Once per combat, you can switch your current draw pile with one from a random character.
 - Divider [X] - Every 4 turns, add a random skill into your hand.
-- Cardoon [] - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.
+- Cardoon [X] - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.
 - Blue Ashes (as suggested by blueash7077!) [X] - At the start of each combat, gain the Fire Breathing buff. 
 - 1. Blue Ashes Side Quest [X] - Upon drawing 20 total Status Cards, gain the Fire Breathing+ buff instead.
 - Equinox (as suggested by Equi!) [X] - Every time you play 10 Attacks, play the top card of your draw pile.
@@ -40,7 +40,9 @@
 - Cerberus' Mask [] - Upon pickup, obtain all Face Relics. Lose 1 Energy at the start of your turn.
 
 ## Potions:
-- Slowness Potion [] - Apply 1 Slow.
+- Potion of Slowness (Rare) [X] - Apply Slow.
+- Potion of A Thousand Cuts (Uncommon) [X] - Whenever you play a card, deal 1 (2) damage to ALL enemies. 
+- Retain Potion (Uncommon) [X] - Retain your hand for X turns.
 
 
 Card removal cost is doubled, but the rest of the shop is discounted by 25%

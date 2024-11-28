@@ -133,3 +133,15 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - Added 2 new Uncommon relics:
 - 1. Terrifying Trinket - At the start of turn 3, all Minions run away.
 - 2. Cardoon - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.
+
+# Version 0.1.4 - 11/27/2024
+## Today was quite a successful day because I added my first few potions!
+## New Features
+- Updated `ToDo.md`
+- Added 2 new Uncommon Potions:
+- 1. Potion of A Thousand Cuts - Whenever you play a card, deal 1 (2) damage to ALL enemies.
+- 2. Retain Potion - Retain your hand for X turns.
+- Added 1 new Rare Potion:
+- 1. Potion of Slowness - Apply slow.
+Moved the following relic to become a Rare relic:
+- 1. Narcissus

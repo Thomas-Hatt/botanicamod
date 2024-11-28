@@ -13,7 +13,7 @@ public class Narcissus extends BaseRelic {
     // Narcissus (Ironclad Specific) - Start each combat with Limit Break. It has Purge and costs 0.
     private static final String NAME = "Narcissus";
     public static final String ID = makeID(NAME);
-    private static final RelicTier RARITY = RelicTier.BOSS;
+    private static final RelicTier RARITY = RelicTier.RARE;
     private static final LandingSound SOUND = LandingSound.MAGICAL;
     private static final int AMOUNT = 1;
 
