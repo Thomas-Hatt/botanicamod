@@ -20,5 +20,31 @@
       " turns.",
       "Retain your hand for #b1 turn."
     ]
+  },
+
+  "${modID}:EssenceOfLightning": {
+    "NAME": "Essence of Lightning",
+    "DESCRIPTIONS": [
+      "#yChannel #b",
+      " #yLightning Orbs for each orb slot.",
+      "#yChannel #b1 #yLightning Orb for each orb slot."
+    ]
+  },
+
+  "${modID}:EssenceOfFrost": {
+    "NAME": "Essence of Frost",
+    "DESCRIPTIONS": [
+      "#yChannel #b",
+      " #yFrost Orbs for each orb slot.",
+      "#yChannel #b1 #yFrost Orb for each orb slot."
+    ]
+  },
+
+  "${modID}:PotionOfVigor": {
+    "NAME": "Potion of Vigor",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " #yVigor."
+    ]
   }
 }

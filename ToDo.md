@@ -19,6 +19,7 @@
 - Silene [X] - Heal 10% of damage taken at the end of combat.
 - Marigold [X] - Gain gold equal to 25% of the damage dealt in combat, but only for the first 50 damage dealt. Additionally, for every 100 gold gained from this effect, draw one card at the start of combat.
 - Hemlock [X] - Upon entering a Rest Site, Scry 1 for every 6 cards in your deck at the start of your next combat.
+- Sweater (The Defect Specific) [] - At the start of each combat, Channel 2 Frost. Gain 1 Focus every 3 turns.
 
 ## Shop Relics:
 - Rainbow Cape [] - Card can be of any color, except your own character's. If you have Prismatic Shard, exchange it for a random rare relic
@@ -43,6 +44,9 @@
 - Potion of Slowness (Rare) [X] - Apply Slow.
 - Potion of A Thousand Cuts (Uncommon) [X] - Whenever you play a card, deal 1 (2) damage to ALL enemies. 
 - Retain Potion (Uncommon) [X] - Retain your hand for X turns.
+- Potion of Vigor (Ironclad Specific) (Common) [X] - Gain 8 Vigor.
+- Essence of Frost (The Defect Specific) (Uncommon) [X] - Channel 1 (2) Frost Orbs for each orb slot.
+- Essence of Lightning (The Defect Specific) (Uncommon) [X] - Channel 1 (2) Lightning Orbs for each orb slot.
 
 
 Card removal cost is doubled, but the rest of the shop is discounted by 25%
@@ -59,8 +63,6 @@ Every time an enemy gains a buff, gain block
 Right click to activate, you and the enemy loses half of your current hp
 
 The Defect:
-Sweater
-At the start of each combat, Channel 2 Frost. Gain 1 Focus every 3 turns.
 
 The Silent:
 

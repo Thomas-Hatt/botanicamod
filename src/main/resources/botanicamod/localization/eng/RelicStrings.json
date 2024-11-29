@@ -164,5 +164,13 @@
     "DESCRIPTIONS": [
       "At the start of turn #b3, all Minions run away."
     ]
+  },
+
+  "${modID}:Sweater": {
+    "NAME": "Sweater",
+    "FLAVOR": "Oh the weather outside is frightful!",
+    "DESCRIPTIONS": [
+      "At the start of each combat, #yChannel #b2 #yFrost. Gain #b1 #yFocus every #b3 turns."
+    ]
   }
 }

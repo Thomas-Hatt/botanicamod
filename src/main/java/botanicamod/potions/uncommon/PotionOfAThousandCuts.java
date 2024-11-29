@@ -13,6 +13,7 @@ import static botanicamod.BasicMod.makeID;
 
 public class PotionOfAThousandCuts extends BasePotion {
     // Whenever you play a card, deal 1 (2) damage to ALL enemies.
+
     public static final String ID = makeID(PotionOfAThousandCuts.class.getSimpleName());
 
     private static final Color LIQUID_COLOR = CardHelper.getColor(213,81,19);
@@ -26,8 +27,9 @@ public class PotionOfAThousandCuts extends BasePotion {
 
     @Override
     public void use(AbstractCreature target) {
-        if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
+        if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThousandCutsPower(AbstractDungeon.player, this.potency), this.potency));
+        }
     }
 
     @Override

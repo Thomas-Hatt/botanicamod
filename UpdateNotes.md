@@ -145,3 +145,14 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - 1. Potion of Slowness - Apply slow.
 Moved the following relic to become a Rare relic:
 - 1. Narcissus
+
+# Version 0.1.5 - 11/28/2024 (Thanksgiving Day!)
+## New Features
+- Updated `ToDo.md`
+- Added 1 new Rare relic:
+- 1. Sweater (The Defect Specific) - At the start of each combat, Channel 2 Frost. Gain 1 Focus every 3 turns.
+- Added 1 new Common potion:
+- 1. Potion of Vigor (Ironclad Specific) - Gain 8 Vigor.
+- Added 2 new Uncommon potions:
+- 1. Essence of Frost (The Defect Specific) - Channel 1 (2) Frost Orbs for each orb slot.
+- 2. Essence of Lightning (The Defect Specific) - Channel 1 (2) Lightning Orbs for each orb slot.
