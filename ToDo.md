@@ -1,6 +1,8 @@
 # This mod will eventually contain 100 relics. I have sorted this To-Do list into smaller subsections
 
 ## Common Relics:
+- Short Circuit [X] - If you do not play any Skills during your turn, gain an extra Energy next turn.
+- Merchant's Robes [X] - The merchant's card removal service now gives a potion reward.
 
 ## Uncommon Relics:
 - Mirror Shard [X] - At the start of each combat, create a copy of a random card in your hand.
@@ -19,13 +21,13 @@
 - Silene [X] - Heal 10% of damage taken at the end of combat.
 - Marigold [X] - Gain gold equal to 25% of the damage dealt in combat, but only for the first 50 damage dealt. Additionally, for every 100 gold gained from this effect, draw one card at the start of combat.
 - Hemlock [X] - Upon entering a Rest Site, Scry 1 for every 6 cards in your deck at the start of your next combat.
-- Sweater (The Defect Specific) [] - At the start of each combat, Channel 2 Frost. Gain 1 Focus every 3 turns.
+- Sweater (The Defect Specific) [X] - At the start of each combat, Channel 2 Frost. Gain 1 Focus every 3 turns.
 
 ## Shop Relics:
 - Rainbow Cape [] - Card can be of any color, except your own character's. If you have Prismatic Shard, exchange it for a random rare relic
 - Sky's Death Spell [] - At the end of your turn, double the potency of your potions. If you use a potion, die next turn.
 - Tapinella [X] - All Dexterity is converted to Strength
-- Alchemist's Mask [] - Right click to activate. Lose all gold. At the end of your turn, if you have 0 gold, obtain a random potion and add a random curse to your deck and draw pile.
+- Alchemist's Mask [X] - Right click to activate. Lose all gold. At the end of your turn, if you have 0 gold, obtain a random potion and add a random curse to your deck and draw pile.
 - Gambler's debt [X] - Card rewards have 2 extra cards, but 1 random card is disguised as a curse.
 
 ## Boss Relics:
@@ -34,7 +36,7 @@
 - Dragon Heart [X] - Gain 2 Strength and 2 Dexterity at the start of each combat. Retain a random card at the end of your turn
 - Flask of Duplication [X] - Upon pickup, gain 2 copies of Normality. Duplicate every card in your deck and gain 10 gold for each card added.
 - Glimmering Orb [X] - The first time you play 5 Power Cards each combat, gain 1 permanent Strength
-- Purging Stone [] - Remove all copies of a selected card from your deck. If the card is part of your starter deck, lose 10 Max HP.
+- Purging Stone [X] - Remove all copies of a selected card from your deck. If the card is part of your starter deck, lose 10 Max HP.
 - Jester's Belt [X] - Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 4 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 4.
 
 ## Event Relics:
@@ -43,8 +45,8 @@
 ## Potions:
 - Potion of Slowness (Rare) [X] - Apply Slow.
 - Potion of A Thousand Cuts (Uncommon) [X] - Whenever you play a card, deal 1 (2) damage to ALL enemies. 
-- Retain Potion (Uncommon) [X] - Retain your hand for X turns.
-- Potion of Vigor (Ironclad Specific) (Common) [X] - Gain 8 Vigor.
+- Retain Potion (Uncommon) [X] - Retain your hand for 1 (2) turns.
+- Potion of Vigor (Ironclad Specific) (Common) [X] - Gain 8 (16) Vigor.
 - Essence of Frost (The Defect Specific) (Uncommon) [X] - Channel 1 (2) Frost Orbs for each orb slot.
 - Essence of Lightning (The Defect Specific) (Uncommon) [X] - Channel 1 (2) Lightning Orbs for each orb slot.
 

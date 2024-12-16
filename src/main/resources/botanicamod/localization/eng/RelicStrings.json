@@ -160,7 +160,7 @@
 
   "${modID}:Terrifying_Trinket": {
     "NAME": "Terrifying Trinket",
-    "FLAVOR": "How spooky!",
+    "FLAVOR": "3spooky5me",
     "DESCRIPTIONS": [
       "At the start of turn #b3, all Minions run away."
     ]
@@ -171,6 +171,30 @@
     "FLAVOR": "Oh the weather outside is frightful!",
     "DESCRIPTIONS": [
       "At the start of each combat, #yChannel #b2 #yFrost. Gain #b1 #yFocus every #b3 turns."
+    ]
+  },
+
+  "${modID}:Alchemists_Mask": {
+    "NAME": "Alchemist's Mask",
+    "FLAVOR": "Streamer, you have potions!",
+    "DESCRIPTIONS": [
+      "Right click to activate. Set your #yGold to #b0. NL At the end of your turn, if you have #b0 #yGold, obtain a random #bPotion and add a random #rCurse to your deck and draw pile."
+    ]
+  },
+
+  "${modID}:Short_Circuit": {
+    "NAME": "Short Circuit",
+    "FLAVOR": "Do not let the defect have this.",
+    "DESCRIPTIONS": [
+      "If you do not play any #ySkills during your turn, gain an extra #yEnergy next turn."
+    ]
+  },
+
+  "${modID}:Merchants_Robes": {
+    "NAME": "Merchant's Robes",
+    "FLAVOR": "How did you get these!?",
+    "DESCRIPTIONS": [
+      "Upon entering a #yshop, obtain a #yPotion and a #yCard reward."
     ]
   }
 }

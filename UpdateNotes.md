@@ -156,3 +156,15 @@ Moved the following relic to become a Rare relic:
 - Added 2 new Uncommon potions:
 - 1. Essence of Frost (The Defect Specific) - Channel 1 (2) Frost Orbs for each orb slot.
 - 2. Essence of Lightning (The Defect Specific) - Channel 1 (2) Lightning Orbs for each orb slot.
+
+# Version 0.1.6 - 12/16/2024
+### I am back from my hiatus! My final exams for college took a lot of my time and energy
+## New Features
+- Updated `ToDo.md`
+- Add 2 new Common relics (I somehow made it this far without having any):
+- 1. Short Circuit - If you do not play any Skills during your turn, gain an extra Energy next turn.
+- 2. Merchant's Robes - Upon entering a shop, obtain a Potion and a Card reward.
+- Added 1 new Shop relic:
+- 1. Alchemist's Mask - Right click to activate. Lose all gold. At the end of your turn, if you have 0 gold, obtain a random potion and add a random curse to your deck and draw pile.
+## Fixed Bugs
+Gambler's Debt now triggers Darkstone Periapt (recoded the relic to be more visually consistent, too.)

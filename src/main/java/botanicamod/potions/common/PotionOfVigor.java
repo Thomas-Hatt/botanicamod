@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import static botanicamod.BasicMod.makeID;
 
 public class PotionOfVigor extends BasePotion {
-    // Gain 8 Vigor.
+    // Gain 8 (16) Vigor.
 
     public static final String ID = makeID(PotionOfVigor.class.getSimpleName());
 
