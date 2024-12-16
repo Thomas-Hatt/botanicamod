@@ -168,3 +168,12 @@ Moved the following relic to become a Rare relic:
 - 1. Alchemist's Mask - Right click to activate. Lose all gold. At the end of your turn, if you have 0 gold, obtain a random potion and add a random curse to your deck and draw pile.
 ## Fixed Bugs
 Gambler's Debt now triggers Darkstone Periapt (recoded the relic to be more visually consistent, too.)
+
+# Version 0.1.7 - 12/16/2024
+## New Features
+- Updated `ToDo.md`
+- Added 1 new Uncommon relic:
+- 1. Illusionist's Coin - At the start of turn 3, add a copy Illusion Neutralize to your hand.
+1. - - Illusionist's Coin Side Quest - Every 3rd time you play Illusion Neutralize, Draw 3 cards.
+## Fixed Bugs
+Fixed an issue where cards could not be used from the console.

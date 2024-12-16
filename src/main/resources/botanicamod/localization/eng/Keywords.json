@@ -7,6 +7,16 @@
     ],
     "DESCRIPTION": "Upon drawing 20 total #yStatus cards, gain the #yFire #yBreathing+ #ybuff instead."
   },
+
+  {
+    "ID": "illusionary_quest",
+    "PROPER_NAME": "Illusionary Quest",
+    "NAMES": [
+      "illusionary_quest"
+    ],
+    "DESCRIPTION": "Every 3rd time you play #yIllusion #yNeutralize, Draw #b3 cards."
+  },
+
   {
     "ID": "slow",
     "PROPER_NAME": "Slow",

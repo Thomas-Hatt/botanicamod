@@ -13,6 +13,8 @@
 - 1. Blue Ashes Side Quest [X] - Upon drawing 20 total Status Cards, gain the Fire Breathing+ buff instead.
 - Equinox (as suggested by Equi!) [X] - Every time you play 10 Attacks, play the top card of your draw pile.
 - Terrifying Trinket [X] - At the start of turn 3, all minions run away.
+- Illusionist's Coin [X] - At the start of turn 3, add a special copy of Neutralize to your hand.
+-- Illusionist's Coin Side Quest - Every 3rd time you play Illusion Neutralize, Draw 3 cards.
 
 
 ## Rare Relics:

@@ -3,5 +3,11 @@
     "NAME": "Limit Break",
     "DESCRIPTION": "Double your Strength. NL Purge.",
     "UPGRADE_DESCRIPTION": "Double your Strength. NL Purge."
-    }
+    },
+
+  "${modID}:IllusionaryNeutralize": {
+    "NAME": "Illusion Neutralize",
+    "DESCRIPTION": "Deal 1 damage. NL Apply 1 Weak. NL Apply 1 Vulnerable. Gain 2 Block. NL Purge.",
+    "UPGRADE_DESCRIPTION": "Deal 3 damage. NL Apply 2 Weak. NL Apply 1 Vulnerable. NL Gain 4 Block. NL Purge."
+  }
   }

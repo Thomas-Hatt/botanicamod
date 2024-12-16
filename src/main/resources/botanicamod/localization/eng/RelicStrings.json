@@ -146,7 +146,7 @@
     "NAME": "Blue Ashes",
     "FLAVOR": "As suggested by blueash7077",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain the #yFire #yBreathing #ybuff. NL NL Has a #y${modID}:Fiery_Quest."
+      "At the start of each combat, gain the #yFire #yBreathing #ybuff. NL This relic has a #y${modID}:Fiery_Quest."
     ]
   },
 
@@ -195,6 +195,15 @@
     "FLAVOR": "How did you get these!?",
     "DESCRIPTIONS": [
       "Upon entering a #yshop, obtain a #yPotion and a #yCard reward."
+    ]
+  },
+
+  "${modID}:IllusionistsCoin": {
+    "NAME": "Illusionist's Coin",
+    "FLAVOR": "Who knew Neutralize was so powerful?",
+    "DESCRIPTIONS": [
+      "At the start of turn #b",
+      ", add a copy of #yIllusionary #yNeutralize to your hand. NL This relic has an #y${modID}:Illusionary_Quest."
     ]
   }
 }

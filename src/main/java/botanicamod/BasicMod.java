@@ -4,6 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import botanicamod.cards.BaseCard;
 import botanicamod.potions.BasePotion;
 import botanicamod.relics.BaseRelic;
 import botanicamod.relics.boss.*;
@@ -43,6 +44,7 @@ import java.util.*;
 
 @SpireInitializer
 public class BasicMod implements
+        EditCardsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditRelicsSubscriber,
@@ -55,6 +57,14 @@ public class BasicMod implements
     static { loadModInfo(); }
     private static final String resourcesFolder = checkResourcesPath();
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
+
+    @Override
+    public void receiveEditCards() { //somewhere in the class
+        new AutoAdd(modID) //Loads files from this mod
+                .packageFilter(BaseCard.class) //In the same package as this class
+                .setDefaultSeen(true) //And marks them as seen in the compendium
+                .cards(); //Adds the cards
+    }
 
     @Override
     public void receiveEditRelics() { //somewhere in the class
