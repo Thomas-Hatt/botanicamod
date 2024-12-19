@@ -173,7 +173,16 @@ Gambler's Debt now triggers Darkstone Periapt (recoded the relic to be more visu
 ## New Features
 - Updated `ToDo.md`
 - Added 1 new Uncommon relic:
-- 1. Illusionist's Coin - At the start of turn 3, add a copy Illusion Neutralize to your hand.
+- 1. Illusionist's Coin - At the start of turn 3, add a copy of Illusion Neutralize to your hand.
 1. - - Illusionist's Coin Side Quest - Every 3rd time you play Illusion Neutralize, Draw 3 cards.
 ## Fixed Bugs
 Fixed an issue where cards could not be used from the console.
+
+# Version 0.1.8 - 12/18/2024
+### I got really sick, and I'm still pretty sick :(
+## New Features
+- Updated `ToDo.md`
+- Added 3 new Common relics:
+1. Burning Stone - At the start of each combat, add a Burn to your discard pile. Whenever you draw a Burn, gain 2 Strength.
+2. Quill - At the start of each combat, add a random 0 cost card to your hand, discard pile, and draw pile. 
+3. Blossom - The first time your HP drops to 50% or below each combat, add a copy of Miracle to your hand.

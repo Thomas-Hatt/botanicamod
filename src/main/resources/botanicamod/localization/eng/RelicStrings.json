@@ -198,12 +198,36 @@
     ]
   },
 
-  "${modID}:IllusionistsCoin": {
+  "${modID}:Illusionists_Coin": {
     "NAME": "Illusionist's Coin",
     "FLAVOR": "Who knew Neutralize was so powerful?",
     "DESCRIPTIONS": [
       "At the start of turn #b",
       ", add a copy of #yIllusionary #yNeutralize to your hand. NL This relic has an #y${modID}:Illusionary_Quest."
+    ]
+  },
+
+  "${modID}:Burning_Stone": {
+    "NAME": "Burning Stone",
+    "FLAVOR": "Hot to the touch!",
+    "DESCRIPTIONS": [
+      "At the start of each combat, add a #yBurn to your discard pile. Whenever you draw a #yBurn, gain #b2 #yStrength."
+    ]
+  },
+
+  "${modID}:Quill": {
+    "NAME": "Quill",
+    "FLAVOR": "Poems strong enough to defeat giants.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, add a random #b0 cost card to your hand, discard pile, and draw pile."
+    ]
+  },
+
+  "${modID}:Blossom": {
+    "NAME": "Blossom",
+    "FLAVOR": "Pretty flower!",
+    "DESCRIPTIONS": [
+      "The first time your HP drops to #b50% or below each combat, add a copy of #yMiracle to your hand."
     ]
   }
 }

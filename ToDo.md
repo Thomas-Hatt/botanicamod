@@ -3,6 +3,9 @@
 ## Common Relics:
 - Short Circuit [X] - If you do not play any Skills during your turn, gain an extra Energy next turn.
 - Merchant's Robes [X] - The merchant's card removal service now gives a potion reward.
+- Burning Stone [X] - At the start of each combat, add a Burn to your discard pile. Whenever you draw a Burn, gain 2 Strength.
+- Quill [X] - At the start of each combat, add a random 0 cost card to your hand, discard pile, and draw pile.
+- Blossom [X] - The first time your HP drops to 50% or below each combat, add a copy of Miracle to your hand.
 
 ## Uncommon Relics:
 - Mirror Shard [X] - At the start of each combat, create a copy of a random card in your hand.

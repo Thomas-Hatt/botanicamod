@@ -12,10 +12,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static botanicamod.BasicMod.makeID;
 
 public class IllusionistsCoin extends BaseRelic {
-    // Illusionist's Coin - At the start of turn 3, add a copy Illusion Neutralize to your hand.
+    // Illusionist's Coin - At the start of turn 3, add a copy of Illusion Neutralize to your hand.
     // Side Quest - Every 3rd time you play Illusion Neutralize, Draw 3 cards.
 
-    private static final String NAME = "IllusionistsCoin";  // Name of the relic
+    private static final String NAME = "Illusionists_Coin";  // Name of the relic
     public static final String ID = makeID(NAME);  // Unique ID for the relic
     private static final RelicTier RARITY = RelicTier.UNCOMMON;  // Rarity of the relic
     private static final LandingSound SOUND = LandingSound.MAGICAL;  // Sound effect for the relic

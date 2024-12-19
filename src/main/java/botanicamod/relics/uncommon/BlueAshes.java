@@ -21,8 +21,6 @@ public class BlueAshes extends BaseRelic {
     // Store the amount of statuses drawn
     private int STATUSES_DRAWN = 0;
 
-    // Total Statuses Drawn
-
     public BlueAshes() {
         super(ID, NAME, RARITY, SOUND);
     }
