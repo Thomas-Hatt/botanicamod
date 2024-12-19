@@ -186,3 +186,12 @@ Fixed an issue where cards could not be used from the console.
 1. Burning Stone - At the start of each combat, add a Burn to your discard pile. Whenever you draw a Burn, gain 2 Strength.
 2. Quill - At the start of each combat, add a random 0 cost card to your hand, discard pile, and draw pile. 
 3. Blossom - The first time your HP drops to 50% or below each combat, add a copy of Miracle to your hand.
+
+# Version 0.1.9 - 12/19/2024
+### I'm still pretty sick :(
+## New Features
+- Updated `ToDo.md`
+- Added 1 new Rare relic:
+1. Crystal - At the start of combat, gain 2 Crystallize.
+- Added 1 new Boss relic:
+1. Prismatic Box: Transform all Strikes and Defends into Uncommon cards. These cards can be of any color.

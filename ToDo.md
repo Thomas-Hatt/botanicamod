@@ -17,8 +17,7 @@
 - Equinox (as suggested by Equi!) [X] - Every time you play 10 Attacks, play the top card of your draw pile.
 - Terrifying Trinket [X] - At the start of turn 3, all minions run away.
 - Illusionist's Coin [X] - At the start of turn 3, add a special copy of Neutralize to your hand.
--- Illusionist's Coin Side Quest - Every 3rd time you play Illusion Neutralize, Draw 3 cards.
-
+- - Illusionist's Coin Side Quest - Every 3rd time you play Illusion Neutralize, Draw 3 cards.
 
 ## Rare Relics:
 - Nebula [X] - If you end your turn without Block, your next skill is played twice.
@@ -27,6 +26,8 @@
 - Marigold [X] - Gain gold equal to 25% of the damage dealt in combat, but only for the first 50 damage dealt. Additionally, for every 100 gold gained from this effect, draw one card at the start of combat.
 - Hemlock [X] - Upon entering a Rest Site, Scry 1 for every 6 cards in your deck at the start of your next combat.
 - Sweater (The Defect Specific) [X] - At the start of each combat, Channel 2 Frost. Gain 1 Focus every 3 turns.
+- Crystal [X] - At the start of combat, gain 2 Crystallize.
+- - Crystallize: At the end of your turn, gain an Orb slot and Channel a random Orb.
 
 ## Shop Relics:
 - Rainbow Cape [] - Card can be of any color, except your own character's. If you have Prismatic Shard, exchange it for a random rare relic
@@ -41,8 +42,9 @@
 - Dragon Heart [X] - Gain 2 Strength and 2 Dexterity at the start of each combat. Retain a random card at the end of your turn
 - Flask of Duplication [X] - Upon pickup, gain 2 copies of Normality. Duplicate every card in your deck and gain 10 gold for each card added.
 - Glimmering Orb [X] - The first time you play 5 Power Cards each combat, gain 1 permanent Strength
-- Purging Stone [X] - Remove all copies of a selected card from your deck. If the card is part of your starter deck, lose 10 Max HP.
+- Purging Stone [] - Remove all copies of a selected card from your deck. If the card is part of your starter deck, lose 10 Max HP.
 - Jester's Belt [X] - Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 4 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 4.
+- Prismatic Box [X] - Transform all Strikes and Defends into Uncommon cards. These cards can be of any color.
 
 ## Event Relics:
 - Cerberus' Mask [] - Upon pickup, obtain all Face Relics. Lose 1 Energy at the start of your turn.

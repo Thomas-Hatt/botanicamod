@@ -229,5 +229,21 @@
     "DESCRIPTIONS": [
       "The first time your HP drops to #b50% or below each combat, add a copy of #yMiracle to your hand."
     ]
+  },
+
+  "${modID}:Prismatic_Box": {
+    "NAME": "Prismatic Box",
+    "FLAVOR": "The best of both worlds!",
+    "DESCRIPTIONS": [
+      "#yTransform all #yStrikes and #yDefends into #yUncommon cards. These cards can be of any color."
+    ]
+  },
+
+  "${modID}:Crystal": {
+    "NAME": "Crystal",
+    "FLAVOR": "Ooh, shiny!",
+    "DESCRIPTIONS": [
+      "At the start of combat, gain #b2 #yCrystallize."
+    ]
   }
 }
