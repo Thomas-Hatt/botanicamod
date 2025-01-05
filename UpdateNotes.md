@@ -195,3 +195,18 @@ Fixed an issue where cards could not be used from the console.
 1. Crystal - At the start of combat, gain 2 Crystallize.
 - Added 1 new Boss relic:
 1. Prismatic Box: Transform all Strikes and Defends into Uncommon cards. These cards can be of any color.
+
+# Version 0.2.0 - 1/5/2024
+## New Features
+- Updated `ToDo.md`
+- Added 3 new Common relics:
+1. Nile - Whenever you enter a ? room, all enemies in the next combat lose 1 Strength.
+2. Nostrum - At the end of your first turn, Exhaust any number of cards in your hand
+3. Trifocal - At the end of your first turn, gain 5 gold for each card discarded, then Scry 3.
+- Added 1 new Uncommon relic:
+1. Manna - At the start of each Elite combat, draw until your hand is full.
+- Reworked 1 relic:
+1. Merchant's Robes: 
+- - Originally: Upon entering a shop, obtain a Potion and a Card reward.
+- - New Ability: Upon entering a shop, obtain 2 random Potions.
+### I currently have 33 Relics implemented. If I choose to have 50 relics in total, I'm 66% done.

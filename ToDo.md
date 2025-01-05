@@ -1,11 +1,12 @@
-# This mod will eventually contain 100 relics. I have sorted this To-Do list into smaller subsections
-
 ## Common Relics:
 - Short Circuit [X] - If you do not play any Skills during your turn, gain an extra Energy next turn.
-- Merchant's Robes [X] - The merchant's card removal service now gives a potion reward.
+- Merchant's Robes [X] - Upon entering a shop, obtain 2 random Potions.
 - Burning Stone [X] - At the start of each combat, add a Burn to your discard pile. Whenever you draw a Burn, gain 2 Strength.
 - Quill [X] - At the start of each combat, add a random 0 cost card to your hand, discard pile, and draw pile.
 - Blossom [X] - The first time your HP drops to 50% or below each combat, add a copy of Miracle to your hand.
+- Nile [X] - Whenever you enter a ? room, all enemies in the next combat lose 1 Strength.
+- Nostrum [X] - At the end of your first turn, Exhaust any number of cards in your hand
+- Trifocal [X] - At the end of your first turn, gain 5 gold for each card discarded, then Scry 3.
 
 ## Uncommon Relics:
 - Mirror Shard [X] - At the start of each combat, create a copy of a random card in your hand.
@@ -13,11 +14,12 @@
 - Divider [X] - Every 4 turns, add a random skill into your hand.
 - Cardoon [X] - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.
 - Blue Ashes (as suggested by blueash7077!) [X] - At the start of each combat, gain the Fire Breathing buff. 
-- 1. Blue Ashes Side Quest [X] - Upon drawing 20 total Status Cards, gain the Fire Breathing+ buff instead.
+- 1. Blue Ashes Side Quest - Upon drawing 20 total Status Cards, gain the Fire Breathing+ buff instead.
 - Equinox (as suggested by Equi!) [X] - Every time you play 10 Attacks, play the top card of your draw pile.
 - Terrifying Trinket [X] - At the start of turn 3, all minions run away.
 - Illusionist's Coin [X] - At the start of turn 3, add a special copy of Neutralize to your hand.
 - - Illusionist's Coin Side Quest - Every 3rd time you play Illusion Neutralize, Draw 3 cards.
+- Manna [X] - At the start of each Elite combat, draw until your hand is full.
 
 ## Rare Relics:
 - Nebula [X] - If you end your turn without Block, your next skill is played twice.

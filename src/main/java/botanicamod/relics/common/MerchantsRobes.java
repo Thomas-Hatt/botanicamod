@@ -1,18 +1,16 @@
 package botanicamod.relics.common;
 
 import botanicamod.relics.BaseRelic;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 
 import static botanicamod.BasicMod.makeID;
 
 public class MerchantsRobes extends BaseRelic {
-    // Upon entering a shop, obtain a Potion and a Card reward.
+    // Upon entering a shop, obtain 2 random Potions.
 
     private static final String NAME = "Merchants_Robes"; // The name will be used for determining the image file as well as the ID.
     public static final String ID = makeID(NAME); // This adds the mod's prefix to the relic ID, resulting in modID:relic
@@ -23,30 +21,19 @@ public class MerchantsRobes extends BaseRelic {
         super(ID, NAME, RARITY, SOUND);
     }
 
+    private static final int PotionGain = 2;
+
     @Override
     public void onEnterRoom(AbstractRoom room) {
         if (room instanceof ShopRoom) {
             this.flash();
 
-            // Add potions to rewards
-            for (int i = 0; i < 1; i++) {
-                AbstractDungeon.getCurrRoom().addPotionToRewards(PotionHelper.getRandomPotion());
+            // Give the player random potions
+            for (int i = 0; i < PotionGain; ++i) {
+                AbstractDungeon.player.obtainPotion(PotionHelper.getRandomPotion());
             }
-
-            // Find and remove card reward
-            AbstractDungeon.getCurrRoom().rewards.removeIf(reward -> reward.type == RewardItem.RewardType.CARD);
-
-            // Open reward screen
-            if (this.DESCRIPTIONS.length > 1) {
-                AbstractDungeon.combatRewardScreen.open(this.DESCRIPTIONS[1]);
-            } else {
-                AbstractDungeon.combatRewardScreen.open();
-            }
-            AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.0F;
         }
     }
-
-
 
     @Override
     public boolean canSpawn() {

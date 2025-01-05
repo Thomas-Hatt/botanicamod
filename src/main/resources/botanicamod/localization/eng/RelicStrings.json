@@ -186,7 +186,7 @@
     "NAME": "Short Circuit",
     "FLAVOR": "Do not let the defect have this.",
     "DESCRIPTIONS": [
-      "If you do not play any #ySkills during your turn, gain an extra #yEnergy next turn."
+      "If you do not play any #ySkills during your turn, gain an extra [E] next turn."
     ]
   },
 
@@ -194,7 +194,7 @@
     "NAME": "Merchant's Robes",
     "FLAVOR": "How did you get these!?",
     "DESCRIPTIONS": [
-      "Upon entering a #yshop, obtain a #yPotion and a #yCard reward."
+      "Upon entering a Shop, obtain #b2 random #yPotions."
     ]
   },
 
@@ -244,6 +244,43 @@
     "FLAVOR": "Ooh, shiny!",
     "DESCRIPTIONS": [
       "At the start of combat, gain #b2 #yCrystallize."
+    ]
+  },
+
+  "${modID}:Nile": {
+    "NAME": "Nile",
+    "FLAVOR": "Quite the river.",
+    "DESCRIPTIONS": [
+      "Whenever you enter a ? room, all enemies in the next combat lose #b1 #yStrength."
+    ]
+  },
+
+
+
+  "${modID}:Nostrum": {
+    "NAME": "Nostrum",
+    "FLAVOR": "Similar to Elixir!",
+    "DESCRIPTIONS": [
+      "At the end of your first turn, #yExhaust any number of cards in your hand",
+      "Manna [] - At the start of each Elite combat, draw until your hand is full."
+    ]
+  },
+
+  "${modID}:Manna": {
+    "NAME": "Manna",
+    "FLAVOR": "'We have Scrawl at home!' NL Scrawl at home:",
+    "DESCRIPTIONS": [
+      "At the start of each Elite combat, draw until your hand is full."
+    ]
+  },
+
+  "${modID}:Trifocal": {
+    "NAME": "Trifocal",
+    "FLAVOR": "How can you focus on 3 things at once?",
+    "DESCRIPTIONS": [
+      "At the end of your first turn, gain #b",
+      " gold for each card discarded, then #yScry #b",
+      "."
     ]
   }
 }
