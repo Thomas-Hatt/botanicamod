@@ -210,3 +210,18 @@ Fixed an issue where cards could not be used from the console.
 - - Originally: Upon entering a shop, obtain a Potion and a Card reward.
 - - New Ability: Upon entering a shop, obtain 2 random Potions.
 ### I currently have 33 Relics implemented. If I choose to have 50 relics in total, I'm 66% done.
+
+# Version 0.2.1 - 1/5/2024
+## New Features
+- Updated `ToDo.md`
+- Removed unnecessary relics from `ToDo.md`
+- Reworked 2 Relics:
+- 1. Original Glimmering Orb - The first time you play 5 Power Cards each combat, Gain 1 Permanent Strength
+  2. New Glimmering Orb - The first time you play 5 Power Cards each combat, obtain a Vajra.
+- 1. Original Blossom - The first time your HP drops to 50% or below each combat, add a copy of Miracle to your hand.
+  2. New Blossom - The first time you lose HP each combat, add a Miracle to your hand.
+- Buffed 2 Relics:
+- 1. Original Marigold - Gain gold equal to 25% of the damage dealt in combat, but only for the first 50 damage dealt. Additionally, for every 100 Gold gained from this effect, draw one card at the start of combat.
+  2. New Marigold - Gain gold equal to 25% of the damage dealt in combat, but only for the first 100 damage dealt. For every 100 Gold gained from this effect, draw one card at the start of combat.
+- 1. Original Thorned Crown - Start each combat with 2 Thorns for each boss relic you have
+  2. New Thorned Crown - Start each combat with 4 Thorns for each boss relic you have

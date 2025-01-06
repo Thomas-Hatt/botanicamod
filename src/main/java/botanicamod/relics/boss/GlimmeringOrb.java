@@ -1,16 +1,18 @@
 package botanicamod.relics.boss;
 
 import botanicamod.relics.BaseRelic;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.Vajra;
 
 import static botanicamod.BasicMod.makeID;
 
-// Glimmering Orb - The first time you play 5 Power Cards each combat, Gain 1 Permanent Strength
+// Glimmering Orb - The first time you play 5 Power Cards each combat, obtain a Vajra.
 public class GlimmeringOrb extends BaseRelic {
 
     private static final String NAME = "Glimmering_Orb"; // The name will be used for determining the image file as well as the ID.
@@ -23,9 +25,6 @@ public class GlimmeringOrb extends BaseRelic {
 
     // Count how many power cards the player has played
     private int powerCardCount = 0;
-
-    // Track how much strength the player has gained from this relic
-    private int GlimmeringOrbStrength = 0;
 
     // Check if the strength has already been given this combat
     private boolean strengthAwarded = false;
@@ -43,11 +42,6 @@ public class GlimmeringOrb extends BaseRelic {
 
         // Reset strength awarded to be false
         strengthAwarded = false;
-
-        // Apply the amount of strength the player has gained from this relic
-        if (GlimmeringOrbStrength > 0) {
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, GlimmeringOrbStrength)));
-        }
     }
 
     @Override
@@ -61,16 +55,19 @@ public class GlimmeringOrb extends BaseRelic {
             // And the player hasn't already gained 1 permanent strength this combat
             // Give the player 1 permanent strength
             if (powerCardCount >= Power_Threshold && !strengthAwarded) {
-                // Reset the power card count
                 powerCardCount = 0;
-
-                // Give the player 1 strength
-                GlimmeringOrbStrength++;
-
-                // Ensure the player can't get any more strength this combat
                 strengthAwarded = true;
 
-                // Give the 1 strength to the player *this* combat
+                AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        float relicX = AbstractDungeon.player.drawX;
+                        float relicY = AbstractDungeon.player.drawY;
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(relicX, relicY, new Vajra());
+                        this.isDone = true;
+                    }
+                });
+
                 this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1)));
             }
         }

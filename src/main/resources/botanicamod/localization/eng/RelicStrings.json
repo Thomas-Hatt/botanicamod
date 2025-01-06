@@ -45,7 +45,7 @@
     "FLAVOR": "A powerful orb connected with the essence of nature itself",
     "DESCRIPTIONS": [
       "The first time you play #b",
-      " Power Cards each combat, Gain 1 Permanent #yStrength"
+      " Power Cards each combat, obtain a #yVajra"
     ]
   },
 
@@ -122,7 +122,7 @@
     "NAME": "Marigold",
     "FLAVOR": "A flower with gold gaining properties.",
     "DESCRIPTIONS": [
-      "Gain #yGold equal to #b25% of the damage dealt in combat, but only for the first #b50 damage dealt. NL NL Additionally, for every #b100 #yGold gained from this effect, draw #b1 card at the start of combat."
+      "Gain #yGold equal to #b25% of the damage dealt in combat, but only for the first #b100 damage dealt. NL NL For every #b100 #yGold gained from this effect, draw #b1 card at the start of combat."
     ]
   },
 
@@ -227,7 +227,7 @@
     "NAME": "Blossom",
     "FLAVOR": "Pretty flower!",
     "DESCRIPTIONS": [
-      "The first time your HP drops to #b50% or below each combat, add a copy of #yMiracle to your hand."
+      "The first time you lose HP each combat, add a #yMiracle to your hand."
     ]
   },
 

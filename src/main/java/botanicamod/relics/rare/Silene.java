@@ -7,6 +7,7 @@ import static botanicamod.BasicMod.makeID;
 
 public class Silene extends BaseRelic {
     // Silene - Heal 10% of damage taken at the end of combat.
+
     private static final String NAME = "Silene"; // The name will be used for determining the image file as well as the ID.
     public static final String ID = makeID(NAME); // This adds the mod's prefix to the relic ID, resulting in modID:relic
     private static final RelicTier RARITY = RelicTier.RARE; // The relic's rarity.

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import static botanicamod.BasicMod.makeID;
 
-// Thorned Crown - Start each combat with 2 Thorns for each boss relic you have
+// Thorned Crown - Start each combat with 4 Thorns for each boss relic you have
 
 public class ThornedCrown extends BaseRelic
 {
@@ -29,8 +29,8 @@ public class ThornedCrown extends BaseRelic
                 .filter(r -> r.tier == AbstractRelic.RelicTier.BOSS)
                 .count();
 
-        // Multiply the count by 2
-        int thornsAmount = (int) bossRelicCount * 2;
+        // Multiply the count by 4
+        int thornsAmount = (int) bossRelicCount * 4;
 
         // Apply thorns equal to twice the amount of boss relics that the player has
         this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThornsPower(AbstractDungeon.player, thornsAmount), thornsAmount));

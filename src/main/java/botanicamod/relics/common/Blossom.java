@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import static botanicamod.BasicMod.makeID;
 
 public class Blossom extends BaseRelic {
-    // The first time your HP drops to 50% or below each combat, add a copy of Miracle to your hand.
+    // The first time you lose HP each combat, add a Miracle to your hand.
 
     // Initialize a variable that tracks if the effect has been used
     private boolean usedThisCombat = false;
@@ -30,9 +30,8 @@ public class Blossom extends BaseRelic {
         usedThisCombat = false;
     }
 
-    @Override
-    public void onBloodied() {
-        if (!usedThisCombat) {
+    public void onLoseHp(int HP) {
+        if (!usedThisCombat && HP > 0) {
             if (AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
                 return;
             }

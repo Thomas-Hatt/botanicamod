@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.vfx.SpotlightPlayerEffect;
 import static botanicamod.BasicMod.makeID;
 
 public class Marigold extends BaseRelic {
-    // Marigold - Gain gold equal to 25% of the damage dealt in combat, but only for the first 50 damage dealt. Additionally, for every 100 Gold gained from this effect, draw one card at the start of combat.
+    // Marigold - Gain gold equal to 25% of the damage dealt in combat, but only for the first 100 damage dealt. For every 100 Gold gained from this effect, draw one card at the start of combat.
 
     private static final String NAME = "Marigold"; // The name will be used for determining the image file as well as the ID.
     public static final String ID = makeID(NAME); // This adds the mod's prefix to the relic ID, resulting in modID:relic
@@ -53,12 +53,11 @@ public class Marigold extends BaseRelic {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (damageDealt < 50) {
-            int allowedDamage = Math.min(damageAmount, 50 - damageDealt); // Calculate how much can be added without exceeding 50
-            damageDealt += allowedDamage; // Track total damage dealt up to a cap of 50
+        if (damageDealt < 100) {
+            int allowedDamage = Math.min(damageAmount, 100 - damageDealt); // Calculate how much can be added without exceeding 100
+            damageDealt += allowedDamage; // Track total damage dealt up to a cap of 100
 
             System.out.println("Damage Dealt: " + damageDealt); // Debug output
-
         }
     }
 
