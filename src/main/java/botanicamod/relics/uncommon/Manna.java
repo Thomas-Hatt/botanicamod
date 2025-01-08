@@ -1,11 +1,14 @@
 package botanicamod.relics.uncommon;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.unique.ExpertiseAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class Manna extends BaseRelic {
     // At the start of each Elite combat, draw until your hand is full.
@@ -25,6 +28,14 @@ public class Manna extends BaseRelic {
             this.addToBot(new ExpertiseAction(AbstractDungeon.player, 10));
             this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("Manna")) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

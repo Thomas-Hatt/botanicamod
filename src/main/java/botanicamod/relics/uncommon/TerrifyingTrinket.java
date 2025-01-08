@@ -1,14 +1,15 @@
 package botanicamod.relics.uncommon;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.EscapeAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import java.util.Iterator;
-
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class TerrifyingTrinket extends BaseRelic {
     // Terrifying Trinket - At the start of turn 3, all Minions run away.
@@ -49,6 +50,14 @@ public class TerrifyingTrinket extends BaseRelic {
     public void onVictory() {
         this.counter = -1;
         this.grayscale = false;
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("TerrifyingTrinket")) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

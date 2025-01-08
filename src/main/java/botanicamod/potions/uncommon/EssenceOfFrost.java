@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class EssenceOfFrost extends BasePotion {
     // Channel 1 (2) Frost Orbs for each orb slot.

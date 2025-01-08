@@ -1,15 +1,18 @@
 package botanicamod.relics.uncommon;
 
+import botanicamod.Botanica;
 import botanicamod.cards.IllusionaryNeutralize;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class IllusionistsCoin extends BaseRelic {
     // Illusionist's Coin - At the start of turn 3, add a copy of Illusion Neutralize to your hand.
@@ -76,6 +79,14 @@ public class IllusionistsCoin extends BaseRelic {
                 purgeNeutralizePlayed = 0;  // Reset the counter after drawing cards
             }
         }
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("IllusionistsCoin")) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

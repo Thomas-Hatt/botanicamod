@@ -1,6 +1,6 @@
 package botanicamod.relics.shop;
 
-import basemod.devcommands.potions.Potionlist;
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,9 +10,10 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class AlchemistsMask extends BaseRelic implements ClickableRelic {
     // Right click to activate. Lose all gold. At the end of your turn, if you have 0 gold, obtain a random potion and add a random curse to your deck and draw pile.
@@ -49,6 +50,14 @@ public class AlchemistsMask extends BaseRelic implements ClickableRelic {
             AbstractPotion randomPotion = PotionHelper.getRandomPotion();
             AbstractDungeon.player.obtainPotion(randomPotion);
         }
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("AlchemistsMask")) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

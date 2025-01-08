@@ -1,14 +1,17 @@
 package botanicamod.relics.common;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class Blossom extends BaseRelic {
     // The first time you lose HP each combat, add a Miracle to your hand.
@@ -41,6 +44,14 @@ public class Blossom extends BaseRelic {
             usedThisCombat = true;
             grayscale = true;
         }
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("Blossom")) {
+            return (AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

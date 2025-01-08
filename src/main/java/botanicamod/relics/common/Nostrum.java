@@ -1,12 +1,15 @@
 package botanicamod.relics.common;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class Nostrum extends BaseRelic {
     // At the end of your first turn, Exhaust any number of cards in your hand
@@ -35,6 +38,14 @@ public class Nostrum extends BaseRelic {
     @Override
     public void atPreBattle() {
         firstTurn = true;
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("Nostrum")) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

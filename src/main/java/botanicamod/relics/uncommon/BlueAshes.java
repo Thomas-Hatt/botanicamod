@@ -1,13 +1,16 @@
 package botanicamod.relics.uncommon;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.FireBreathingPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class BlueAshes extends BaseRelic {
     // Blue Ashes (as suggested by blueash7077!) - At the start of each combat, gain the Fire Breathing buff.
@@ -46,6 +49,14 @@ public class BlueAshes extends BaseRelic {
         if (card.type == AbstractCard.CardType.STATUS) {
             STATUSES_DRAWN += 1;
         }
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("BlueAshes")) {
+            return (AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

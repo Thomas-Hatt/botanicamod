@@ -3,7 +3,7 @@ package botanicamod.cards;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
-import botanicamod.BasicMod;
+import botanicamod.Botanica;
 import botanicamod.util.CardStats;
 import botanicamod.util.TriFunction;
 import com.badlogic.gdx.graphics.Color;
@@ -25,7 +25,7 @@ import static botanicamod.util.TextureLoader.getCardTextureString;
 public abstract class BaseCard extends CustomCard {
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();
 
-    protected static String makeID(String name) { return BasicMod.makeID(name); }
+    protected static String makeID(String name) { return Botanica.makeID(name); }
     protected CardStrings cardStrings;
 
     protected boolean upgradesDescription;
@@ -457,7 +457,7 @@ public abstract class BaseCard extends CustomCard {
             {
                 if (cardStrings.UPGRADE_DESCRIPTION == null)
                 {
-                    BasicMod.logger.error("Card " + cardID + " upgrades description and has null upgrade description.");
+                    Botanica.logger.error("Card " + cardID + " upgrades description and has null upgrade description.");
                 }
                 else
                 {

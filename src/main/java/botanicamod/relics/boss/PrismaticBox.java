@@ -1,20 +1,23 @@
 package botanicamod.relics.boss;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon.CurrentScreen;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class PrismaticBox extends BaseRelic {
     // Transform all Strikes and Defends into Uncommon cards. These cards can be of any color.
@@ -105,7 +108,10 @@ public class PrismaticBox extends BaseRelic {
 
     @Override
     public boolean canSpawn() {
-        return (!(AbstractDungeon.player.hasRelic("PrismaticShard")) && !(AbstractDungeon.player.hasRelic("PandorasBox")));
+        if (Botanica.isRelicEnabled("PrismaticBox")) {
+            return (!(AbstractDungeon.player.hasRelic("PrismaticShard")) && !(AbstractDungeon.player.hasRelic("PandorasBox")));
+        }
+        return false;
     }
 
     @Override

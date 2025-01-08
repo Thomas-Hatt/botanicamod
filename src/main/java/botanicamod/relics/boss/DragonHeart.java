@@ -1,14 +1,17 @@
 package botanicamod.relics.boss;
 
+import botanicamod.Botanica;
 import botanicamod.actions.DragonHeartAction;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 // Dragon Heart - Gain 2 Strength and 2 Dexterity at the start of each combat. Retain a random card at the end of your turn.
 
@@ -43,6 +46,14 @@ public class DragonHeart extends BaseRelic {
         this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, DEX), DEX));
 
         this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("DragonHeart")) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

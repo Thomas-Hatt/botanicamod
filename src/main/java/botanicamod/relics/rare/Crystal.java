@@ -1,13 +1,16 @@
 // Crystal.java
 package botanicamod.relics.rare;
 
+import botanicamod.Botanica;
 import botanicamod.powers.CrystallizePower;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class Crystal extends BaseRelic {
     // Crystal - At the start of combat, gain 2 Crystallize.
@@ -33,6 +36,14 @@ public class Crystal extends BaseRelic {
         this.flash();
 
         this.addToBot(new ApplyPowerAction(p, p, new CrystallizePower(p, crystallizeAmount)));
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("Crystal")) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

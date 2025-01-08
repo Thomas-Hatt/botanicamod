@@ -1,5 +1,6 @@
 package botanicamod.relics.common;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -7,7 +8,7 @@ import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class MerchantsRobes extends BaseRelic {
     // Upon entering a shop, obtain 2 random Potions.
@@ -37,7 +38,10 @@ public class MerchantsRobes extends BaseRelic {
 
     @Override
     public boolean canSpawn() {
-        return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        if (Botanica.isRelicEnabled("MerchantsRobes")) {
+            return (AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

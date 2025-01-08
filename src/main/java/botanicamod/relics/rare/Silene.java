@@ -1,9 +1,12 @@
 package botanicamod.relics.rare;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class Silene extends BaseRelic {
     // Silene - Heal 10% of damage taken at the end of combat.
@@ -38,6 +41,14 @@ public class Silene extends BaseRelic {
             AbstractDungeon.player.heal(healAmount);
             flash();
         }
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("Silene")) {
+            return (AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

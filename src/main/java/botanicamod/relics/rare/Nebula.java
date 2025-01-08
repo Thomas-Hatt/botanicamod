@@ -1,12 +1,15 @@
 package botanicamod.relics.rare;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.powers.BurstPower;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 // If you end your turn without Block, your next skill is played twice.
 public class Nebula extends BaseRelic {
@@ -55,6 +58,14 @@ public class Nebula extends BaseRelic {
     @Override
     public BaseRelic makeCopy() {
         return new Nebula();
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("Nebula")) {
+            return (AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

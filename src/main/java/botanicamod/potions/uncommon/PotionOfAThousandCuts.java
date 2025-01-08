@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.powers.ThousandCutsPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class PotionOfAThousandCuts extends BasePotion {
     // Whenever you play a card, deal 1 (2) damage to ALL enemies.

@@ -1,17 +1,20 @@
 package botanicamod.relics.common;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class Quill extends BaseRelic {
     // At the start of each combat, add a random 0 cost card to your hand, discard pile, and draw pile.
@@ -40,6 +43,14 @@ public class Quill extends BaseRelic {
                 .filter(c -> c.cost == 0)
                 .collect(Collectors.toCollection(ArrayList::new));
         return zeroCostCards.isEmpty() ? null : zeroCostCards.get(AbstractDungeon.cardRandomRng.random(zeroCostCards.size() - 1));
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("Quill")) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

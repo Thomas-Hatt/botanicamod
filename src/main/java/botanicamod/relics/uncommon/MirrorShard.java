@@ -1,11 +1,14 @@
 package botanicamod.relics.uncommon;
 
+import botanicamod.Botanica;
 import botanicamod.actions.MirrorShardAction;
 import botanicamod.relics.BaseRelic;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.badlogic.gdx.Gdx;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 // Mirror Shard - At the start of each combat, create a copy of a random card in your hand
 
@@ -24,6 +27,14 @@ public class MirrorShard extends BaseRelic {
         Gdx.app.log("MirrorShard", "atBattleStart called");
         // Use a delayed action to wait until cards are drawn
         AbstractDungeon.actionManager.addToBottom(new MirrorShardAction());
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("MirrorShard")) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

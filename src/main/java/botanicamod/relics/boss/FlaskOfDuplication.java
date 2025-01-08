@@ -1,17 +1,19 @@
 package botanicamod.relics.boss;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Normality;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class FlaskOfDuplication extends BaseRelic {
     // Flask of Duplication - Upon pickup, gain 2 copies of Normality. Duplicate every card in your deck and gain 10 gold for each card added.
@@ -56,6 +58,16 @@ public class FlaskOfDuplication extends BaseRelic {
             Normality card = new Normality();
             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
         }
+    }
+
+    // Can only spawn in act 2
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("MerchantsRobes")) {
+            int floorNum = AbstractDungeon.floorNum;
+            return floorNum >= 20 && floorNum <= 40 && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

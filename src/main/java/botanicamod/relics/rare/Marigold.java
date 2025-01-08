@@ -1,13 +1,16 @@
 package botanicamod.relics.rare;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import com.megacrit.cardcrawl.vfx.SpotlightPlayerEffect;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class Marigold extends BaseRelic {
     // Marigold - Gain gold equal to 25% of the damage dealt in combat, but only for the first 100 damage dealt. For every 100 Gold gained from this effect, draw one card at the start of combat.
@@ -73,6 +76,14 @@ public class Marigold extends BaseRelic {
             System.out.println("Gold Gained: " + goldGain + ", Total Gold: " + totalGoldGained); // Debug output
             this.flash();
         }
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("Marigold")) {
+            return (AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

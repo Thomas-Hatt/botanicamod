@@ -1,5 +1,6 @@
 package botanicamod.relics.common;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -8,8 +9,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class Nile extends BaseRelic {
     // Whenever you enter a ? room, all enemies in the next combat lose 1 Strength.
@@ -66,8 +68,12 @@ public class Nile extends BaseRelic {
         }
     }
 
+    @Override
     public boolean canSpawn() {
-        return Settings.isEndless || AbstractDungeon.floorNum <= 40; // Control spawn conditions
+        if (Botanica.isRelicEnabled("Nile")) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 40) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.EquilibriumPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class RetainPotion extends BasePotion {
     // Retain your hand for X turns.

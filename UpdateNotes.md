@@ -225,3 +225,16 @@ Fixed an issue where cards could not be used from the console.
   2. New Marigold - Gain gold equal to 25% of the damage dealt in combat, but only for the first 100 damage dealt. For every 100 Gold gained from this effect, draw one card at the start of combat.
 - 1. Original Thorned Crown - Start each combat with 2 Thorns for each boss relic you have
   2. New Thorned Crown - Start each combat with 4 Thorns for each boss relic you have
+
+# Version 0.2.2 - 1/7/2025
+## New Features
+- Updated `ToDo.md`
+- Added a config menu that allows the user to choose whether they'd like to see any specific relic in their run (this took me like 5 hours to implement smh)
+- Finally renamed my mod from BasicMod to Botanica (idk how it took this long)
+- Removed more unnecessary Java classes
+- Added relic art for `Blossom`, `Burning Stone`, `Nostrum`, `Short Circuit`, and `Trifocal`
+- Buffed 1 Relic:
+- 1. Original Jester's Belt - Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 4 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 4.
+- 2. New Jester's Belt - Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 3 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 8.
+- Fixed an issue where the keyword `Crystallize` wasn't appearing when hovering over the `Crystal` relic
+### I do need to implement the config menu for the potions as well. Also, the config menu breaks at lower resolutions.

@@ -1,14 +1,16 @@
 package botanicamod.relics.rare;
 
+import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.RestRoom;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class Hemlock extends BaseRelic {
     // Hemlock - Upon entering a Rest Site, Scry 1 for every 6 cards in your deck at the start of your next combat.
@@ -67,6 +69,14 @@ public class Hemlock extends BaseRelic {
             this.pulse = true;
         }
 
+    }
+
+    @Override
+    public boolean canSpawn() {
+        if (Botanica.isRelicEnabled("Hemlock")) {
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        }
+        return false;
     }
 
     @Override

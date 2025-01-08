@@ -1,6 +1,6 @@
 package botanicamod.potions.rare;
 
-import botanicamod.BasicMod;
+import botanicamod.Botanica;
 import botanicamod.potions.BasePotion;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.SlowPower;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class PotionOfSlowness extends BasePotion {
         public static final String ID = makeID(PotionOfSlowness.class.getSimpleName());
@@ -33,7 +33,7 @@ public class PotionOfSlowness extends BasePotion {
     @Override
     public void addAdditionalTips() {
         //Adding a tooltip for Slow
-        this.tips.add(new PowerTip(BasicMod.keywords.get("slow").PROPER_NAME, BasicMod.keywords.get("slow").DESCRIPTION));
+        this.tips.add(new PowerTip(Botanica.keywords.get("slow").PROPER_NAME, Botanica.keywords.get("slow").DESCRIPTION));
     }
 
     @Override

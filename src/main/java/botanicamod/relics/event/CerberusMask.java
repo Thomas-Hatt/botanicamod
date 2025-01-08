@@ -2,7 +2,7 @@ package botanicamod.relics.event;
 
 import botanicamod.relics.BaseRelic;
 
-import static botanicamod.BasicMod.makeID;
+import static botanicamod.Botanica.makeID;
 
 public class CerberusMask extends BaseRelic {
     // Cerberus' Mask [] - Upon pickup, obtain all Face Relics. Lose 1 Energy at the start of your turn.

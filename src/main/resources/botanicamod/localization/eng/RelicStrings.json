@@ -243,7 +243,7 @@
     "NAME": "Crystal",
     "FLAVOR": "Ooh, shiny!",
     "DESCRIPTIONS": [
-      "At the start of combat, gain #b2 #yCrystallize."
+      "At the start of combat, gain #b2 #y${modID}:Crystallize."
     ]
   },
 
