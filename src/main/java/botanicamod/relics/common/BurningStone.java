@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.rooms.ShopRoom;
 
 import static botanicamod.Botanica.makeID;
 
@@ -41,7 +40,7 @@ public class BurningStone extends BaseRelic {
     @Override
     public boolean canSpawn() {
         if (Botanica.isRelicEnabled("BurningStone")) {
-            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48);
         }
         return false;
     }

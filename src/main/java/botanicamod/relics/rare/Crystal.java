@@ -41,7 +41,7 @@ public class Crystal extends BaseRelic {
     @Override
     public boolean canSpawn() {
         if (Botanica.isRelicEnabled("Crystal")) {
-            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48);
         }
         return false;
     }

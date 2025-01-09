@@ -53,7 +53,7 @@ public class Divider extends BaseRelic {
     @Override
     public boolean canSpawn() {
         if (Botanica.isRelicEnabled("Divider")) {
-            return (AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+            return (AbstractDungeon.floorNum <= 48);
         }
         return false;
     }

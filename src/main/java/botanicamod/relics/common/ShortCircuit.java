@@ -50,6 +50,11 @@ public class ShortCircuit extends BaseRelic {
         this.gainEnergyNext = true;
     }
 
+    @Override
+    public void onVictory() {
+        this.pulse = false;
+    }
+
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.SKILL) {
             this.gainEnergyNext = false;
@@ -60,7 +65,7 @@ public class ShortCircuit extends BaseRelic {
     @Override
     public boolean canSpawn() {
         if (Botanica.isRelicEnabled("ShortCircuit")) {
-            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48);
         }
         return false;
     }

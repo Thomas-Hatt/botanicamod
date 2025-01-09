@@ -238,3 +238,15 @@ Fixed an issue where cards could not be used from the console.
 - 2. New Jester's Belt - Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 3 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 8.
 - Fixed an issue where the keyword `Crystallize` wasn't appearing when hovering over the `Crystal` relic
 ### I do need to implement the config menu for the potions as well. Also, the config menu breaks at lower resolutions.
+
+# Version 0.2.3 - 1/8/25
+## New Features
+- Updated `ToDo.md`
+- Increased the availability of relics in shops
+- Changed `Botanica.java` to be more readable, specifically the config and the way the relics are loaded in the config. There is currently a bug where the text goes off the screen again, though.
+- Changed `Sweater` and `Narcissus` to properly show up as Rare relics instead of Boss relics in the config
+- Reworked 1 Relic:
+- 1. Thorned Crown - Start each combat with 4 Thorns for each boss relic you have
+- 2. New Thorned Crown - Start each combat with Thorns equal to 4 times the current act number
+- Added the relic pictures for `Hemlock`
+- Fixed `Short Circuit` to stop it from infinitely pulsing

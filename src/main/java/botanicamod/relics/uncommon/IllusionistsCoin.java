@@ -84,7 +84,7 @@ public class IllusionistsCoin extends BaseRelic {
     @Override
     public boolean canSpawn() {
         if (Botanica.isRelicEnabled("IllusionistsCoin")) {
-            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48);
         }
         return false;
     }

@@ -2,9 +2,7 @@ package botanicamod.relics.rare;
 
 import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.rooms.ShopRoom;
 
 import static botanicamod.Botanica.makeID;
 
@@ -46,7 +44,7 @@ public class Silene extends BaseRelic {
     @Override
     public boolean canSpawn() {
         if (Botanica.isRelicEnabled("Silene")) {
-            return (AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+            return (AbstractDungeon.floorNum <= 48);
         }
         return false;
     }

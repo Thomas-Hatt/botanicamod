@@ -54,7 +54,7 @@ public class BlueAshes extends BaseRelic {
     @Override
     public boolean canSpawn() {
         if (Botanica.isRelicEnabled("BlueAshes")) {
-            return (AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+            return (AbstractDungeon.floorNum <= 48);
         }
         return false;
     }

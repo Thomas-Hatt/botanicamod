@@ -51,7 +51,7 @@ public class GamblersDebt extends BaseRelic {
     @Override
     public boolean canSpawn() {
         if (Botanica.isRelicEnabled("GamblersDebt")) {
-            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48);
         }
         return false;
     }

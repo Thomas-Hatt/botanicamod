@@ -18,7 +18,7 @@
     "NAME": "Thorned Crown",
     "FLAVOR": "A makeshift version of busted crown",
     "DESCRIPTIONS": [
-      "Start each combat with #b2 #yThorns for each boss relic you have"
+      "Start each combat with #yThorns equal to #b4 times the current act number."
     ]
   },
 

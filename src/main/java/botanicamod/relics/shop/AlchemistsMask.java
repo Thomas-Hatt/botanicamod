@@ -55,7 +55,7 @@ public class AlchemistsMask extends BaseRelic implements ClickableRelic {
     @Override
     public boolean canSpawn() {
         if (Botanica.isRelicEnabled("AlchemistsMask")) {
-            return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+            return (Settings.isEndless || AbstractDungeon.floorNum <= 48);
         }
         return false;
     }

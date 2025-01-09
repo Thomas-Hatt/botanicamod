@@ -63,7 +63,7 @@ public class Nebula extends BaseRelic {
     @Override
     public boolean canSpawn() {
         if (Botanica.isRelicEnabled("Nebula")) {
-            return (AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+            return (AbstractDungeon.floorNum <= 48);
         }
         return false;
     }

@@ -41,6 +41,9 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.io.IOException;
@@ -208,54 +211,34 @@ public class Botanica implements
         }
     }
 
-    private static final String[] RELIC_NAMES = {
-            "ShortCircuit", "MerchantsRobes", "BurningStone", "Quill", "Blossom", "Nile", "Nostrum", "Trifocal",
-            "MirrorShard", "Divider", "Cardoon", "BlueAshes", "Equinox", "TerrifyingTrinket", "IllusionistsCoin", "Manna",
-            "Nebula", "Narcissus", "Silene", "Marigold", "Hemlock", "Sweater", "Crystal", "Crystallize",
-            "Tapinella", "AlchemistsMask", "GamblersDebt",
-            "HandOfMidas", "ThornedCrown", "DragonHeart", "FlaskOfDuplication", "GlimmeringOrb", "JestersBelt", "PrismaticBox", "Narcissus", "Sweater"
-    };
-
     private static final Map<String, String> RELIC_DESCRIPTIONS = new HashMap<>();
 
     static {
-        RELIC_DESCRIPTIONS.put("ShortCircuit", "If you do not play any Skills during your turn, gain an extra Energy next turn.");
-        RELIC_DESCRIPTIONS.put("MerchantsRobes", "Upon entering a shop, obtain 2 random Potions.");
-        RELIC_DESCRIPTIONS.put("BurningStone", "At the start of each combat, add a Burn to your discard pile. Whenever you draw a Burn, gain 2 Strength.");
-        RELIC_DESCRIPTIONS.put("Quill", "At the start of each combat, add a random 0 cost card to your hand, discard pile, and draw pile.");
-        RELIC_DESCRIPTIONS.put("Blossom", "The first time you lose HP each combat, add a Miracle to your hand.");
-        RELIC_DESCRIPTIONS.put("Nile", "Whenever you enter a ? room, all enemies in the next combat lose 1 Strength.");
-        RELIC_DESCRIPTIONS.put("Nostrum", "At the end of your first turn, Exhaust any number of cards in your hand.");
-        RELIC_DESCRIPTIONS.put("Trifocal", "At the end of your first turn, gain 5 gold for each card discarded, then Scry 3.");
-        RELIC_DESCRIPTIONS.put("MirrorShard", "At the start of each combat, create a copy of a random card in your hand.");
-        RELIC_DESCRIPTIONS.put("Divider", "Every 4 turns, add a random skill into your hand.");
-        RELIC_DESCRIPTIONS.put("Cardoon", "Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.");
-        RELIC_DESCRIPTIONS.put("BlueAshes", "At the start of each combat, gain the Fire Breathing buff.");
-        RELIC_DESCRIPTIONS.put("Equinox", "Every time you play 10 Attacks, play the top card of your draw pile.");
-        RELIC_DESCRIPTIONS.put("TerrifyingTrinket", "At the start of turn 3, all minions run away.");
-        RELIC_DESCRIPTIONS.put("IllusionistsCoin", "At the start of turn 3, add an Illusion Neutralize to your hand.");
-        RELIC_DESCRIPTIONS.put("Manna", "At the start of each Elite combat, draw until your hand is full.");
-        RELIC_DESCRIPTIONS.put("Nebula", "If you end your turn without Block, your next skill is played twice.");
-        RELIC_DESCRIPTIONS.put("Narcissus", "Start each combat with Limit Break. It has Purge and costs 0.");
-        RELIC_DESCRIPTIONS.put("Silene", "Heal 10% of damage taken at the end of combat.");
-        RELIC_DESCRIPTIONS.put("Marigold", "Gain gold equal to 25% of the damage dealt in combat, but only for the first 100 damage dealt. For every 100 gold gained from this effect, draw one card at the start of combat.");
-        RELIC_DESCRIPTIONS.put("Hemlock", "Upon entering a Rest Site, Scry 1 for every 6 cards in your deck at the start of your next combat.");
-        RELIC_DESCRIPTIONS.put("Sweater", "At the start of each combat, Channel 2 Frost. Gain 1 Focus every 3 turns.");
-        RELIC_DESCRIPTIONS.put("Crystal", "At the start of combat, gain 2 Crystallize. Crystallize: At the end of your turn, gain an Orb slot and Channel a random Orb.");
-        RELIC_DESCRIPTIONS.put("Tapinella", "All Dexterity is converted to Strength.");
-        RELIC_DESCRIPTIONS.put("AlchemistsMask", "Right click to activate. Lose all gold. At the end of your turn, if you have 0 gold, obtain a random potion and add a random curse to your deck and draw pile.");
-        RELIC_DESCRIPTIONS.put("GamblersDebt", "Card rewards have 2 extra cards, but 1 random card is disguised as a curse.");
-        RELIC_DESCRIPTIONS.put("HandOfMidas", "Hand of Greed now grants double gold on kill. Upon pickup, upgrade all held Hand of Greed(s) and obtain 3 copies.");
-        RELIC_DESCRIPTIONS.put("ThornedCrown", "Start each combat with 4 Thorns for each boss relic you have.");
-        RELIC_DESCRIPTIONS.put("DragonHeart", "Gain 2 Strength and 2 Dexterity at the start of each combat. Retain a random card at the end of your turn.");
-        RELIC_DESCRIPTIONS.put("FlaskOfDuplication", "Upon pickup, gain 2 copies of Normality. Duplicate every card in your deck and gain 10 gold for each card added.");
-        RELIC_DESCRIPTIONS.put("GlimmeringOrb", "The first time you play 5 Power Cards each combat, obtain a Vajra.");
-        RELIC_DESCRIPTIONS.put("JestersBelt", "Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 3 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 8.");
-        RELIC_DESCRIPTIONS.put("PrismaticBox", "Transform all Strikes and Defends into Uncommon cards. These cards can be of any color.");
+        Properties properties = new Properties();
+        try (InputStream input = Botanica.class.getClassLoader().getResourceAsStream("relic_descriptions.properties")) {
+            if (input == null) {
+                System.out.println("Sorry, unable to find relic_descriptions.properties");
+            }
+            properties.load(input);
+            for (String key : properties.stringPropertyNames()) {
+                RELIC_DESCRIPTIONS.put(key, properties.getProperty(key));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
+    private String getRelicDescription(String relicName) {
+        return RELIC_DESCRIPTIONS.getOrDefault(relicName, "Description not available.");
+    }
+
     String ENABLE_DISABLE = "Enable/Disable ";
+
+    private static final Map<String, List<String>> relicsByType = new LinkedHashMap<>();
+    private static final List<String> RELIC_NAMES_LIST = new ArrayList<>();
+    private static final String[] RELIC_NAMES = RELIC_NAMES_LIST.toArray(new String[0]);
+
 
     private void initializeConfig() {
         UIStrings configStrings = CardCrawlGame.languagePack.getUIString(makeID("ConfigMenuText"));
@@ -266,9 +249,12 @@ public class Botanica implements
         Map<String, List<String>> relicsByType = new LinkedHashMap<>();
         relicsByType.put(ENABLE_DISABLE + "Common", Arrays.asList("Blossom", "BurningStone", "MerchantsRobes", "Nile", "Nostrum", "Quill", "ShortCircuit", "Trifocal"));
         relicsByType.put(ENABLE_DISABLE + "Uncommon", Arrays.asList("BlueAshes", "Cardoon", "Divider", "Equinox", "IllusionistsCoin", "Manna", "MirrorShard", "TerrifyingTrinket"));
-        relicsByType.put(ENABLE_DISABLE + "Rare", Arrays.asList("Crystal", "Hemlock", "Marigold", "Nebula", "Silene"));
-        relicsByType.put(ENABLE_DISABLE + "Boss", Arrays.asList("DragonHeart", "FlaskOfDuplication", "GlimmeringOrb", "HandOfMidas", "JestersBelt", "PrismaticBox", "ThornedCrown", "Sweater", "Narcissus"));
+        relicsByType.put(ENABLE_DISABLE + "Rare", Arrays.asList("Crystal", "Hemlock", "Marigold", "Nebula", "Silene", "Sweater", "Narcissus"));
+        relicsByType.put(ENABLE_DISABLE + "Boss", Arrays.asList("DragonHeart", "FlaskOfDuplication", "GlimmeringOrb", "HandOfMidas", "JestersBelt", "PrismaticBox", "ThornedCrown"));
         relicsByType.put(ENABLE_DISABLE + "Shop", Arrays.asList("AlchemistsMask", "GamblersDebt", "Tapinella"));
+
+        for (List<String> relics : relicsByType.values()) { RELIC_NAMES_LIST.addAll(relics); }
+
         // Add other types and relics as needed
 
         int pageIndex = 0;
@@ -290,8 +276,8 @@ public class Botanica implements
                     yPos -= SPACING_Y;
                 }
 
-                // Add up to 7 relics per page
-                List<String> currentRelics = relics.subList(0, Math.min(7 - relicCount, relics.size()));
+                // Add up to 6 relics per page
+                List<String> currentRelics = relics.subList(0, Math.min(6 - relicCount, relics.size()));
                 // Add relic type header
                 if (relicCount == 0) {
                     // Add extra space before relics appear
@@ -324,7 +310,7 @@ public class Botanica implements
                     // Add relic description
                     String description = "-" + getRelicDescription(relicName);
                     float descriptionXOffset = 0f; // Adjust this value to move description
-                    FontHelper.cardDescFont_L.getData().setScale(0.6f); // Adjust the scale of the font
+                    FontHelper.cardDescFont_L.getData().setScale(0.66f); // Adjust the scale of the font
 
                     ModLabel descLabel = new ModLabel(description, LAYOUT_X + descriptionXOffset, yPos, Settings.CREAM_COLOR, FontHelper.cardDescFont_L, settingsPanel, (l) -> {});
                     registerUIElement(descLabel, pageIndex);
@@ -384,10 +370,6 @@ public class Botanica implements
         }
         pages.get(pageIndex).add(elem);
         elem.setX(elem.getX() + (pageIndex * Settings.WIDTH)/Settings.scale);
-    }
-
-    private String getRelicDescription(String relicName) {
-        return RELIC_DESCRIPTIONS.getOrDefault(relicName, "Description not available.");
     }
 
 

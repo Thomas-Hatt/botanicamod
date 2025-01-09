@@ -1,6 +1,7 @@
 package botanicamod.relics.boss;
 
 import botanicamod.Botanica;
+import botanicamod.misc_classes.ActTracker;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.Settings;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.rooms.ShopRoom;
 
 import static botanicamod.Botanica.makeID;
 
-// Thorned Crown - Start each combat with 4 Thorns for each boss relic you have
+// Thorned Crown - Start each combat with Thorns equal to 4 times the current act number
 
 public class ThornedCrown extends BaseRelic
 {
@@ -24,18 +25,15 @@ public class ThornedCrown extends BaseRelic
         super(ID, NAME, RARITY, SOUND);
     }
 
+    int currentAct = ActTracker.getCurrentAct();
+
     public void atBattleStart() {
         this.flash();
 
-        // Check to see how many boss relics the player has
-        long bossRelicCount = AbstractDungeon.player.relics.stream()
-                .filter(r -> r.tier == AbstractRelic.RelicTier.BOSS)
-                .count();
+        // Multiply the current act by 4 to get the thorns amount
+        int thornsAmount = currentAct * 4;
 
-        // Multiply the count by 4
-        int thornsAmount = (int) bossRelicCount * 4;
-
-        // Apply thorns equal to twice the amount of boss relics that the player has
+        // Apply thorns
         this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThornsPower(AbstractDungeon.player, thornsAmount), thornsAmount));
     }
 
