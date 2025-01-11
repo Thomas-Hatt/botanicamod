@@ -11,7 +11,7 @@
 ## Uncommon Relics:
 - Mirror Shard [X] - At the start of each combat, create a copy of a random card in your hand.
 - Divider [X] - Every 4 turns, add a random skill into your hand.
-- Cardoon [X] - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.
+- Cardoon [X] - Every time you play 4 Attacks in a single turn, gain the Noxious Fumes buff.
 - Blue Ashes (as suggested by blueash7077!) [X] - At the start of each combat, gain the Fire Breathing buff. 
 - 1. Blue Ashes Side Quest - Upon drawing 20 total Status Cards, gain the Fire Breathing+ buff instead.
 - Equinox (as suggested by Equi!) [X] - Every time you play 10 Attacks, play the top card of your draw pile.

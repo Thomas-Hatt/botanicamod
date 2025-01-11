@@ -2,18 +2,21 @@ package botanicamod.relics.uncommon;
 
 import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.JackOfAllTrades;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.NoxiousFumesPower;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 
 import static botanicamod.Botanica.makeID;
 
 public class Cardoon extends BaseRelic {
-    // Cardoon - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.
+    // Cardoon - Every time you play 4 Attacks in a single turn, gain the Noxious Fumes buff.
 
     private static final String NAME = "Cardoon"; // The name will be used for determining the image file as well as the ID.
     public static final String ID = makeID(NAME); // This adds the mod's prefix to the relic ID, resulting in modID:relic
@@ -34,12 +37,16 @@ public class Cardoon extends BaseRelic {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK) {
             this.counter++;
+
             // Create a variable to be used for the attack requirement
             int attackRequirement = 4;
             if (this.counter % attackRequirement == 0) {
                 this.counter = 0;
                 flash();
-                this.addToBot(new MakeTempCardInDrawPileAction(new JackOfAllTrades(), 1, true, true));
+
+                // Apply Noxious Fumes buff to the player
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                        new NoxiousFumesPower(AbstractDungeon.player, 2), 2));
             }
         }
     }

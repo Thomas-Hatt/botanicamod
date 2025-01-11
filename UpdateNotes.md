@@ -1,5 +1,4 @@
 # Version 0.0.2 - 11/15/2024
-
 ## New Features
 - Stylized `ToDo.md`.
 - Created `UpdateNotes.md`.
@@ -11,7 +10,6 @@
     3. Flask of Duplication
 
 # Version 0.0.3 - 11/16/2024
-
 ## New Features
 - Updated `ToDo.md`
 - Changed the `ID` of each relic to be more in line with Slay the Spire's formatting.
@@ -250,3 +248,14 @@ Fixed an issue where cards could not be used from the console.
 - 2. New Thorned Crown - Start each combat with Thorns equal to 4 times the current act number
 - Added the relic pictures for `Hemlock`
 - Fixed `Short Circuit` to stop it from infinitely pulsing
+
+# Version 0.2.4 - 1/10/25
+## New Features
+- Updated `ToDo.md`
+- Buffed `Purge Limit Break` to retain when upgraded
+- Added relic art for the following relics: `Glimmering Orb`, `Thorned Crown`, and `Dragon Heart`
+- Fixed an issue where the act wasn't properly calculated in the `Thorned Crown` relic
+- Updated Divider to properly show "Skill" as yellow text in `RelicStrings.json`
+- Reworked 1 relic:
+- 1. Original Cardoon - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.
+- 1. New Cardoon - Every time you play 4 Attacks in a single turn, gain the Noxious Fumes buff.

@@ -25,10 +25,12 @@ public class ThornedCrown extends BaseRelic
         super(ID, NAME, RARITY, SOUND);
     }
 
-    int currentAct = ActTracker.getCurrentAct();
+
 
     public void atBattleStart() {
         this.flash();
+        // Get the act
+        int currentAct = ActTracker.getCurrentAct();
 
         // Multiply the current act by 4 to get the thorns amount
         int thornsAmount = currentAct * 4;

@@ -2,7 +2,7 @@
   "${modID}:PurgeLimitBreak": {
     "NAME": "Limit Break",
     "DESCRIPTION": "Double your Strength. NL Purge.",
-    "UPGRADE_DESCRIPTION": "Double your Strength. NL Purge."
+    "UPGRADE_DESCRIPTION": "Double your Strength. NL Retain. NL Purge."
     },
 
   "${modID}:IllusionaryNeutralize": {

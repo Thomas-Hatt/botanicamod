@@ -41,6 +41,7 @@ public class PurgeLimitBreak extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(0); // Reduce cost to 0
+            this.selfRetain = true; // Make the card retain
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -86,7 +86,7 @@
     "FLAVOR": "The Defect",
     "DESCRIPTIONS": [
       "Every #b",
-      " turns, add a random skill into your hand."
+      " turns, add a random #ySkill into your hand."
     ]
   },
 
@@ -136,9 +136,9 @@
 
   "${modID}:Cardoon": {
     "NAME": "Cardoon",
-    "FLAVOR": "Sample Text",
+    "FLAVOR": "Not exactly savory.",
     "DESCRIPTIONS": [
-      "Every time you play #b4 #yAttacks in a single turn, shuffle a #yJack #yof #yAll #yTrades into your draw pile."
+      "Every time you play 4 Attacks in a single turn, gain the Noxious Fumes buff."
     ]
   },
 
