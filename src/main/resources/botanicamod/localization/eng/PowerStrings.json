@@ -9,7 +9,7 @@
   "${modID}:Crystallize": {
     "NAME": "Crystallize",
     "DESCRIPTIONS": [
-      "At the end of your turn, gain an Orb slot and #yChannel a random Orb."
+      "At the end of your turn, gain an Orb slot, #yChannel a random Orb, and gain #b1 #yDexterity."
     ]
   }
 }

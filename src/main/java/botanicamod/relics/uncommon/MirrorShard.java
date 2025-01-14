@@ -6,7 +6,6 @@ import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.badlogic.gdx.Gdx;
-import com.megacrit.cardcrawl.rooms.ShopRoom;
 
 import static botanicamod.Botanica.makeID;
 

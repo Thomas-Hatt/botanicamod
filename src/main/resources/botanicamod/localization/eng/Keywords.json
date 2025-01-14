@@ -32,6 +32,6 @@
     "NAMES": [
       "crystallize"
     ],
-    "DESCRIPTION": "At the end of your turn, gain an Orb slot and #yChannel a random Orb."
+    "DESCRIPTION": "At the end of your turn, gain an Orb slot, #yChannel a random Orb, and gain #b1 #yDexterity."
   }
 ]

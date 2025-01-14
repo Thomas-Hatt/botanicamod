@@ -14,13 +14,13 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import java.util.function.Consumer;
 
 public class BiggerModButton implements IUIElement {
-    private Consumer<BiggerModButton> click;
-    private Hitbox hb;
-    private Texture texture;
-    private float x;
-    private float y;
-    private float w;
-    private float h;
+    private final Consumer<BiggerModButton> click;
+    private final Hitbox hb;
+    private final Texture texture;
+    private final float x;
+    private final float y;
+    private final float w;
+    private final float h;
     public ModPanel parent;
 
     public BiggerModButton(float xPos, float yPos, float hbSize, ModPanel p, Consumer<BiggerModButton> c) {

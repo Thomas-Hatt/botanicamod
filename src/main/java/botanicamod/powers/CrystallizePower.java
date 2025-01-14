@@ -1,8 +1,5 @@
 package botanicamod.powers;
-//The only thing TURN_BASED controls is the color of the number on the power icon.
-//Turn based powers are white, non-turn based powers are red or green depending on if their amount is positive or negative.
-//For a power to actually decrease/go away on its own they do it themselves.
-//Look at powers that do this like VulnerablePower and DoubleTapPower.
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
@@ -12,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 
 import static botanicamod.Botanica.makeID;
 
@@ -39,6 +37,10 @@ public class CrystallizePower extends BasePower {
         AbstractOrb orb = AbstractOrb.getRandomOrb(true);
         this.addToBot(new ChannelAction(orb));
 
+        // Give the player 1 Dexterity
+        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 1), 1));
+
+        // Give the player the Crystallize power
         this.addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, CrystallizePower.POWER_ID, 1));
     }
 

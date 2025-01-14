@@ -2,7 +2,6 @@ package botanicamod.relics.common;
 
 import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;

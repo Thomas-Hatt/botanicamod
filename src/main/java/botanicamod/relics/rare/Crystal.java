@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.rooms.ShopRoom;
 
 import static botanicamod.Botanica.makeID;
 
@@ -22,7 +21,7 @@ public class Crystal extends BaseRelic {
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
     // Amount of crystallize to apply
-    private int crystallizeAmount = 2;
+    private final int crystallizeAmount = 2;
 
     AbstractPlayer p = AbstractDungeon.player;
 

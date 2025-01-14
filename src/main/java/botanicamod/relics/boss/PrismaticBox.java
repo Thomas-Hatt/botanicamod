@@ -4,13 +4,11 @@ import botanicamod.Botanica;
 import botanicamod.relics.BaseRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon.CurrentScreen;
 
@@ -84,7 +82,7 @@ public class PrismaticBox extends BaseRelic {
                     return;
                 }
 
-                e = (AbstractCard)i.next();
+                e = i.next();
             } while(!e.hasTag(AbstractCard.CardTags.STARTER_DEFEND) && !e.hasTag(AbstractCard.CardTags.STARTER_STRIKE));
 
             i.remove();
@@ -97,9 +95,10 @@ public class PrismaticBox extends BaseRelic {
         super.update();
         if (!this.calledTransform && AbstractDungeon.screen != CurrentScreen.GRID) {
             this.calledTransform = true;
-            AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25F;
+            if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom() != null) {
+                AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25F;
+            }
         }
-
     }
 
     private AbstractCard getRandomCardOfAnyColor() {
