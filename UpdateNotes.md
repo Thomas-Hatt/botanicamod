@@ -268,3 +268,7 @@ Fixed an issue where cards could not be used from the console.
 - Removed unnecessary code
 - Buffed the `Crystallize` Power to also give 1 Dexterity at the end of your turn
 - Fixed an issue where the `Prismatic Box` relic would crash the game when you click into the Relic Collection
+
+# Version 0.2.6 - 1/14/25
+- Updated `ToDo.md`
+- Fixed scaling issues in my config file

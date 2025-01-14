@@ -5,7 +5,7 @@ import basemod.interfaces.*;
 import botanicamod.cards.BaseCard;
 import botanicamod.potions.BasePotion;
 import botanicamod.relics.BaseRelic;
-import botanicamod.relics.boss.*;
+import botanicamod.relics.boss.JestersBelt;
 import botanicamod.relics.shop.Tapinella;
 import botanicamod.ui.BiggerModButton;
 import botanicamod.ui.CenteredModLabel;
@@ -42,8 +42,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
 
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
@@ -57,11 +57,14 @@ public class Botanica implements
         OnPowersModifiedSubscriber,
         OnStartBattleSubscriber,
         PostPowerApplySubscriber,
-        RelicGetSubscriber
-{
+        RelicGetSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
-    static { loadModInfo(); }
+
+    static {
+        loadModInfo();
+    }
+
     private static final String resourcesFolder = checkResourcesPath();
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
 
@@ -144,41 +147,22 @@ public class Botanica implements
     public static HashMap<Integer, ArrayList<IUIElement>> pages = new HashMap<>();
     public static float LAYOUT_Y = 760f;
     public static float LAYOUT_X = 400f;
-    public static final float SPACING_Y = 25f;
+    public static float SPACING_Y = 25f;
     public static final float FULL_PAGE_Y = (SPACING_Y * 1.5f);
     public static float deltaY = 0;
     public static int currentPage = 0;
 
-    // Get the longest text so all sliders are centered
-    private static float getSliderPosition(List<String> stringsToCompare) {
-        float longest = 0;
-        for (String s : stringsToCompare) {
-            longest = Math.max(longest, FontHelper.getWidth(FontHelper.charDescFont, s, 1f /Settings.scale));
-        }
-
-        //Get the longest slider text for positioning
-        ArrayList<String> labelStrings = new ArrayList<>(Arrays.asList(TEXT));
-        float sliderOffset = getSliderPosition(labelStrings.subList(1,5));
-        labelStrings.clear();
-
-        return longest + 40f;
-    }
-
     public static SpireConfig modConfig = null;
 
     private static void setupSettingsPanel() {
+        float screenWidthRatio = (float) Settings.WIDTH / 1920f;
+        float screenHeightRatio = (float) Settings.HEIGHT / 1080f;
+        LAYOUT_X *= screenWidthRatio;
+        LAYOUT_Y *= screenHeightRatio;
+        SPACING_Y *= screenHeightRatio;
+
         logger.info("Loading badge image and mod options");
         settingsPanel = new ModPanel();
-        float aspectRatio = (float)Settings.WIDTH/(float)Settings.HEIGHT;
-        float sixteenByNine = 1920f/1080f;
-        if (Settings.isFourByThree || (aspectRatio < 1.333F)) {
-            LAYOUT_Y *= 1.2222f;
-        } else if (Settings.isSixteenByTen) {
-            LAYOUT_Y *= 1.08f;
-        } else if (aspectRatio < sixteenByNine) {
-            LAYOUT_Y *= 1.8888f - aspectRatio/2f;
-        }
-
 
         // Grab the strings
         uiStrings = CardCrawlGame.languagePack.getUIString(makeID("ModConfigs"));
@@ -192,9 +176,8 @@ public class Botanica implements
 
         // Get the longest slider text for positioning
         ArrayList<String> labelStrings = new ArrayList<>(Arrays.asList(TEXT));
-        float sliderOffset = getSliderPosition(labelStrings.subList(1,5));
         labelStrings.clear();
-        }
+    }
 
     @Override
     public void receiveRelicGet(AbstractRelic rel) {
@@ -213,7 +196,7 @@ public class Botanica implements
         Properties properties = new Properties();
         try (InputStream input = Botanica.class.getClassLoader().getResourceAsStream("relic_descriptions.properties")) {
             if (input == null) {
-                System.out.println("Sorry, unable to find relic_descriptions.properties");
+                System.out.println("Unable to find relic_descriptions.properties");
             }
             properties.load(input);
             for (String key : properties.stringPropertyNames()) {
@@ -231,7 +214,6 @@ public class Botanica implements
 
     String ENABLE_DISABLE = "Enable/Disable ";
 
-    private static final Map<String, List<String>> relicsByType = new LinkedHashMap<>();
     private static final List<String> RELIC_NAMES_LIST = new ArrayList<>();
     private static final String[] RELIC_NAMES = RELIC_NAMES_LIST.toArray(new String[0]);
 
@@ -241,15 +223,20 @@ public class Botanica implements
 
         settingsPanel = new ModPanel();
 
+        // Use these variables when creating ModLabeledToggleButton and ModLabel
+
         // Organize relics by type
         Map<String, List<String>> relicsByType = new LinkedHashMap<>();
+
         relicsByType.put(ENABLE_DISABLE + "Common", Arrays.asList("Blossom", "BurningStone", "MerchantsRobes", "Nile", "Nostrum", "Quill", "ShortCircuit", "Trifocal"));
         relicsByType.put(ENABLE_DISABLE + "Uncommon", Arrays.asList("BlueAshes", "Cardoon", "Divider", "Equinox", "IllusionistsCoin", "Manna", "MirrorShard", "TerrifyingTrinket"));
         relicsByType.put(ENABLE_DISABLE + "Rare", Arrays.asList("Crystal", "Hemlock", "Marigold", "Nebula", "Silene", "Sweater", "Narcissus"));
         relicsByType.put(ENABLE_DISABLE + "Boss", Arrays.asList("DragonHeart", "FlaskOfDuplication", "GlimmeringOrb", "HandOfMidas", "JestersBelt", "PrismaticBox", "ThornedCrown"));
         relicsByType.put(ENABLE_DISABLE + "Shop", Arrays.asList("AlchemistsMask", "GamblersDebt", "Tapinella"));
 
-        for (List<String> relics : relicsByType.values()) { RELIC_NAMES_LIST.addAll(relics); }
+        for (List<String> relics : relicsByType.values()) {
+            RELIC_NAMES_LIST.addAll(relics);
+        }
 
         // Add other types and relics as needed
 
@@ -269,11 +256,11 @@ public class Botanica implements
                     ModLabel typeLabel = new ModLabel(relicType + " Relics", LAYOUT_X - 40f, yPos, Settings.CREAM_COLOR, FontHelper.charDescFont, settingsPanel, (l) -> {
                     });
                     registerUIElement(typeLabel, pageIndex);
-                    yPos -= SPACING_Y;
+                    yPos -= SPACING_Y * 2.5f; // Move the header down
                 }
 
-                // Add up to 6 relics per page
-                List<String> currentRelics = relics.subList(0, Math.min(6 - relicCount, relics.size()));
+                // Add up to 4 relics per page
+                List<String> currentRelics = relics.subList(0, Math.min(4 - relicCount, relics.size()));
                 // Add relic type header
                 if (relicCount == 0) {
                     // Add extra space before relics appear
@@ -288,7 +275,8 @@ public class Botanica implements
                     ModLabeledToggleButton relicToggle = new ModLabeledToggleButton(
                             relicName, LAYOUT_X - 40f, yPos, Settings.CREAM_COLOR, FontHelper.charDescFont,
                             enabled, settingsPanel,
-                            (label) -> {},
+                            (label) -> {
+                            },
                             (button) -> {
                                 modConfig.setBool("Botanica" + relicName + "RelicEnabled", button.enabled);
                                 try {
@@ -301,18 +289,48 @@ public class Botanica implements
                     registerUIElement(relicToggle, pageIndex);
 
                     // Move the yPos down for description
-                    yPos -= SPACING_Y;
+                    yPos -= SPACING_Y * 2;
 
                     // Add relic description
                     String description = "-" + getRelicDescription(relicName);
-                    float descriptionXOffset = 0f; // Adjust this value to move description
-                    FontHelper.cardDescFont_L.getData().setScale(0.66f); // Adjust the scale of the font
+                    float descriptionXOffset = 10f; // Adjust this value to move description
+                    float wrapWidth = 800f; // Dynamic wrap width based on screen width
+                    float fontScale = 0.85f; // Adjusted font scale for screen scaling
 
-                    ModLabel descLabel = new ModLabel(description, LAYOUT_X + descriptionXOffset, yPos, Settings.CREAM_COLOR, FontHelper.cardDescFont_L, settingsPanel, (l) -> {});
+                    FontHelper.cardDescFont_L.getData().setScale(fontScale);
+                    // Set a maximum number of words per line
+                    int maxWordsPerLine = 20; // Adjust this value as needed
+                    ArrayList<String> words = new ArrayList<>(Arrays.asList(description.split(" ")));
+                    StringBuilder wrappedDescription = new StringBuilder();
+                    int wordCount = 0;
+
+                    for (String word : words) {
+                        if (wordCount >= maxWordsPerLine) {
+                            wrappedDescription.append("\n");
+                            wordCount = 0; // Reset word count for the new line
+                        }
+                        wrappedDescription.append(word).append(" ");
+                        wordCount++;
+                    }
+
+
+
+                    // Create the description label
+                    ModLabel descLabel = new ModLabel(
+                            wrappedDescription.toString(),
+                            LAYOUT_X + descriptionXOffset,
+                            yPos,
+                            Settings.CREAM_COLOR,
+                            FontHelper.cardDescFont_L,
+                            settingsPanel,
+                            (l) -> {
+                            }
+                    );
                     registerUIElement(descLabel, pageIndex);
 
+
                     // Move the yPos further down after placing the description
-                    yPos -= SPACING_Y * 2.0; // Adjust this value for spacing between relics
+                    yPos -= (float) (SPACING_Y * 3.0); // Adjust this value for spacing between relics
                     relicCount++;
                 }
 
@@ -321,7 +339,7 @@ public class Botanica implements
                 relics = relics.subList(currentRelics.size(), relics.size());
 
                 // Check if we need to move to a new page
-                if (relicCount >= 6 && !relics.isEmpty()) {
+                if (relicCount >= 4 && !relics.isEmpty()) {
                     relicCount = 0; // Reset count for the next page
                     yPos = LAYOUT_Y; // Reset Y position
                     pageIndex++; // Move to the next page
@@ -341,13 +359,13 @@ public class Botanica implements
             l.setX((Settings.WIDTH - FontHelper.getWidth(FontHelper.charDescFont, l.text, 1.0f)) / 2.5f);
         });
 
-        BiggerModButton leftButton = new BiggerModButton(Settings.WIDTH/2F/Settings.xScale - 100f - ImageMaster.CF_LEFT_ARROW.getWidth()/2F, LAYOUT_Y + 45f, -5f, ImageMaster.CF_LEFT_ARROW, settingsPanel, b -> {
+        BiggerModButton leftButton = new BiggerModButton(Settings.WIDTH / 2F / Settings.xScale - 100f - ImageMaster.CF_LEFT_ARROW.getWidth() / 2F, LAYOUT_Y + 45f, -5f, ImageMaster.CF_LEFT_ARROW, settingsPanel, b -> {
             if (currentPage > 0) previousPage();
             else for (int i = 0; i < totalPages - 1; i++) nextPage();
         });
 
         BiggerModButton rightButton = new BiggerModButton(
-                Settings.WIDTH/2F/Settings.xScale + 100f - ImageMaster.CF_LEFT_ARROW.getWidth()/2F, LAYOUT_Y + 45f, -5f, ImageMaster.CF_RIGHT_ARROW, settingsPanel, b -> {
+                Settings.WIDTH / 2F / Settings.xScale + 100f - ImageMaster.CF_LEFT_ARROW.getWidth() / 2F, LAYOUT_Y + 45f, -5f, ImageMaster.CF_RIGHT_ARROW, settingsPanel, b -> {
             if (currentPage < totalPages - 1) nextPage();
             else for (int i = currentPage; i > 0; i--) previousPage();
         });
@@ -365,7 +383,7 @@ public class Botanica implements
             pages.put(pageIndex, new ArrayList<>());
         }
         pages.get(pageIndex).add(elem);
-        elem.setX(elem.getX() + (pageIndex * Settings.WIDTH)/Settings.scale);
+        elem.setX(elem.getX() + (pageIndex * Settings.WIDTH) / Settings.scale);
     }
 
 
@@ -374,21 +392,21 @@ public class Botanica implements
         if (pages.isEmpty()) {
             pages.put(0, new ArrayList<>());
         }
-        int page = pages.size()-1;
+        int page = pages.size() - 1;
         pages.get(page).add(elem);
         elem.setY(elem.getY() - deltaY);
-        elem.setX(elem.getX() + (page * Settings.WIDTH)/Settings.scale);
+        elem.setX(elem.getX() + (page * Settings.WIDTH) / Settings.scale);
         deltaY += SPACING_Y;
         if (deltaY > FULL_PAGE_Y) {
             deltaY = 0;
-            pages.put(page+1, new ArrayList<>());
+            pages.put(page + 1, new ArrayList<>());
         }
     }
 
     private static void nextPage() {
         for (ArrayList<IUIElement> elems : pages.values()) {
             for (IUIElement elem : elems) {
-                elem.setX(elem.getX() - Settings.WIDTH/Settings.scale);
+                elem.setX(elem.getX() - Settings.WIDTH / Settings.scale);
             }
         }
         currentPage++;
@@ -397,7 +415,7 @@ public class Botanica implements
     private static void previousPage() {
         for (ArrayList<IUIElement> elems : pages.values()) {
             for (IUIElement elem : elems) {
-                elem.setX(elem.getX() + Settings.WIDTH/Settings.scale);
+                elem.setX(elem.getX() + Settings.WIDTH / Settings.scale);
             }
         }
         currentPage--;
@@ -420,10 +438,10 @@ public class Botanica implements
     /*----------Localization----------*/
 
     //This is used to load the appropriate localization files based on language.
-    private static String getLangString()
-    {
+    private static String getLangString() {
         return Settings.language.name().toLowerCase();
     }
+
     private static final String defaultLanguage = "eng";
 
     public static final Map<String, KeywordInfo> keywords = new HashMap<>();
@@ -440,8 +458,7 @@ public class Botanica implements
         if (!defaultLanguage.equals(getLangString())) {
             try {
                 loadLocalization(getLangString());
-            }
-            catch (GdxRuntimeException e) {
+            } catch (GdxRuntimeException e) {
                 e.printStackTrace();
             }
         }
@@ -469,8 +486,7 @@ public class Botanica implements
     }
 
     @Override
-    public void receiveEditKeywords()
-    {
+    public void receiveEditKeywords() {
         Gson gson = new Gson();
         String json = Gdx.files.internal(localizationPath(defaultLanguage, "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
         KeywordInfo[] keywords = gson.fromJson(json, KeywordInfo[].class);
@@ -480,17 +496,14 @@ public class Botanica implements
         }
 
         if (!defaultLanguage.equals(getLangString())) {
-            try
-            {
+            try {
                 json = Gdx.files.internal(localizationPath(getLangString(), "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
                 keywords = gson.fromJson(json, KeywordInfo[].class);
                 for (KeywordInfo keyword : keywords) {
                     keyword.prep();
                     registerKeyword(keyword);
                 }
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 logger.warn(modID + " does not support " + getLangString() + " keywords.");
             }
         }
@@ -498,8 +511,7 @@ public class Botanica implements
 
     private void registerKeyword(KeywordInfo info) {
         BaseMod.addKeyword(modID.toLowerCase(), info.PROPER_NAME, info.NAMES, info.DESCRIPTION);
-        if (!info.ID.isEmpty())
-        {
+        if (!info.ID.isEmpty()) {
             keywords.put(info.ID, info);
         }
     }
@@ -512,12 +524,15 @@ public class Botanica implements
     public static String imagePath(String file) {
         return resourcesFolder + "/images/" + file;
     }
+
     public static String characterPath(String file) {
         return resourcesFolder + "/images/character/" + file;
     }
+
     public static String powerPath(String file) {
         return resourcesFolder + "/images/powers/" + file;
     }
+
     public static String relicPath(String file) {
         return resourcesFolder + "/images/relics/" + file;
     }
@@ -555,7 +570,7 @@ public class Botanica implements
      * This determines the mod's ID based on information stored by ModTheSpire.
      */
     private static void loadModInfo() {
-        Optional<ModInfo> infos = Arrays.stream(Loader.MODINFOS).filter((modInfo)->{
+        Optional<ModInfo> infos = Arrays.stream(Loader.MODINFOS).filter((modInfo) -> {
             AnnotationDB annotationDB = Patcher.annotationDBMap.get(modInfo.jarURL);
             if (annotationDB == null)
                 return false;
@@ -565,8 +580,7 @@ public class Botanica implements
         if (infos.isPresent()) {
             info = infos.get();
             modID = info.ID;
-        }
-        else {
+        } else {
             throw new RuntimeException("Failed to determine mod info/ID based on initializer.");
         }
     }
@@ -577,8 +591,7 @@ public class Botanica implements
             if (power.ID.equals(DexterityPower.POWER_ID)) {
                 // Jester's Belt
                 JestersBelt jestersBelt = (JestersBelt) AbstractDungeon.player.getRelic(JestersBelt.ID);
-                if (jestersBelt != null)
-                {
+                if (jestersBelt != null) {
                     jestersBelt.reduceDexterity();
                 }
 
@@ -587,7 +600,7 @@ public class Botanica implements
                 if (tapinella != null && !tapinella.isConverting()) {
                     tapinella.convertDexterityToStrength(AbstractDungeon.player, power.amount);
                 }
-        }
+            }
     }
 
     @Override
