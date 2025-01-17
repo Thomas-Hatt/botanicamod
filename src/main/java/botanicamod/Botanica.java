@@ -42,9 +42,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 import java.util.*;
 
 @SpireInitializer
@@ -100,10 +102,37 @@ public class Botanica implements
                     //These three null parameters are colors.
                     //If they're not null, they'll overwrite whatever color is set in the potions themselves.
                     //This is an old feature added before having potions determine their own color was possible.
-                    BaseMod.addPotion(potion.getClass(), null, null, null, potion.ID, potion.playerClass);
+                    if (isPotionEnabled(potion.ID)) {
+                        BaseMod.addPotion(potion.getClass(), null, null, null, potion.ID, potion.playerClass);
+                        System.out.println("Added potion: " + potion.ID);
+                    }
                     //playerClass will make a potion character-specific. By default, it's null and will do nothing.
                 });
     }
+
+    public static void editPotionPool(ArrayList<String> potionList) {
+        System.out.println("Potion Pool before modification: " + potionList); // Log initial state
+
+        Set<String> potionsToRetain = new HashSet<>();
+
+        for (String potionID : potionList) {
+            if (isPotionEnabled(potionID)) {
+                potionsToRetain.add(potionID);
+            }
+        }
+
+        if (potionsToRetain.isEmpty()) {
+            System.out.println("No potions enabled, the pool will be empty!");
+            return;
+        }
+
+        potionList.clear();
+        potionList.addAll(potionsToRetain);
+
+        System.out.println("Potion Pool after modification: " + potionList); // Log final state
+    }
+
+
 
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
@@ -190,6 +219,8 @@ public class Botanica implements
         }
     }
 
+    // Relic Descriptions
+
     private static final Map<String, String> RELIC_DESCRIPTIONS = new HashMap<>();
 
     static {
@@ -207,9 +238,31 @@ public class Botanica implements
         }
     }
 
-
     private String getRelicDescription(String relicName) {
         return RELIC_DESCRIPTIONS.getOrDefault(relicName, "Description not available.");
+    }
+
+    // Potion Descriptions
+
+    private static final Map<String, String> POTION_DESCRIPTIONS = new HashMap<>();
+
+    static {
+        Properties properties = new Properties();
+        try (InputStream input = Botanica.class.getClassLoader().getResourceAsStream("potion_descriptions.properties")) {
+            if (input == null) {
+                System.out.println("Unable to find potion_descriptions.properties");
+            }
+            properties.load(input);
+            for (String key : properties.stringPropertyNames()) {
+                POTION_DESCRIPTIONS.put(key, properties.getProperty(key));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String getPotionDescription(String potionName) {
+        return POTION_DESCRIPTIONS.getOrDefault(potionName, "Description not available.");
     }
 
     String ENABLE_DISABLE = "Enable/Disable ";
@@ -239,6 +292,23 @@ public class Botanica implements
         }
 
         // Add other types and relics as needed
+
+        // Organize potions by type
+
+        Map<String, List<String>> potionsByType = new LinkedHashMap<>();
+
+        potionsByType.put(ENABLE_DISABLE + "Common", Arrays.asList(
+                "PotionOfVigor"
+        ));
+        potionsByType.put(ENABLE_DISABLE + "Uncommon", Arrays.asList(
+                "PotionOfAThousandCuts",
+                "RetainPotion",
+                "EssenceOfFrost",
+                "EssenceOfLightning"
+        ));
+        potionsByType.put(ENABLE_DISABLE + "Rare", Arrays.asList(
+                "PotionOfSlowness"
+        ));
 
         int pageIndex = 0;
 
@@ -349,7 +419,112 @@ public class Botanica implements
             // Reset layout for the next category
             LAYOUT_X = 400f;
             pageIndex++;
+
         }
+
+        // Add Potions by Type
+        for (Map.Entry<String, List<String>> entry : potionsByType.entrySet()) {
+            String potionType = entry.getKey();
+            List<String> potions = entry.getValue();
+
+            float yPos = LAYOUT_Y;
+            int potionCount = 0; // Count potions per page
+
+            // Ensure the header is on each page
+            while (!potions.isEmpty()) {
+                // Add potion type header
+                if (potionCount == 0) {
+                    ModLabel typeLabel = new ModLabel(potionType + " Potions", LAYOUT_X - 40f, yPos, Settings.CREAM_COLOR, FontHelper.charDescFont, settingsPanel, (l) -> {
+                    });
+                    registerUIElement(typeLabel, pageIndex);
+                    yPos -= SPACING_Y * 2.5f; // Move the header down
+                }
+
+                // Add up to 4 potions per page
+                List<String> currentPotions = new ArrayList<>(potions.subList(0, Math.min(4 - potionCount, potions.size())));
+
+                // Add potions and descriptions
+                for (String potionName : currentPotions) {
+                    boolean enabled = modConfig.getBool("Botanica" + potionName + "PotionEnabled");
+
+                    // Add potion name toggle button
+                    ModLabeledToggleButton potionToggle = new ModLabeledToggleButton(
+                            potionName, LAYOUT_X - 40f, yPos, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                            enabled, settingsPanel,
+                            (label) -> {},
+                            (button) -> {
+                                modConfig.setBool("Botanica" + potionName + "PotionEnabled", button.enabled);
+                                try {
+                                    modConfig.save();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                // Call the function to update the potion pool
+                                editPotionPool(new ArrayList<>(potionsByType.get(potionType)));
+                                registerPotions();
+                            }
+                    );
+                    registerUIElement(potionToggle, pageIndex);
+
+                    // Move the yPos down for description
+                    yPos -= SPACING_Y * 2;
+
+                    // Add potion description
+                    String description = "-" + getPotionDescription(potionName);
+
+                    float descriptionXOffset = 10f;
+                    float wrapWidth = 800f;
+                    float fontScale = 0.85f;
+
+                    FontHelper.cardDescFont_L.getData().setScale(fontScale);
+                    ArrayList<String> words = new ArrayList<>(Arrays.asList(description.split(" ")));
+                    StringBuilder wrappedDescription = new StringBuilder();
+                    int maxWordsPerLine = 20;
+
+                    int wordCount = 0;
+                    for (String word : words) {
+                        if (wordCount >= maxWordsPerLine) {
+                            wrappedDescription.append("\n");
+                            wordCount = 0;
+                        }
+                        wrappedDescription.append(word).append(" ");
+                        wordCount++;
+                    }
+
+                    // Create the description label
+                    ModLabel descLabel = new ModLabel(
+                            wrappedDescription.toString(),
+                            LAYOUT_X + descriptionXOffset,
+                            yPos,
+                            Settings.CREAM_COLOR,
+                            FontHelper.cardDescFont_L,
+                            settingsPanel,
+                            (l) -> {
+                            }
+                    );
+                    registerUIElement(descLabel, pageIndex);
+
+                    // Move the yPos further down after placing the description
+                    yPos -= (float) (SPACING_Y * 3.0);
+                    potionCount++;
+                }
+
+                // Remove added potions from the list
+                potions = potions.subList(currentPotions.size(), potions.size());
+
+                // Check if we need to move to a new page
+                if (potionCount >= 4 && !potions.isEmpty()) {
+                    potionCount = 0; // Reset count for the next page
+                    yPos = LAYOUT_Y; // Reset Y position
+                    pageIndex++; // Move to the next page
+                }
+            }
+
+            // Reset layout for the next category
+            LAYOUT_X = 400f;
+            pageIndex++;
+        }
+
 
         // Add Page Navigation (Fixed Centering)
         int totalPages = pageIndex;
@@ -425,9 +600,14 @@ public class Botanica implements
         return modConfig.getBool("Botanica" + relicID + "RelicEnabled");
     }
 
+    public static boolean isPotionEnabled(String potionID) {
+        return modConfig.getBool("Botanica" + potionID + "PotionEnabled");
+    }
+
     @Override
     public void receivePostInitialize() {
         registerPotions();
+
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
 
         initializeConfig();

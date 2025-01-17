@@ -37,7 +37,7 @@
 
 ## Boss Relics:
 - Hand of Midas [X] - Hand of Greed now grants double gold on kill. Upon pickup, upgrade all held Hand of Greed(s) and obtain 3 copies
-- Thorned Crown [X] - Start each combat with Thorns equal to 4 times the current act number
+- Thorned Crown [X] - Start each combat with Thorns equal to 4 times the current act number. Lose 20% of your Max HP at the beginning of Act 3.
 - Dragon Heart [X] - Gain 2 Strength and 2 Dexterity at the start of each combat. Retain a random card at the end of your turn
 - Flask of Duplication [X] - Upon pickup, gain 2 copies of Normality. Duplicate every card in your deck and gain 10 gold for each card added.
 - Glimmering Orb [X] - The first time you play 5 Power Cards each combat, obtain a Vajra.

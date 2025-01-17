@@ -7,11 +7,12 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 
 import static botanicamod.Botanica.makeID;
 
-// Thorned Crown - Start each combat with Thorns equal to 4 times the current act number
+// Thorned Crown - Start each combat with Thorns equal to 4 times the current act number. Lose 20% of your Max HP at the beginning of Act 3.
 
 public class ThornedCrown extends BaseRelic
 {
@@ -24,6 +25,7 @@ public class ThornedCrown extends BaseRelic
         super(ID, NAME, RARITY, SOUND);
     }
 
+    private boolean hasLostHPInAct3 = false;
 
 
     public void atBattleStart() {
@@ -36,6 +38,21 @@ public class ThornedCrown extends BaseRelic
 
         // Apply thorns
         this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThornsPower(AbstractDungeon.player, thornsAmount), thornsAmount));
+    }
+
+    @Override
+    public void onEnterRoom(AbstractRoom room) {
+        super.onEnterRoom(room);
+        if (AbstractDungeon.floorNum == 35 && !hasLostHPInAct3) {
+            loseMaxHPInAct3();
+        }
+    }
+
+    private void loseMaxHPInAct3() {
+        int hpLoss = (int)(AbstractDungeon.player.maxHealth * 0.2f);
+        AbstractDungeon.player.decreaseMaxHealth(hpLoss);
+        this.flash();
+        hasLostHPInAct3 = true;
     }
 
     @Override

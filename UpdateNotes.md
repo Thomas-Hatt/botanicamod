@@ -271,4 +271,10 @@ Fixed an issue where cards could not be used from the console.
 
 # Version 0.2.6 - 1/14/25
 - Updated `ToDo.md`
-- Fixed scaling issues in my config file
+- Fixed scaling issues in my config menu
+
+# Version 0.2.7 - UPDATE DATE UPDATE DATE UPDATE DATE UPDATE DATE UPDATE DATE // pending
+- Updated `ToDo.md`
+- Added the ability to enable/disable potions in the config
+- Nerfed `Thorned Crown` to remove 20% of the player's Max HP at the start of Act 3
+- Added relic art for the following relics: `Nebula`, `Narcissus`, `Blue Ashes`, and `Silene`
