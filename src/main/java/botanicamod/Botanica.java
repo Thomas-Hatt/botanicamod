@@ -96,34 +96,37 @@ public class Botanica implements
     }
 
     public static void registerPotions() {
-        new AutoAdd(modID) //Loads files from this mod
-                .packageFilter(BasePotion.class) //In the same package as this class
-                .any(BasePotion.class, (info, potion) -> { //Run this code for any classes that extend this class
-                    //These three null parameters are colors.
-                    //If they're not null, they'll overwrite whatever color is set in the potions themselves.
-                    //This is an old feature added before having potions determine their own color was possible.
-                    if (isPotionEnabled(potion.ID)) {
+        new AutoAdd(modID)
+                .packageFilter(BasePotion.class)
+                .any(BasePotion.class, (info, potion) -> {
+                    String potionName = stripPrefix(potion.ID); // Strip prefix
+                    if (isPotionEnabled(potionName)) {
                         BaseMod.addPotion(potion.getClass(), null, null, null, potion.ID, potion.playerClass);
-                        System.out.println("Added potion: " + potion.ID);
+                        System.out.println("Added potion: " + potionName);
                     }
-                    //playerClass will make a potion character-specific. By default, it's null and will do nothing.
                 });
+    }
+
+    private static String stripPrefix(String id) {
+        if (id.startsWith(modID + ":")) {
+            return id.substring((modID + ":").length());
+        }
+        return id;
+    }
+
+    private static String addPrefix(String name) {
+        return modID + ":" + name;
     }
 
     public static void editPotionPool(ArrayList<String> potionList) {
         System.out.println("Potion Pool before modification: " + potionList); // Log initial state
 
         Set<String> potionsToRetain = new HashSet<>();
-
         for (String potionID : potionList) {
-            if (isPotionEnabled(potionID)) {
-                potionsToRetain.add(potionID);
+            String potionName = stripPrefix(potionID); // Strip prefix to get the potion name
+            if (isPotionEnabled(potionName)) {
+                potionsToRetain.add(addPrefix(potionName)); // Add prefix back for the ID
             }
-        }
-
-        if (potionsToRetain.isEmpty()) {
-            System.out.println("No potions enabled, the pool will be empty!");
-            return;
         }
 
         potionList.clear();
@@ -441,7 +444,7 @@ public class Botanica implements
                 }
 
                 // Add up to 4 potions per page
-                List<String> currentPotions = new ArrayList<>(potions.subList(0, Math.min(4 - potionCount, potions.size())));
+                List<String> currentPotions = new ArrayList<>(potions.subList(0, Math.min(5 - potionCount, potions.size())));
 
                 // Add potions and descriptions
                 for (String potionName : currentPotions) {
@@ -513,7 +516,7 @@ public class Botanica implements
                 potions = potions.subList(currentPotions.size(), potions.size());
 
                 // Check if we need to move to a new page
-                if (potionCount >= 4 && !potions.isEmpty()) {
+                if (potionCount >= 5 && !potions.isEmpty()) {
                     potionCount = 0; // Reset count for the next page
                     yPos = LAYOUT_Y; // Reset Y position
                     pageIndex++; // Move to the next page

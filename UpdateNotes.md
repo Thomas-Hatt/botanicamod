@@ -1,4 +1,4 @@
-    # Version 0.0.2 - 11/15/2024
+    # Version 0.0.2 - 11/15/24
 ## New Features
 - Stylized `ToDo.md`.
 - Created `UpdateNotes.md`.
@@ -9,7 +9,7 @@
     2. Dragon Heart
     3. Flask of Duplication
 
-# Version 0.0.3 - 11/16/2024
+# Version 0.0.3 - 11/16/24
 ## New Features
 - Updated `ToDo.md`
 - Changed the `ID` of each relic to be more in line with Slay the Spire's formatting.
@@ -20,7 +20,7 @@
 - Created the programming outlines for the following relics:
   1. Gambler's Debt
 
-# Version 0.0.4 - 11/17/2024
+# Version 0.0.4 - 11/17/24
 ### I had a very short amount of time for today, so I only created outlines for new relics
 ## New Features
 - Updated `ToDo.md`
@@ -32,7 +32,7 @@
 - 5. Rainbow Cape
 - 6. Reality Shard
 
-# Version 0.0.5 - 11/18/2024
+# Version 0.0.5 - 11/18/24
 ## New Features
 - Updated `ToDo.md`
 - Added 2 new Boss Relics:
@@ -48,12 +48,12 @@ Flask of duplication is now a Boss Relic instead of an Uncommon Relic
 ## Known Bugs
 - Gambler's Debt is not removing the card the player is supposed to receive when a curse replaces that card in the deck
 
-# Version 0.0.5 #2 - 11/19/2024
-This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I decided to label it as 11/19/2024).
+# Version 0.0.5 #2 - 11/19/24
+This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I decided to label it as 11/19/24).
 - Fixed bug where Gambler's Debt was not removing the card the player is supposed to receive when a curse replaces that card in the deck
 - Improved logic for adding the random curse to the player's deck
 
-# Version 0.0.6 - 11/19/2024
+# Version 0.0.6 - 11/19/24
 ## New Features
 - Updated `ToDo.md`
 - Created the programming outlines for the following relics:
@@ -74,7 +74,7 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - For Gambler's Debt, I want to mark 3 cards that are known to be safe (i.e., won't give a curse if the player chooses that card).
 - This would dynamically scale if the player has fewer card rewards, for instance.
 
-# Version 0.0.7 - 11/20/2024
+# Version 0.0.7 - 11/20/24
 ## New Features
 - Updated `ToDo.md`
 - Deleted excess imports in the individual classes for relics
@@ -85,13 +85,13 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - Moved the following relics to become Shop Relics:
 - 1. Gambler's Debt
 
-# Version 0.0.8 - 11/21/2024
+# Version 0.0.8 - 11/21/24
 ## New Features
 - Updated `ToDo.md`
 - Added 1 new Boss relic:
 - 1. Jester's Belt - Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 4 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 4.
 
-# Version 0.0.9 - 11/22/2024
+# Version 0.0.9 - 11/22/24
 ## New Features
 - Updated `ToDo.md`
 - Created `Credits.md`
@@ -101,7 +101,7 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - Added 1 new Rare relic:
 - 1. Narcissus (Ironclad Specific) - Start each combat with Limit Break. It has Purge and costs 0.
 
-# Version 0.1.0 - 11/23/2024
+# Version 0.1.0 - 11/23/24
 ## New Features
 - Updated `ToDo.md`
 - Added new credits in `Credits.md`
@@ -110,13 +110,13 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - 1. Silene - Heal 10% of damage taken at the end of combat.
 - 2. Marigold - Gain gold equal to 25% of the damage dealt in combat, but only for the first 50 damage dealt. Additionally, for every 100 Gold gained from this effect, draw one card at the start of combat.
 
-# Version 0.1.1 - 11/24/2024
+# Version 0.1.1 - 11/24/24
 ## New Features
 - Updated `ToDo.md`
 - Added 1 new Rare relic:
 - 1. Hemlock - Upon entering a Rest Site, Scry 1 for every 6 cards in your deck at the start of your next combat.
 
-# Version 0.1.2 - 11/25/2024
+# Version 0.1.2 - 11/25/24
 ## Today I added 2 relics suggested by Frost Prime's community!
 ## New Features
 - Updated `ToDo.md`
@@ -125,14 +125,14 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 - - Blue Ashes Side Quest - Upon drawing 20 total Status Cards, gain the Fire Breathing+ buff instead.
 3. Equinox (as suggested by Equi!) - Every time you play 10 Attacks, play the top card of your draw pile.
 
-# Version 0.1.3 - 11/26/2024
+# Version 0.1.3 - 11/26/24
 ## New Features
 - Updated `ToDo.md`
 - Added 2 new Uncommon relics:
 - 1. Terrifying Trinket - At the start of turn 3, all Minions run away.
 - 2. Cardoon - Every time you play 4 Attacks in a single turn, shuffle a Jack of All Trades into your draw pile.
 
-# Version 0.1.4 - 11/27/2024
+# Version 0.1.4 - 11/27/24
 ## Today was quite a successful day because I added my first few potions!
 ## New Features
 - Updated `ToDo.md`
@@ -144,7 +144,7 @@ This was made shortly after I published Version 0.0.5 (It's 12:31 A.M. so I deci
 Moved the following relic to become a Rare relic:
 - 1. Narcissus
 
-# Version 0.1.5 - 11/28/2024 (Thanksgiving Day!)
+# Version 0.1.5 - 11/28/24 (Thanksgiving Day!)
 ## New Features
 - Updated `ToDo.md`
 - Added 1 new Rare relic:
@@ -155,7 +155,7 @@ Moved the following relic to become a Rare relic:
 - 1. Essence of Frost (The Defect Specific) - Channel 1 (2) Frost Orbs for each orb slot.
 - 2. Essence of Lightning (The Defect Specific) - Channel 1 (2) Lightning Orbs for each orb slot.
 
-# Version 0.1.6 - 12/16/2024
+# Version 0.1.6 - 12/16/24
 ### I am back from my hiatus! My final exams for college took a lot of my time and energy
 ## New Features
 - Updated `ToDo.md`
@@ -167,7 +167,7 @@ Moved the following relic to become a Rare relic:
 ## Fixed Bugs
 Gambler's Debt now triggers Darkstone Periapt (recoded the relic to be more visually consistent, too.)
 
-# Version 0.1.7 - 12/16/2024
+# Version 0.1.7 - 12/16/24
 ## New Features
 - Updated `ToDo.md`
 - Added 1 new Uncommon relic:
@@ -176,7 +176,7 @@ Gambler's Debt now triggers Darkstone Periapt (recoded the relic to be more visu
 ## Fixed Bugs
 Fixed an issue where cards could not be used from the console.
 
-# Version 0.1.8 - 12/18/2024
+# Version 0.1.8 - 12/18/24
 ### I got really sick, and I'm still pretty sick :(
 ## New Features
 - Updated `ToDo.md`
@@ -185,7 +185,7 @@ Fixed an issue where cards could not be used from the console.
 2. Quill - At the start of each combat, add a random 0 cost card to your hand, discard pile, and draw pile. 
 3. Blossom - The first time your HP drops to 50% or below each combat, add a copy of Miracle to your hand.
 
-# Version 0.1.9 - 12/19/2024
+# Version 0.1.9 - 12/19/24
 ### I'm still pretty sick :(
 ## New Features
 - Updated `ToDo.md`
@@ -194,7 +194,7 @@ Fixed an issue where cards could not be used from the console.
 - Added 1 new Boss relic:
 1. Prismatic Box: Transform all Strikes and Defends into Uncommon cards. These cards can be of any color.
 
-# Version 0.2.0 - 1/5/2024
+# Version 0.2.0 - 1/5/24
 ## New Features
 - Updated `ToDo.md`
 - Added 3 new Common relics:
@@ -209,7 +209,7 @@ Fixed an issue where cards could not be used from the console.
 - - New Ability: Upon entering a shop, obtain 2 random Potions.
 ### I currently have 33 Relics implemented. If I choose to have 50 relics in total, I'm 66% done.
 
-# Version 0.2.1 - 1/5/2024
+# Version 0.2.1 - 1/5/24
 ## New Features
 - Updated `ToDo.md`
 - Removed unnecessary relics from `ToDo.md`
@@ -273,7 +273,7 @@ Fixed an issue where cards could not be used from the console.
 - Updated `ToDo.md`
 - Fixed scaling issues in my config menu
 
-# Version 0.2.7 - UPDATE DATE UPDATE DATE UPDATE DATE UPDATE DATE UPDATE DATE // pending
+# Version 0.2.7 - 1/17/25
 - Updated `ToDo.md`
 - Added the ability to enable/disable potions in the config
 - Nerfed `Thorned Crown` to remove 20% of the player's Max HP at the start of Act 3
