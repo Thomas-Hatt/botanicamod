@@ -278,3 +278,7 @@ Fixed an issue where cards could not be used from the console.
 - Added the ability to enable/disable potions in the config
 - Nerfed `Thorned Crown` to remove 20% of the player's Max HP at the start of Act 3
 - Added relic art for the following relics: `Nebula`, `Narcissus`, `Blue Ashes`, and `Silene`
+
+# Version 0.2.8 - 1/26/25
+- Updated `ToDo.md`
+- - Added relic art for the following relics: `Equinox` and `Hand of Midas`
