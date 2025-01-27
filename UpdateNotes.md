@@ -282,3 +282,7 @@ Fixed an issue where cards could not be used from the console.
 # Version 0.2.8 - 1/26/25
 - Updated `ToDo.md`
 - - Added relic art for the following relics: `Equinox` and `Hand of Midas`
+
+# Version 0.2.9 - 1/26/25
+- Updated `ToDo.md`
+- - Added relic art for the following relic: `Gambler's Debt`
