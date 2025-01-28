@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.PandorasBox;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon.CurrentScreen;
 
@@ -54,6 +55,10 @@ public class PrismaticBox extends BaseRelic {
     }
 
     public void onEquip() {
+        // Remove Pandora's Box from the relic pool
+        AbstractDungeon.bossRelicPool.remove(PandorasBox.ID);
+
+        // Create an iterator to look through the player's master deck
         this.calledTransform = false;
         Iterator<AbstractCard> i = AbstractDungeon.player.masterDeck.group.iterator();
 
