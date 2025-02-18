@@ -290,3 +290,13 @@ Fixed an issue where cards could not be used from the console.
 # Version 0.3.0 - 1/28/25
 - Updated `ToDo.md`
 - Updated `Prismatic Box` to remove `Pandora's Box` from the relic pool when obtained
+
+# Version 1.0.0 - 2/17/25 
+# It's the massive launch day! I'm so excited!
+- Updated `ToDo.md`
+- Reworked `Tapinella` to say "At the end of your turn, All Dexterity is converted to Strength" to avoid bugs and to create an interesting dynamic (mostly to avoid bugs)
+- Change `Jester's Belt` to reduce to the dexterity cap at the end of your turn. I cannot find a fix to using potions.
+- Added the rest of the relic art (`Jester's Belt`, `Mirror Shard`, `Divider`, `Manna`, `Merchant's Robes`. `Terrifying Trinket`, `Illusionist's Coin`, `Crystal`, `Quill`, `Nile`, `Sweater`, `Marigold`, `Cardoon`, `Tapinella`)
+- Added the art for the `Crystallize` Power
+- Added a proper description for the mod when viewed in ModTheSpire
+- Added the rest of the relic descriptions

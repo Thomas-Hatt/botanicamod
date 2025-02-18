@@ -1,7 +1,7 @@
 {
   "${modID}:Mirror_Shard": {
     "NAME": "Mirror Shard",
-    "FLAVOR": "A shard broken off from the core of Hexaghost, perhaps from a previous reincarnation?",
+    "FLAVOR": "A shard broken off with a reflection of the Ironclad, perhaps from a previous reincarnation?",
     "DESCRIPTIONS": [
       "At the start of combat, create a copy of a random card in your hand."
     ]
@@ -9,14 +9,14 @@
 
   "${modID}:Hand_Of_Midas": {
     "NAME": "Hand of Midas",
-    "FLAVOR": "Greed has consumed us all.",
+    "FLAVOR": "POV: America",
     "DESCRIPTIONS": [
       "#yHand #yof #yGreed now grants double gold on kill. NL NL Upon pickup, upgrade all held #yHand #yof #yGreed(s) and obtain #b3 copies."    ]
   },
 
   "${modID}:Thorned_Crown": {
     "NAME": "Thorned Crown",
-    "FLAVOR": "A makeshift version of busted crown",
+    "FLAVOR": "A makeshift version of busted crown.",
     "DESCRIPTIONS": [
       "Start each combat with #yThorns equal to #b4 times the current act number. Lose #r20% of your Max HP at the beginning of Act 3."
     ]
@@ -32,7 +32,7 @@
 
   "${modID}:Dragon_Heart": {
     "NAME": "Dragon Heart",
-    "FLAVOR": "The Dragonborn could only wish to have this power",
+    "FLAVOR": "*Skyrim's Main Theme plays*",
     "DESCRIPTIONS": [
       "Gain #b",
       " #yStrength and #b",
@@ -61,7 +61,7 @@
     "NAME": "Tapinella",
     "FLAVOR": "Who knew mushrooms held so much power!?",
     "DESCRIPTIONS": [
-      "All #yDexterity is converted to #yStrength"
+      "At the end of your turn, All #yDexterity is converted to #yStrength"
     ]
   },
 
@@ -75,7 +75,7 @@
 
   "${modID}:Nebula": {
     "NAME": "Nebula",
-    "FLAVOR": "The power consumes you, and grows.",
+    "FLAVOR": "My cat!",
     "DESCRIPTIONS": [
       "If you end your turn without #yBlock, your next skill is played twice."
     ]
@@ -92,7 +92,7 @@
 
   "${modID}:Jesters_Belt": {
     "NAME": "Jester's Belt",
-    "FLAVOR": "Loki needs your help",
+    "FLAVOR": "Balatro reference in Slay the Spire 2?",
     "DESCRIPTIONS": [
       "Gain [E] at the start of each turn. NL NL Gain #b",
       " #yDexterity for every #b",
@@ -104,7 +104,7 @@
 
   "${modID}:Narcissus": {
     "NAME": "Narcissus",
-    "FLAVOR": "Don't look into the water.",
+    "FLAVOR": "The man, the myth, the legend.",
     "DESCRIPTIONS": [
       "Start each combat with #yLimit #yBreak. It has #yPurge and costs #b0."
     ]
@@ -112,7 +112,7 @@
 
   "${modID}:Silene": {
     "NAME": "Silene",
-    "FLAVOR": "A flower with healing properties.",
+    "FLAVOR": "The Goddess of Healing.",
     "DESCRIPTIONS": [
       "Heal #b10% of damage taken at the end of combat."
     ]
@@ -120,7 +120,7 @@
 
   "${modID}:Marigold": {
     "NAME": "Marigold",
-    "FLAVOR": "A flower with gold gaining properties.",
+    "FLAVOR": "Hand of Midas' younger brother.",
     "DESCRIPTIONS": [
       "Gain #yGold equal to #b25% of the damage dealt in combat, but only for the first #b100 damage dealt. NL NL For every #b100 #yGold gained from this effect, draw #b1 card at the start of combat."
     ]
@@ -128,7 +128,7 @@
 
   "${modID}:Hemlock": {
     "NAME": "Hemlock",
-    "FLAVOR": "Sample Text",
+    "FLAVOR": "I love the smell of hemlock in the morning.",
     "DESCRIPTIONS": [
       "Upon entering a Rest Site, #yScry #b1 for every #b6 cards in your deck at the start of your next combat."
     ]
@@ -249,7 +249,7 @@
 
   "${modID}:Nile": {
     "NAME": "Nile",
-    "FLAVOR": "Quite the river.",
+    "FLAVOR": "Quite the river! Maybe??",
     "DESCRIPTIONS": [
       "Whenever you enter a ? room, all enemies in the next combat lose #b1 #yStrength."
     ]

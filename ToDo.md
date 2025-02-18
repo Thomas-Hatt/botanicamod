@@ -31,7 +31,7 @@
 - - Crystallize: At the end of your turn, gain an Orb slot, Channel a random Orb, and gain 1 Dexterity.
 
 ## Shop Relics:
-- Tapinella [X] - All Dexterity is converted to Strength
+- Tapinella [X] - At the end of your turn, All Dexterity is converted to Strength
 - Alchemist's Mask [X] - Right click to activate. Lose all gold. At the end of your turn, if you have 0 gold, obtain a random potion and add a random curse to your deck and draw pile.
 - Gambler's debt [X] - Card rewards have 2 extra cards, but 1 random card is disguised as a curse.
 

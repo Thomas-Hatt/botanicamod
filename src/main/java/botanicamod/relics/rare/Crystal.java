@@ -20,22 +20,24 @@ public class Crystal extends BaseRelic {
     private static final RelicTier RARITY = RelicTier.RARE;
     private static final LandingSound SOUND = LandingSound.MAGICAL;
 
-    // Amount of crystallize to apply
-    private final int crystallizeAmount = 2;
-
-    AbstractPlayer p = AbstractDungeon.player;
-
     public Crystal() {
         super(ID, NAME, RARITY, SOUND);
     }
 
     @Override
     public void atBattleStart() {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p != null) {
+            this.flash();
 
-        this.flash();
+            // Amount of crystallize to apply
+            int crystallizeAmount = 2;
 
-        this.addToBot(new ApplyPowerAction(p, p, new CrystallizePower(p, crystallizeAmount)));
+            // Apply crystallize
+            this.addToBot(new ApplyPowerAction(p, p, new CrystallizePower(p, crystallizeAmount)));
+        }
     }
+
 
     @Override
     public boolean canSpawn() {

@@ -68,6 +68,15 @@ public class JestersBelt extends BaseRelic {
         }
     }
 
+    public void onPlayerEndTurn() {
+        // If the amount of dexterity the player has is greater than the cap, reduce it to the dexterity cap
+        AbstractPower dexterityPower = AbstractDungeon.player.getPower(DexterityPower.POWER_ID);
+        if (dexterityPower != null && dexterityPower.amount > dexterityCap) {
+            dexterityPower.amount = dexterityCap;
+            this.flash();
+        }
+    }
+
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         ++this.counter;

@@ -785,6 +785,7 @@ public class Botanica implements
         AbstractDungeon.player.powers.forEach(power -> {
             if (power.ID.equals(StrengthPower.POWER_ID)) {
                 Tapinella tapinella = (Tapinella) AbstractDungeon.player.getRelic(Tapinella.ID);
+
             }
         });
     }
