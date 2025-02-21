@@ -32,6 +32,8 @@
         -There are 2 Relic specific cards (Illusionary Neutralize and Purge Limit Break)
         \n
         -There is 1 new Power effect (Crystallize)
+        \n
+        -Version 1.0.1 - 2/21/25 - Fixed a bug where relics and potions were not being enabled by default when first downloading the mod. Massive shoutout the modding community for helping me fix this bug!
     </description>
 
     <!--You shouldn't need to change anything below this point, but feel free to look at it.-->
