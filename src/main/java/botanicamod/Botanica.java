@@ -155,6 +155,11 @@ public class Botanica implements
                 defaults.put("Botanica" + relicName + "RelicEnabled", "TRUE");
             }
 
+            // Set all potions to enabled by default
+            for (String potionName : POTION_NAMES) {
+                defaults.put("Botanica" + potionName + "PotionEnabled", "TRUE");
+            }
+
             modConfig = new SpireConfig(modID, "GeneralConfig", defaults);
 
         } catch (Exception e) {
@@ -225,6 +230,8 @@ public class Botanica implements
     // Relic Descriptions
 
     private static final Map<String, String> RELIC_DESCRIPTIONS = new HashMap<>();
+    private static final List<String> RELIC_NAMES_LIST = new ArrayList<>();
+    private static final String[] RELIC_NAMES;
 
     static {
         Properties properties = new Properties();
@@ -239,6 +246,15 @@ public class Botanica implements
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        // Populate RELIC_NAMES_LIST
+        RELIC_NAMES_LIST.addAll(Arrays.asList("Blossom", "BurningStone", "MerchantsRobes", "Nile", "Nostrum",
+                "Quill", "ShortCircuit", "Trifocal", "BlueAshes", "Cardoon", "Divider", "Equinox",
+                "IllusionistsCoin", "Manna", "MirrorShard", "TerrifyingTrinket", "Crystal", "Hemlock", "Marigold",
+                "Nebula", "Silene", "Sweater", "Narcissus", "DragonHeart", "FlaskOfDuplication",
+                "GlimmeringOrb", "HandOfMidas", "JestersBelt", "PrismaticBox", "ThornedCrown", "AlchemistsMask", "GamblersDebt", "Tapinella"));
+
+        RELIC_NAMES = RELIC_NAMES_LIST.toArray(new String[0]);
     }
 
     private String getRelicDescription(String relicName) {
@@ -247,7 +263,10 @@ public class Botanica implements
 
     // Potion Descriptions
 
+    // Potion Descriptions
     private static final Map<String, String> POTION_DESCRIPTIONS = new HashMap<>();
+    private static final List<String> POTION_NAMES_LIST = new ArrayList<>();
+    private static final String[] POTION_NAMES;
 
     static {
         Properties properties = new Properties();
@@ -262,6 +281,11 @@ public class Botanica implements
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        // Populate POTION_NAMES_LIST
+        POTION_NAMES_LIST.addAll(Arrays.asList("PotionOfVigor", "PotionOfAThousandCuts", "RetainPotion", "EssenceOfFrost", "EssenceOfLightning", "PotionOfSlowness"));
+
+        POTION_NAMES = POTION_NAMES_LIST.toArray(new String[0]);
     }
 
     private String getPotionDescription(String potionName) {
@@ -269,10 +293,6 @@ public class Botanica implements
     }
 
     String ENABLE_DISABLE = "Enable/Disable ";
-
-    private static final List<String> RELIC_NAMES_LIST = new ArrayList<>();
-    private static final String[] RELIC_NAMES = RELIC_NAMES_LIST.toArray(new String[0]);
-
 
     private void initializeConfig() {
         UIStrings configStrings = CardCrawlGame.languagePack.getUIString(makeID("ConfigMenuText"));
@@ -294,8 +314,6 @@ public class Botanica implements
             RELIC_NAMES_LIST.addAll(relics);
         }
 
-        // Add other types and relics as needed
-
         // Organize potions by type
 
         Map<String, List<String>> potionsByType = new LinkedHashMap<>();
@@ -312,6 +330,10 @@ public class Botanica implements
         potionsByType.put(ENABLE_DISABLE + "Rare", Arrays.asList(
                 "PotionOfSlowness"
         ));
+
+        for (List<String> potions : potionsByType.values()) {
+            POTION_NAMES_LIST.addAll(potions);
+        }
 
         int pageIndex = 0;
 

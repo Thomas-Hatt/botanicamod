@@ -24,7 +24,7 @@
 
     <!-- This information will be displayed in ModTheSpire, the modded launcher. -->
     <name>Botanica</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
     <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
     <description>Botanica is my first mod for Slay the Spire. There are a total of 33 relics and 6 potions, which you can fully enable or disable within the config menu.

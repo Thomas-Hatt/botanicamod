@@ -300,3 +300,6 @@ Fixed an issue where cards could not be used from the console.
 - Added the art for the `Crystallize` Power
 - Added a proper description for the mod when viewed in ModTheSpire
 - Added the rest of the relic descriptions
+
+# Version 1.0.1 - 2/21/25
+- Fixed a bug where relics and potions were not being enabled by default when first downloading the mod. Massive shoutout the modding community for helping me fix this bug!
