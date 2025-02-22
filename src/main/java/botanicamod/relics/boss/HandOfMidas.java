@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
+import java.util.Iterator;
+
 import static botanicamod.Botanica.makeID;
 
 // Hand of Midas - Hand of Greed now grants double gold on kill. Upon pickup, upgrade all held Hand of Greed(s) and obtain 3 copies
@@ -34,7 +36,9 @@ public class HandOfMidas extends BaseRelic {
         }
 
         // Modify existing Hand of Greed cards in the player's master deck
-        for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+        Iterator<AbstractCard> iterator = AbstractDungeon.player.masterDeck.group.iterator();
+        while (iterator.hasNext()) {
+            AbstractCard card = iterator.next();
             if (card.cardID.equals(HandOfGreed.ID)) {
                 card.baseMagicNumber *= 2;
                 card.magicNumber = card.baseMagicNumber;
@@ -47,6 +51,7 @@ public class HandOfMidas extends BaseRelic {
                 card.applyPowers();
             }
         }
+
 
         CardCrawlGame.sound.play("NECRONOMICON");
     }

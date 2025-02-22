@@ -24,7 +24,7 @@ public class GlimmeringOrb extends BaseRelic {
     private static final AbstractRelic.LandingSound SOUND = AbstractRelic.LandingSound.CLINK; // The sound played when the relic is clicked.
 
     // How many power cards the player needs to play to gain 1 permanent strength
-    private static final int Power_Threshold = 4;
+    private static final int Power_Threshold = 5;
 
     // Count how many power cards the player has played
     private int powerCardCount = 0;

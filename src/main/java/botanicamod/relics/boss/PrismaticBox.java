@@ -100,9 +100,7 @@ public class PrismaticBox extends BaseRelic {
         super.update();
         if (!this.calledTransform && AbstractDungeon.screen != CurrentScreen.GRID) {
             this.calledTransform = true;
-            if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.getCurrRoom() != null) {
-                AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25F;
-            }
+            AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.25F;
         }
     }
 

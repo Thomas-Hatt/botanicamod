@@ -24,7 +24,7 @@
 
     <!-- This information will be displayed in ModTheSpire, the modded launcher. -->
     <name>Botanica</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
     <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
     <description>Botanica is my first mod for Slay the Spire. There are a total of 33 relics and 6 potions, which you can fully enable or disable within the config menu.
@@ -33,7 +33,15 @@
         \n
         -There is 1 new Power effect (Crystallize)
         \n
-        -Version 1.0.1 - 2/21/25 - Fixed a bug where relics and potions were not being enabled by default when first downloading the mod. Massive shoutout the modding community for helping me fix this bug!
+        - Version 1.0.2 - 2/22/25
+        \n - Fixed a bug where the game would crash when picking up Prismatic Box.
+        \n - Fixed a bug where the game would crash when picking up Hand of Midas.
+        \n - Buffed `Blossom` to create a Miracle+ instead of Miracle.
+        \n - Buffed `Cardoon` to be 4 Powers played instead of 5 Powers played.
+        \n
+        - Version 1.0.1 - 2/21/25
+        \n - Fixed a bug where relics and potions were not being enabled by default when first downloading the mod. Massive shoutout the modding community for helping me fix this bug!
+
     </description>
 
     <!--You shouldn't need to change anything below this point, but feel free to look at it.-->

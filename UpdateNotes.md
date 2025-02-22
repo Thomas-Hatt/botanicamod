@@ -303,3 +303,9 @@ Fixed an issue where cards could not be used from the console.
 
 # Version 1.0.1 - 2/21/25
 - Fixed a bug where relics and potions were not being enabled by default when first downloading the mod. Massive shoutout the modding community for helping me fix this bug!
+
+# Version 1.0.2 - 2/22/25 
+- Fixed a bug where the game would crash when picking up Prismatic Box.
+- Fixed a bug where the game would crash when picking up Hand of Midas.
+- Buffed `Blossom` to create a Miracle+ instead of Miracle.
+- Buffed `Cardoon` to be 4 Powers played instead of 5 Powers played.

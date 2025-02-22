@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import static botanicamod.Botanica.makeID;
 
 public class Blossom extends BaseRelic {
-    // The first time you lose HP each combat, add a Miracle to your hand.
+    // The first time you lose HP each combat, add a Miracle+ to your hand.
 
     // Initialize a variable that tracks if the effect has been used
     private boolean usedThisCombat = false;
@@ -38,7 +38,11 @@ public class Blossom extends BaseRelic {
             }
             AbstractPlayer p = AbstractDungeon.player;
             addToBot(new RelicAboveCreatureAction(p, this));
-            this.addToBot(new MakeTempCardInHandAction(new Miracle()));
+            // Create a new Miracle card and upgrade it
+            Miracle upgradedMiracle = new Miracle();
+            upgradedMiracle.upgrade();
+
+            this.addToBot(new MakeTempCardInHandAction(upgradedMiracle));
             usedThisCombat = true;
             grayscale = true;
         }

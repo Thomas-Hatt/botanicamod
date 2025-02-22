@@ -3,7 +3,7 @@
 - Merchant's Robes [X] - Upon entering a shop, obtain 2 random Potions.
 - Burning Stone [X] - At the start of each combat, add a Burn to your discard pile. Whenever you draw a Burn, gain 2 Strength.
 - Quill [X] - At the start of each combat, add a random 0 cost card to your hand, discard pile, and draw pile.
-- Blossom [X] - The first time you lose HP each combat, add a Miracle to your hand.
+- Blossom [X] - The first time you lose HP each combat, add a Miracle+ to your hand.
 - Nile [X] - Whenever you enter a ? room, all enemies in the next combat lose 1 Strength.
 - Nostrum [X] - At the end of your first turn, Exhaust any number of cards in your hand
 - Trifocal [X] - At the end of your first turn, gain 5 gold for each card discarded, then Scry 3.
@@ -40,7 +40,7 @@
 - Thorned Crown [X] - Start each combat with Thorns equal to 4 times the current act number. Lose 20% of your Max HP at the beginning of Act 3.
 - Dragon Heart [X] - Gain 2 Strength and 2 Dexterity at the start of each combat. Retain a random card at the end of your turn
 - Flask of Duplication [X] - Upon pickup, gain 2 copies of Normality. Duplicate every card in your deck and gain 10 gold for each card added.
-- Glimmering Orb [X] - The first time you play 5 Power Cards each combat, obtain a Vajra.
+- Glimmering Orb [X] - The first time you play 4 Power Cards each combat, obtain a Vajra.
 - Jester's Belt [X] - Gain 1 Energy at the start of each turn. Gain 1 Dexterity for every 4 cards played in a turn, but lose 2 Dexterity if you play a Power card. Dexterity is now capped at 4.
 - Prismatic Box [X] - Transform all Strikes and Defends into Uncommon cards. These cards can be of any color.
 
