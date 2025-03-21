@@ -9,6 +9,15 @@
   },
 
   {
+    "ID": "flux_quest",
+    "PROPER_NAME": "Flux Quest",
+    "NAMES": [
+      "flux_quest"
+    ],
+    "DESCRIPTION": "Upon playing 10 total #yPower cards, gain the #yHeat #ySinks+ #ybuff instead."
+  },
+
+  {
     "ID": "illusionary_quest",
     "PROPER_NAME": "Illusionary Quest",
     "NAMES": [

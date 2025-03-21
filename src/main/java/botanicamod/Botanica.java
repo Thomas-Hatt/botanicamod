@@ -31,6 +31,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -252,7 +253,8 @@ public class Botanica implements
                 "Quill", "ShortCircuit", "Trifocal", "BlueAshes", "Cardoon", "Divider", "Equinox",
                 "IllusionistsCoin", "Manna", "MirrorShard", "TerrifyingTrinket", "Crystal", "Hemlock", "Marigold",
                 "Nebula", "Silene", "Sweater", "Narcissus", "DragonHeart", "FlaskOfDuplication",
-                "GlimmeringOrb", "HandOfMidas", "JestersBelt", "PrismaticBox", "ThornedCrown", "AlchemistsMask", "GamblersDebt", "Tapinella"));
+                "GlimmeringOrb", "HandOfMidas", "JestersBelt", "PrismaticBox", "ThornedCrown", "AlchemistsMask", "GamblersDebt",
+                "Tapinella", "FloppyDisk"));
 
         RELIC_NAMES = RELIC_NAMES_LIST.toArray(new String[0]);
     }
@@ -305,7 +307,7 @@ public class Botanica implements
         Map<String, List<String>> relicsByType = new LinkedHashMap<>();
 
         relicsByType.put(ENABLE_DISABLE + "Common", Arrays.asList("Blossom", "BurningStone", "MerchantsRobes", "Nile", "Nostrum", "Quill", "ShortCircuit", "Trifocal"));
-        relicsByType.put(ENABLE_DISABLE + "Uncommon", Arrays.asList("BlueAshes", "Cardoon", "Divider", "Equinox", "IllusionistsCoin", "Manna", "MirrorShard", "TerrifyingTrinket"));
+        relicsByType.put(ENABLE_DISABLE + "Uncommon", Arrays.asList("BlueAshes", "Cardoon", "Divider", "Equinox", "IllusionistsCoin", "Manna", "MirrorShard", "TerrifyingTrinket", "FloppyDisk"));
         relicsByType.put(ENABLE_DISABLE + "Rare", Arrays.asList("Crystal", "Hemlock", "Marigold", "Nebula", "Silene", "Sweater", "Narcissus"));
         relicsByType.put(ENABLE_DISABLE + "Boss", Arrays.asList("DragonHeart", "FlaskOfDuplication", "GlimmeringOrb", "HandOfMidas", "JestersBelt", "PrismaticBox", "ThornedCrown"));
         relicsByType.put(ENABLE_DISABLE + "Shop", Arrays.asList("AlchemistsMask", "GamblersDebt", "Tapinella"));
@@ -792,14 +794,6 @@ public class Botanica implements
 
     @Override
     public void receivePostPowerApplySubscriber(AbstractPower power, com.megacrit.cardcrawl.core.AbstractCreature target, com.megacrit.cardcrawl.core.AbstractCreature source) {
-        if (target == AbstractDungeon.player)
-            if (power.ID.equals(DexterityPower.POWER_ID)) {
-                // Jester's Belt
-                JestersBelt jestersBelt = (JestersBelt) AbstractDungeon.player.getRelic(JestersBelt.ID);
-                if (jestersBelt != null) {
-                    jestersBelt.reduceDexterity();
-                }
-            }
     }
 
     @Override

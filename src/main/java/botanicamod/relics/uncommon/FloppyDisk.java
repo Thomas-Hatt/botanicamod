@@ -6,55 +6,54 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.FireBreathingPower;
+import com.megacrit.cardcrawl.powers.HeatsinkPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import static botanicamod.Botanica.makeID;
 
-public class BlueAshes extends BaseRelic {
-    // Blue Ashes (as suggested by blueash7077!) - At the start of each combat, gain the Fire Breathing buff.
-    // Blue Ashes Side Quest - Upon drawing 20 Status Cards, gain the Fire Breathing+ buff instead.
+public class FloppyDisk extends BaseRelic {
+    // At the start of each combat, gain the Heat Sinks buff. This relic has a Flux Quest.
 
-    private static final String NAME = "Blue_Ashes"; // The name will be used for determining the image file as well as the ID.
+    private static final String NAME = "Floppy_Disk"; // The name will be used for determining the image file as well as the ID.
     public static final String ID = makeID(NAME); // This adds the mod's prefix to the relic ID, resulting in modID:relic
     private static final AbstractRelic.RelicTier RARITY = AbstractRelic.RelicTier.UNCOMMON; // The relic's rarity.
     private static final AbstractRelic.LandingSound SOUND = LandingSound.MAGICAL; // The sound played when the relic is clicked.
 
-    // Store the amount of statuses drawn
-    private int STATUSES_DRAWN = 0;
+    private int POWERS_PLAYED = 0;
+    private int UPGRADE_REQUIREMENT = 10;
 
-    public BlueAshes() {
+    public FloppyDisk() {
         super(ID, NAME, RARITY, SOUND);
     }
 
     @Override
     public void onEquip() {
-        STATUSES_DRAWN = 0;
+        POWERS_PLAYED = 0;
         this.counter = 0;
     }
 
     @Override
     public void atBattleStart() {
         this.flash();
-        if (STATUSES_DRAWN < 20) {
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FireBreathingPower(AbstractDungeon.player, 6), 6));
+        if (POWERS_PLAYED < UPGRADE_REQUIREMENT) {
+            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new HeatsinkPower(AbstractDungeon.player, 1), 1));
         }
         else {
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FireBreathingPower(AbstractDungeon.player, 10), 10));
+            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new HeatsinkPower(AbstractDungeon.player, 2), 2));
         }
     }
 
     @Override
-    public void onCardDraw(AbstractCard targetCard) {
-        if (targetCard.type == AbstractCard.CardType.STATUS && STATUSES_DRAWN < 20) {
-            STATUSES_DRAWN += 1;
-            this.counter = STATUSES_DRAWN;
+    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+        if (targetCard.type == AbstractCard.CardType.POWER && POWERS_PLAYED < UPGRADE_REQUIREMENT) {
+            POWERS_PLAYED += 1;
+            this.counter = POWERS_PLAYED;
         }
     }
 
     @Override
     public boolean canSpawn() {
-        if (Botanica.isRelicEnabled("BlueAshes")) {
+        if (Botanica.isRelicEnabled("FloppyDisk")) {
             return (AbstractDungeon.floorNum <= 48);
         }
         return false;

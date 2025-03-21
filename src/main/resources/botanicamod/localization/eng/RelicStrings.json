@@ -150,6 +150,14 @@
     ]
   },
 
+  "${modID}:Floppy_Disk": {
+    "NAME": "Floppy Disk",
+    "FLAVOR": "As suggested by Bento Baker Praymordis",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain the #yHeat #ySinks #ybuff. NL This relic has a #y${modID}:Flux_Quest."
+    ]
+  },
+
   "${modID}:Equinox": {
     "NAME": "Equinox",
     "FLAVOR": "As suggested by Equi",

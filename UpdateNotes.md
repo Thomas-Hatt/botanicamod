@@ -309,3 +309,11 @@ Fixed an issue where cards could not be used from the console.
 - Fixed a bug where the game would crash when picking up Hand of Midas.
 - Buffed `Blossom` to create a Miracle+ instead of Miracle.
 - Buffed `Cardoon` to be 4 Powers played instead of 5 Powers played.
+
+# Version 1.0.3 - 3/21/25
+- Updated `ToDo.md`
+- Added 1 new Uncommon relic:
+- 1. Floppy Disk - At the start of each combat, gain the Heat Sinks buff. After playing 10 Powers, gain the Heat Sinks+ buff instead.
+- Fixed a bug where the game would crash when looking at the relic compendium.
+- Fixed `Jester's Belt` to properly enforce the Dexterity cap, as well as fixing bugs where it would gain Dexterity infinitely.
+- Added counters to `Floppy Disk` and `Blue Ashes` to track quest progress.

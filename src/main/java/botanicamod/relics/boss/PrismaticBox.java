@@ -26,7 +26,7 @@ public class PrismaticBox extends BaseRelic {
     private static final RelicTier RARITY = RelicTier.BOSS; // The relic's rarity.
     private static final LandingSound SOUND = LandingSound.FLAT; // The sound played when the relic is clicked.
 
-    private boolean calledTransform = false;
+    private boolean calledTransform = true;
     private int count = 0;
 
     public PrismaticBox() {
@@ -35,7 +35,7 @@ public class PrismaticBox extends BaseRelic {
     }
 
     private void removeStrikeTip() {
-        ArrayList<String> strikes = new ArrayList();
+        ArrayList<String> strikes = new ArrayList<>();
         String[] var2 = GameDictionary.STRIKE.NAMES;
 
         for (String s : var2) {
